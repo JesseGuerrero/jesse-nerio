@@ -11,7 +11,7 @@ My research interests lie in the intersection of neural networks and geospatial 
 
 Education
 ------
-:mortar_board: Phd in Computer Science and Machine Learning, 2024-, University of Texas - San Antonio \
+:mortar_board: PhD in Computer Science and Machine Learning, 2024-, University of Texas - San Antonio \
 :mortar_board: MS in Computer Science, 2021-2023, Texas A&M - San Antonio \
 :mortar_board: BBA in Information Systems, 2017-2021, Texas A&M - San Antonio \
 :mortar_board: AB in Business Administration, San Antonio College, 2015-2017 
