@@ -32,7 +32,7 @@ Core developer for an open-source RuneScape remake, contributing to game engine 
 Volunteer member supporting first-episode psychosis student advocacy initiatives and mental health awareness. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
 
 **Catechumen Volunteer** | *St. Anthony's Orthodox Church* | *2025 - Present*  
-Community volunteer supporting religious education programs at OCA parish under [Fr. David Wooten](https://www.oca.org/clergy/David-Wooten/).
+Community volunteer supporting Christian education programs at OCA parish under [Fr. David Wooten](https://www.oca.org/clergy/David-Wooten/).
 
 News
 ------
