@@ -13,7 +13,7 @@ title                    : "Jesus Guerrero / Jesse Nerio"
 title_separator          : "-"
 name                     : &name "Jesse"
 description              : &description "I am a PhD student in Computer Science at University of Texas - San Antonio. I joined the Secure AI Autonomy Lab (SAAL) in 2024..."
-url                      : https://jesseguerrero.com/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://jessenerio.com/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "JesseGuerrero/jesse-nerio"
 
