@@ -9,25 +9,25 @@
 
 main:
   - title: "Publications"
-    url: /publications/
+    url: https://scholar.google.com/citations?user=7tsIRXYAAAAJ&hl=en
 
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
+#  - title: "Talks"
+#    url: /talks/
+#
+#  - title: "Teaching"
+#    url: /teaching/
+#
+#  - title: "Portfolio"
+#    url: /portfolio/
         
   - title: "Blog Posts"
-    url: /year-archive/
+    url: https://medium.com/@jessenerio
     
-  - title: "CV"
-    url: /cv/
+#  - title: "CV"
+#    url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+#  - title: "Guide"
+#    url: /markdown/
