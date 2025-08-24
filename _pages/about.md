@@ -7,7 +7,7 @@ redirect_from:
 ---
 Hi there! My name is Jesse. I am a PhD student in Computer Science at University of Texas - San Antonio. I joined the [Secure AI Autonomy Lab (SAAL)](https://secureaiautonomylab.github.io/) in 2024, Where I have been advised by Dr Peyman Najafirad.
 
-My research interests lie in the intersection of neural networks and geospatial automation. Specifically, I am exploring the applications of neural Models and digital Twins to address challenges in GeoAI, including areas such as twin cities, remote sensing, pattern recognition, vision and language models.
+My research interests lie in the intersection of neural networks and geospatial automation. Specifically, I am exploring the applications of neural models and digital twins to address challenges in GeoAI, including areas such as twin cities, remote sensing, pattern recognition, vision and language models.
 
 Education
 ------
