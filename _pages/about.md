@@ -29,7 +29,7 @@ Research Assistant contributing to NLP research publications and advancing compu
 Core developer for an open-source RuneScape remake, contributing to game engine architecture and gameplay systems. Founded by [Trenton Kress](https://trentonkress.com/).
 
 **Student Advocate** | *Students With Psychosis* | *2020 - Present*  
-Volunteer member supporting first-episode psychosis student advocacy initiatives and mental health awareness. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
+Volunteer member supporting psychosis student advocacy initiatives and mental health awareness. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
 
 **Catechumen Volunteer** | *St. Anthony's Orthodox Church* | *2025 - Present*  
 Community volunteer supporting Christian education programs at OCA parish under [Fr. David Wooten](https://www.oca.org/clergy/David-Wooten/).
