@@ -8,7 +8,7 @@ collection: portfolio
 
 This project presents an automated computer vision system that integrates 3D geospatial data with Vision-Language Models (VLMs) to enable intelligent property assessment at scale. By combining Google 3D Tiles, street view imagery, and building footprint data with the Qwen 3-VL model, the system allows users to interactively query property characteristics through a simple point-and-click interface. The architecture supports multi-angle image capture and analysis, providing comprehensive assessments of residential and commercial properties including usage classification, condition evaluation, and accessibility features. Demonstrated on San Antonio's 450,000+ properties, the system is globally extensible to any city with available footprint data and street view coverage.
 
-<img src='/images/policy.png'>
+<img src='/images/CV_2.png'>
 
 ---
 
@@ -97,7 +97,10 @@ The system prompts the VLM with targeted questions to extract actionable propert
 
 The multi-angle image input allows the model to make informed assessments based on comprehensive visual evidence rather than single viewpoint observations.
 
-**[INSERT IMAGE: Example property with multiple street view angles and VLM analysis results]**
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src='/images/policy.png' style="width: 49%; height: auto; object-fit: cover;">
+  <img src='/images/policy2.png' style="width: 49%; height: auto; object-fit: cover;">
+</div>
 
 ---
 
@@ -127,7 +130,7 @@ A key advantage of this architecture is its extensibility. Since Google 3D Tiles
 
 The primary limitation is the availability of building footprint datasets, which are increasingly available through open data initiatives worldwide.
 
-**[INSERT IMAGE: Map visualization showing coverage area or density of analyzed properties]**
+<img src='/images/CV_1.png'>
 
 ---
 
