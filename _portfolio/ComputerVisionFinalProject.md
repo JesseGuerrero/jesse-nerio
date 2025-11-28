@@ -1,6 +1,6 @@
 ---
 title: "Automated Multi-Angle Vision Analysis for Urban Property Assessment"
-excerpt: "A scalable Vision-Language Model system for intelligent property analysis using 3D geospatial data and multi-perspective street-level imagery<br/><img src='/images/policy.png'>"
+excerpt: "A scalable Vision-Language Model system for intelligent property analysis using 3D geospatial data and multi-perspective street-level imagery<br/><img src='/images/policy.png' width='500' height='auto'>"
 collection: portfolio
 ---
 
@@ -8,7 +8,7 @@ collection: portfolio
 
 This project presents an automated computer vision system that integrates 3D geospatial data with Vision-Language Models (VLMs) to enable intelligent property assessment at scale. By combining Google 3D Tiles, street view imagery, and building footprint data with the Qwen 3-VL model, the system allows users to interactively query property characteristics through a simple point-and-click interface. The architecture supports multi-angle image capture and analysis, providing comprehensive assessments of residential and commercial properties including usage classification, condition evaluation, and accessibility features. Demonstrated on San Antonio's 450,000+ properties, the system is globally extensible to any city with available footprint data and street view coverage.
 
-**[INSERT IMAGE: System overview diagram or hero shot of the 3D interface]**
+<img src='/images/policy.png'>
 
 ---
 
@@ -264,8 +264,8 @@ This work represents a step toward democratizing property intelligence, making c
 
 ## Technical Stack
 
-**Geospatial Data**: Google 3D Tiles, Google Street View API, OSM/Overture/Bing building footprints
-**Vision Model**: Qwen 3-VL
-**Inference Engine**: VLLM
-**Hardware**: NVIDIA A100 GPU (UTSA DGX)
-**Spatial Processing**: Ray casting, polygon intersection algorithms
+- **Geospatial Data**: Google 3D Tiles, Google Street View API, OSM/Overture/Bing building footprints
+- **Vision Model**: Qwen 3-VL
+- **Inference Engine**: VLLM
+- **Hardware**: NVIDIA A100 GPU (UTSA DGX)
+- **Spatial Processing**: Ray casting, polygon intersection algorithms
