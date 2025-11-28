@@ -159,14 +159,7 @@ Municipal authorities can employ the system to:
 - Identify properties potentially requiring ADA compliance updates
 - Plan accessibility improvements at neighborhood scale
 
-### 5.4 Emergency & Disaster Response
-
-First responders and emergency planners can benefit from:
-- Pre-incident building intelligence
-- Rapid assessment of building conditions post-disaster
-- Identification of vulnerable structures
-
-**[INSERT IMAGE: Dashboard or visualization showing aggregate analysis results across a neighborhood]**
+<img src='/images/CV_3.png'>
 
 ---
 
