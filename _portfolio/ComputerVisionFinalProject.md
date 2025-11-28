@@ -188,7 +188,7 @@ Multi-angle images are:
 - Batch-processed to minimize inference latency
 - Cached to prevent redundant API calls
 
-**[INSERT IMAGE: Code snippet or flowchart showing the technical pipeline]**
+<img src='/images/CV_4.png'>
 
 ---
 
