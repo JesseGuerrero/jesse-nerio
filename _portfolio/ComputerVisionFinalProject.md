@@ -34,8 +34,6 @@ This project makes the following key contributions:
 - **VLM-Powered Analysis**: Integration of state-of-the-art vision-language models for intelligent property assessment
 - **Scalable Architecture**: A system design that extends to 450k+ properties in San Antonio and is globally applicable
 
-**[INSERT IMAGE: Side-by-side comparison showing 3D mesh click → street view collection → VLM analysis]**
-
 ---
 
 ## 2. System Architecture
@@ -58,7 +56,7 @@ The system integrates three primary data sources:
 
 Upon user interaction, the ray casting algorithm identifies the intersecting building footprint and extracts associated metadata including address, coordinates, and optimal camera positions for image capture.
 
-**[INSERT IMAGE: Technical diagram showing the ray casting process and footprint selection]**
+<img src='/images/CV_4.png'>
 
 ### 2.3 Multi-Perspective Image Acquisition
 
@@ -188,8 +186,6 @@ Multi-angle images are:
 - Batch-processed to minimize inference latency
 - Cached to prevent redundant API calls
 
-<img src='/images/CV_4.png'>
-
 ---
 
 ## 7. Results & Discussion
@@ -223,8 +219,6 @@ Future enhancements could address these through:
 - Integration with additional data sources (satellite imagery, permit records)
 - Fine-tuning VLMs on domain-specific property assessment datasets
 
-**[INSERT IMAGE: Examples of successful analyses and edge cases/limitations]**
-
 ---
 
 ## 8. Conclusion
@@ -244,8 +238,6 @@ The system's global extensibility—leveraging widely available 3D Tiles, street
 ### 8.2 Impact
 
 This work represents a step toward democratizing property intelligence, making comprehensive building assessments accessible without requiring expensive site visits or manual analysis. The open data foundations (OSM, Overture, Google Earth) ensure the approach can benefit researchers, planners, and policy-makers worldwide.
-
-**[INSERT IMAGE: Final compelling visualization or future vision concept]**
 
 ---
 
