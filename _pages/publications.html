@@ -367,17 +367,23 @@ author_profile: true
         // Load publications from JSON
         async function loadPublications() {
             try {
+                console.log('Fetching publications from:', '{{ site.baseurl }}/files/publications.json');
                 const response = await fetch('{{ site.baseurl }}/files/publications.json');
-                if (!response.ok) throw new Error('Failed to load publications');
+                console.log('Response status:', response.status, response.ok);
+
+                if (!response.ok) {
+                    throw new Error(`Failed to load publications: ${response.status} ${response.statusText}`);
+                }
 
                 publications = await response.json();
+                console.log('Publications loaded:', publications.length);
                 initializeFilters();
                 updateStats();
                 displayPublications();
             } catch (error) {
                 console.error('Error loading publications:', error);
                 document.getElementById('publications-content').innerHTML =
-                    '<div class="error-message">Unable to load publications. Please make sure publications.json exists.</div>';
+                    `<div class="error-message">Unable to load publications: ${error.message}<br><br>Please check the browser console for details.</div>`;
             }
         }
 
