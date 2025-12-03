@@ -361,6 +361,7 @@ author_profile: true
     </div>
 
     <script>
+        console.log('Publications script loaded');
         let publications = [];
         let currentFilter = 'all';
 
@@ -473,12 +474,24 @@ author_profile: true
         }
 
         // Search functionality
-        document.addEventListener('DOMContentLoaded', () => {
+        function initializePage() {
+            console.log('Initializing publications page');
             loadPublications();
 
             const searchBox = document.getElementById('searchBox');
-            searchBox.addEventListener('input', displayPublications);
-        });
+            if (searchBox) {
+                searchBox.addEventListener('input', displayPublications);
+            } else {
+                console.error('Search box not found');
+            }
+        }
+
+        // Handle both cases: DOM already loaded or still loading
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
     </script>
 </body>
 </html>
