@@ -5,8 +5,14 @@ Usage: python update_publications.py
 
 import json
 import os
+import sys
 from datetime import datetime
 from scholarly import scholarly
+
+# Set UTF-8 encoding for Windows console
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Configuration
 SCHOLAR_ID = "7tsIRXYAAAAJ"
@@ -64,7 +70,10 @@ def main():
         publications = author.get('publications', [])
 
         for i, pub in enumerate(publications, 1):
-            print(f"Processing {i}/{len(publications)}: ", end='')
+            try:
+                print(f"Processing {i}/{len(publications)}: ", end='', flush=True)
+            except:
+                pass  # Skip print errors
 
             try:
                 # Fill in complete publication details
@@ -72,7 +81,6 @@ def main():
                 bib = filled_pub.get('bib', {})
 
                 title = bib.get('title', f'Publication {i}')
-                print(title[:50] if len(title) <= 50 else title[:50] + '...')
 
                 # Extract publication details
                 pub_data = {
@@ -88,8 +96,24 @@ def main():
 
                 publications_data.append(pub_data)
 
+                # Try to print status, but don't fail if encoding issues occur
+                try:
+                    print(f"{title[:50] if len(title) <= 50 else title[:50] + '...'} [OK]")
+                except:
+                    print(f"[OK]")
+
             except Exception as e:
-                print(f"Error: {str(e)}")
+                try:
+                    print(f" [FAILED] - {str(e)}")
+                    # Try to at least get the title from the unfilled pub
+                    try:
+                        bib = pub.get('bib', {})
+                        title = bib.get('title', f'Publication {i}')
+                        print(f"    Skipped publication: {title}")
+                    except:
+                        print(f"    Could not retrieve publication details")
+                except:
+                    pass  # Even printing the error failed
                 continue
 
         # Sort by year (descending)

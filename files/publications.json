@@ -40,6 +40,16 @@
     "category": "Other"
   },
   {
+    "title": "Enhancing Neural Text Detector Robustness with μAttacking and RR-Training",
+    "authors": "Gongbo Liang and Jesus Guerrero and Fengbo Zheng and Izzat Alsmadi",
+    "year": "2023",
+    "venue": "Unknown Venue",
+    "abstract": "With advanced neural network techniques, language models can generate content that looks genuinely created by humans. Such advanced progress benefits society in numerous ways. However, it may also bring us threats that we have not seen before. A neural text detector is a classification model that separates machine-generated text from human-written ones. Unfortunately, a pretrained neural text detector may be vulnerable to adversarial attack, aiming to fool the detector into making wrong classification decisions. Through this work, we propose μAttacking, a mutation-based general framework that can be used to evaluate the robustness of neural text detectors systematically. Our experiments demonstrate that μAttacking identifies the detector’s flaws effectively. Inspired by the insightful information revealed by μAttacking, we also propose an RR-training strategy, a straightforward but effective method to improve the robustness of neural text detectors through finetuning. Compared with the normal finetuning method, our experiments demonstrated that RR-training effectively increased the model robustness by up to 11.33% without increasing much effort when finetuning a neural text detector. We believe the μAttacking and RR-training are useful tools for developing and evaluating neural language models.",
+    "citations": 13,
+    "url": "https://www.mdpi.com/2079-9292/12/8/1948",
+    "category": "Other"
+  },
+  {
     "title": "Mutation-based adversarial attacks on neural text detectors",
     "authors": "Gongbo Liang and Jesus Guerrero and Izzat Alsmadi",
     "year": "2023",
