@@ -487,9 +487,12 @@ author_profile: true
         }
 
         // Handle both cases: DOM already loaded or still loading
+        console.log('Document readyState:', document.readyState);
         if (document.readyState === 'loading') {
+            console.log('DOM still loading, adding event listener');
             document.addEventListener('DOMContentLoaded', initializePage);
         } else {
+            console.log('DOM already loaded, initializing now');
             initializePage();
         }
     </script>
