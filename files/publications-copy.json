@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Defending mutation-based adversarial text perturbation: a black-box approach",
+    "authors": "Demetrio Deanda and Izzat Alsmadi and Jesus Guerrero and Gongbo Liang",
+    "year": "2025",
+    "venue": "Springer",
+    "abstract": "The proliferation of text generation applications in social networks has raised concerns about the authenticity of online content. Large language models like GPTs can now produce increasingly indistinguishable text from human-written content. While learning-based classifiers can be trained to differentiate between human-written and machine-generated text, their robustness is often questionable. This work first demonstrates the vulnerability of pre-trained human-written text detectors to simple mutation-based adversarial attacks. We then propose a novel black-box defense strategy to enhance detector robustness on such attacks without requiring any knowledge about the attacking method. Our experiments demonstrate that the proposed black-box method significantly enhances detector performance in discerning human-authored from machine-generated text, achieving comparable results to white-box defense …",
+    "citations": 5,
+    "url": "https://link.springer.com/article/10.1007/s10586-024-04916-3",
+    "category": "AI Security"
+  },
+  {
+    "title": "Addressing the Public Health Misinformation Challenge with Real-time Data Fusion",
+    "authors": "Reza Nourmohammadi and Jesus Guerrero and Gongbo Liang and Issam Boukabou and Dulana Rupanetti and Naima Kaabouch",
+    "year": "2025",
+    "venue": "IEEE",
+    "abstract": "Design & development of virtual reality empowered cyber-security training testbed for IoT systems",
+    "citations": 0,
+    "url": "https://ieeexplore.ieee.org/abstract/document/10349995/",
+    "category": "AI Security"
+  },
+  {
+    "title": "Transforming computer security and public trust through the exploration of fine-tuning large language models",
+    "authors": "Garrett Crumrine and Izzat Alsmadi and Jesus Guerrero and Yuvaraj Munian and Muhammad Al-Abdullah",
+    "year": "2024",
+    "venue": "IEEE",
+    "abstract": "Large language models (LLMs) have achieved groundbreaking advancements in natural language processing (NLP) that hold the promise of revolutionizing the relationship between humans and technology. However, this technological advancement has been joined by the emergence of “Mallas” (a term coined by Lin et al. [4]). These services facilitate the creation of malware, phishing attacks, deceptive websites, and most concerning, exploit code. This paper delves into the proliferation of Mallas by examining the use of various pretrained language models and their efficiency at generating vulnerabilities and exploits when being misused. Leveraging a comprehensive dataset from the Common Vulnerabilities and Exposures (CVE) program, it explores dataset creation, prompt engineering and fine-tuning methodologies needed to generate code and explanatory text related to vulnerabilities identified in the CVE …",
+    "citations": 3,
+    "url": "https://ieeexplore.ieee.org/abstract/document/10895437/",
+    "category": "AI Security"
+  },
+  {
+    "title": "Extracting Object Heights From LiDAR & Aerial Imagery",
+    "authors": "Jesus Guerrero",
+    "year": "2024",
+    "venue": "ArXiv",
+    "abstract": "This work shows a procedural method for extracting object heights from LiDAR and aerial imagery. We discuss how to get heights and the future of LiDAR and imagery processing. SOTA object segmentation allows us to take get object heights with no deep learning background. Engineers will be keeping track of world data across generations and reprocessing them. They will be using older procedural methods like this paper and newer ones discussed here. SOTA methods are going beyond analysis and into generative AI. We cover both a procedural methodology and the newer ones performed with language models. These include point cloud, imagery and text encoding allowing for spatially aware AI.",
+    "citations": 0,
+    "url": "https://arxiv.org/abs/2408.00967",
+    "category": "Geospatial AI"
+  },
+  {
+    "title": "Enhancing Neural Text Detector Robustness with μAttacking and RR-Training",
+    "authors": "Gongbo Liang and Jesus Guerrero and Fengbo Zheng and Izzat Alsmadi",
+    "year": "2023",
+    "venue": "MDPI",
+    "abstract": "With advanced neural network techniques, language models can generate content that looks genuinely created by humans. Such advanced progress benefits society in numerous ways. However, it may also bring us threats that we have not seen before. A neural text detector is a classification model that separates machine-generated text from human-written ones. Unfortunately, a pretrained neural text detector may be vulnerable to adversarial attack, aiming to fool the detector into making wrong classification decisions. Through this work, we propose μAttacking, a mutation-based general framework that can be used to evaluate the robustness of neural text detectors systematically. Our experiments demonstrate that μAttacking identifies the detector’s flaws effectively. Inspired by the insightful information revealed by μAttacking, we also propose an RR-training strategy, a straightforward but effective method to improve the robustness of neural text detectors through finetuning. Compared with the normal finetuning method, our experiments demonstrated that RR-training effectively increased the model robustness by up to 11.33% without increasing much effort when finetuning a neural text detector. We believe the μAttacking and RR-training are useful tools for developing and evaluating neural language models.",
+    "citations": 13,
+    "url": "https://www.mdpi.com/2079-9292/12/8/1948",
+    "category": "AI Security"
+  },
+  {
+    "title": "Mutation-based adversarial attacks on neural text detectors",
+    "authors": "Gongbo Liang and Jesus Guerrero and Izzat Alsmadi",
+    "year": "2023",
+    "venue": "ArXiv",
+    "abstract": "Neural text detectors aim to decide the characteristics that distinguish neural (machine-generated) from human texts. To challenge such detectors, adversarial attacks can alter the statistical characteristics of the generated text, making the detection task more and more difficult. Inspired by the advances of mutation analysis in software development and testing, in this paper, we propose character- and word-based mutation operators for generating adversarial samples to attack state-of-the-art natural text detectors. This falls under white-box adversarial attacks. In such attacks, attackers have access to the original text and create mutation instances based on this original text. The ultimate goal is to confuse machine learning models and classifiers and decrease their prediction accuracy.",
+    "citations": 9,
+    "url": "https://arxiv.org/abs/2302.05794",
+    "category": "Neural Networks"
+  },
+  {
+    "title": "Adversarial text perturbation generation and analysis",
+    "authors": "Jesus Guerrero and Gongbo Liang and Izzat Alsmadi",
+    "year": "2023",
+    "venue": "IEEE",
+    "abstract": "With the evolution of applications of text generations in social networks, the genuineness of such text is questioned. Machine learning language based models such as GPT now can generate responses to complex questions which can be hardly distinguished from human-generated alternatives. In this scope, we utilized text-mutation to evaluate different text-based mutation operators that can be easily created and their impact on the output generated text. Our goal is to evaluate how can machine learning models distinguish those mutated versions from original versions. We reported results of several text-based mutation operators. We evaluated only a few examples of mutation operators and our goal is to eventually create a much larger list of operators. Those mutation operators can be used to distinguish human from machine-generated text.",
+    "citations": 6,
+    "url": "https://ieeexplore.ieee.org/abstract/document/10349981/",
+    "category": "Neural Networks"
+  },
+  {
+    "title": "Security Policies Automation in Software Defined Networking",
+    "authors": "Brian Kishiyama and Jesus Guerrero and Izzat Alsmadi",
+    "year": "2023",
+    "venue": "SSRN",
+    "abstract": "Software Defined Networking (SDN) is evolving as a solution to increased demand on elastic net-works and applications. Nonetheless, there are security concerns related to SDN centralization of management and control. With focus in wireless LANs, we evaluated security aspects in the SDN architecture. We expanded the work described in a research paper regarding SDN wireless network security [1] by further looking at the southbound communications protocol of an SDN and the use of WPA3.",
+    "citations": 2,
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4384690",
+    "category": "Computer Networks"
+  },
+  {
+    "title": "Masters Thesis: Detecting ai generated text using neural networks",
+    "authors": "Jesse A Guerrero",
+    "year": "2023",
+    "venue": "Proquest",
+    "abstract": "For humans, distinguishing machine generated text from human written text is mentally taxing and slow. NLP models have been created to do this more effectively and faster. But, what if some adversarial changes have been added to the machine generated text? This thesis discusses this issue and text detectors in general. The primary goal of this thesis is to describe the current state of text detectors in research and to discuss a adversarial issues in modern NLP transformers. Chapter 2 displays the current state of text detector literature as a Systematic Literature Review. Chapter 3 describes an experiment where RoBERTa was used to test transformers against simple mutations which cause mislabeling.",
+    "citations": 1,
+    "url": "https://search.proquest.com/openview/4738c65dbebbad64dae8d1faf5f07d5f/1?pq-origsite=gscholar&cbl=18750&diss=y",
+    "category": "Neural Networks"
+  },
+  {
+    "title": "Enhancing Neural Text Detector Robustness with µAttacking and RR-Training",
+    "authors": "G Liang and J Guerrero and F Zheng and I Alsmadi",
+    "year": "2023",
+    "venue": "Electronics",
+    "abstract": "With advanced neural network techniques, language models can generate content that looks genuinely created by humans. Such advanced progress benefits society in numerous ways. However, it may also bring us threats that we have not seen before. A neural text detector is a classification model that separates machine-generated text from human-written ones. Unfortunately, a pretrained neural text detector may be vulnerable to adversarial attack, aiming to fool the detector into making wrong classification decisions. Through this work, we propose µAttacking, a mutation-based general framework that can be used to evaluate the robustness of neural text detectors systematically. Our experiments demonstrate that µAttacking identifies the detector’s flaws effectively. Inspired by the insightful information revealed by µAttacking, we also propose an RR-training strategy, a straightforward but effective method to improve the robustness of neural text detectors through finetuning. Compared with the normal finetuning method, our experiments demonstrated that RR-training effectively increased the model robustness by up to 11.33% without increasing much effort when finetuning a neural text detector. We believe the µAttacking and RR-training are useful tools for developing and evaluating neural language models.",
+    "citations": 0,
+    "url": "https://www.academia.edu/download/102918903/pdf.pdf",
+    "category": "Neural Networks"
+  },
+  {
+    "title": "Synthetic text detection: Systemic literature review",
+    "authors": "Jesus Guerrero and Izzat Alsmadi",
+    "year": "2022",
+    "venue": "ArXiv",
+    "abstract": "Within the text analysis and processing fields, generated text attacks have been made easier to create than ever before. To combat these attacks open sourcing models and datasets have become a major trend to create automated detection algorithms in defense of authenticity. For this purpose, synthetic text detection has become an increasingly viable topic of research. This review is written for the purpose of creating a snapshot of the state of current literature and easing the barrier to entry for future authors. Towards that goal, we identified few research trends and challenges in this field.",
+    "citations": 8,
+    "url": "https://arxiv.org/abs/2210.06336",
+    "category": "Surveys"
+  },
+  {
+    "title": "A mutation-based text generation for adversarial machine learning applications",
+    "authors": "Jesus Guerrero and Gongbo Liang and Izzat Alsmadi",
+    "year": "2022",
+    "venue": "ArXiv",
+    "abstract": "Many natural language related applications involve text generation, created by humans or machines. While in many of those applications machines support humans, yet in few others, (e.g. adversarial machine learning, social bots and trolls) machines try to impersonate humans. In this scope, we proposed and evaluated several mutation-based text generation approaches. Unlike machine-based generated text, mutation-based generated text needs human text samples as inputs. We showed examples of mutation operators but this work can be extended in many aspects such as proposing new text-based mutation operators based on the nature of the application.",
+    "citations": 4,
+    "url": "https://arxiv.org/abs/2212.11808",
+    "category": "AI Security"
+  }
+]
