@@ -387,7 +387,6 @@ author_profile: true
             }
         }
 
-        // Initialize filter buttons
         function initializeFilters() {
             const categories = new Set(['all']);
             publications.forEach(pub => categories.add(pub.category));
@@ -405,7 +404,6 @@ author_profile: true
             });
         }
 
-        // Update statistics
         function updateStats() {
             const totalPubs = publications.length;
             const totalCitations = publications.reduce((sum, pub) => sum + (pub.citations || 0), 0);
@@ -414,7 +412,6 @@ author_profile: true
             document.getElementById('total-citations').textContent = totalCitations;
         }
 
-        // Display publications
         function displayPublications() {
             const container = document.getElementById('publications-content');
             const searchTerm = document.getElementById('searchBox').value.toLowerCase();
@@ -460,11 +457,9 @@ author_profile: true
             container.innerHTML = html;
         }
 
-        // Filter publications by category
         function filterPublications(category) {
             currentFilter = category;
 
-            // Update active button
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.category === category);
             });
@@ -472,7 +467,6 @@ author_profile: true
             displayPublications();
         }
 
-        // Search functionality
         function initializePage() {
             console.log('Initializing publications page');
             loadPublications();
@@ -485,7 +479,6 @@ author_profile: true
             }
         }
 
-        // Handle both cases: DOM already loaded or still loading
         console.log('Document readyState:', document.readyState);
         if (document.readyState === 'loading') {
             console.log('DOM still loading, adding event listener');
