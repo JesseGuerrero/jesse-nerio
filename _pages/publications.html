@@ -367,7 +367,7 @@ author_profile: true
         // Load publications from JSON
         async function loadPublications() {
             try {
-                const response = await fetch('../assets/data/publications.json');
+                const response = await fetch('/files/publications.json');
                 if (!response.ok) throw new Error('Failed to load publications');
 
                 publications = await response.json();

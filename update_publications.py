@@ -10,7 +10,7 @@ from scholarly import scholarly
 
 # Configuration
 SCHOLAR_ID = "7tsIRXYAAAAJ"
-OUTPUT_DIR = "assets/data"
+OUTPUT_DIR = "files"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "publications.json")
 
 def get_category(venue):
