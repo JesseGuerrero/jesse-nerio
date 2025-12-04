@@ -69,6 +69,51 @@
         nav a:hover {
             color: #0066cc;
         }
+        .sticky-post {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 2px solid #5568d3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .sticky-post::before {
+            content: "📚 NEW BOOK";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #ffd700;
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .sticky-post h2 {
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        .sticky-post h2 a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.4em;
+        }
+        .sticky-post h2 a:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+        .sticky-post .blog-meta {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .sticky-post .blog-excerpt {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +126,12 @@
         </ul>
     </nav>
     <h1>Blog</h1>
+
+    <div class="sticky-post">
+        <h2><a href="https://a.co/d/b56kpK9" target="_blank">How to Learn Code</a></h2>
+        <div class="blog-meta">Available Now on Amazon</div>
+        <p class="blog-excerpt">Master the psychology and methodology of raw implementation without LLMs. Learn how to truly understand code through deliberate practice and deep cognitive engagement.</p>
+    </div>
 
     <ul class="blog-list">
         <li class="blog-item">
