@@ -1,11 +1,24 @@
 import fitz  # PyMuPDF
 import os
+import sys
 
-pdf_path = r"blog\What is the Computer Information Systems major_ -.pdf"
+if len(sys.argv) < 2:
+    print("Usage: python extract_pdf_images.py <pdf_path>")
+    sys.exit(1)
+
+pdf_path = sys.argv[1]
 output_dir = "blog/images"
+
+if not os.path.exists(pdf_path):
+    print(f"Error: PDF file not found at {pdf_path}")
+    sys.exit(1)
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
+
+# Generate image prefix from PDF filename
+pdf_basename = os.path.splitext(os.path.basename(pdf_path))[0]
+image_prefix = pdf_basename.lower().replace(" ", "-").replace("_", "-")
 
 # Open the PDF
 pdf_document = fitz.open(pdf_path)
@@ -22,7 +35,7 @@ for page_num in range(len(pdf_document)):
         image_ext = base_image["ext"]
 
         # Save the image
-        image_filename = f"{output_dir}/cis-major-img-{image_count}.{image_ext}"
+        image_filename = f"{output_dir}/{image_prefix}-img-{image_count}.{image_ext}"
         with open(image_filename, "wb") as image_file:
             image_file.write(image_bytes)
 
