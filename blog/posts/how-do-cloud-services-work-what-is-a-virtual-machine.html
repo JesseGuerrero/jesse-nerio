@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How do cloud services work & what is a virtual machine?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://scholar.google.com/citations?user=7tsIRXYAAAAJ&hl=en">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How do cloud services work & what is a virtual machine?</h1>
+        <div class="meta">
+            <span>Published: April 1, 2019</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>I am here to make cloud services easier to understand for you. Cloud services are very intimidating to new users and require much understanding before being used. When I started the interfaces were too daunting so I quit. I tried AWS years ago without understanding virtual machines, instances, the need for Linux or how in the world I was able to choose the number of processors on my cloud service. How did they process servers for me? It all just didn't make sense. Let's try to piece things together and see if we could make sense of cloud services…</p>
+
+        <h2>Frequent Words</h2>
+        <p><strong>Hypervisor</strong>: The operating system of operating systems</p>
+        <p><strong>Instance</strong>: A machine simulated within another machine, there can be multiple instances.</p>
+        <p><strong>Virtual Machine</strong>: Also known as a VM is said machine from above, though with a different name.</p>
+        <p><strong>Cloud</strong>: An external computer away from your home or business that outsources processing power or storage</p>
+
+        <p>To understand conceptually how cloud services work you need to know the parts that make the whole. The terminology above is a reference, which if all this is new to you, is good to review before and after the article. A cloud is an external computer used remotely from your workplace or PC. After some instructions it can run independently processing any whim or business. This processing is the service; the remote access is the cloud and that is a cloud service.</p>
+
+        <img src="../images/how-do-cloud-services-work-&-what-is-a-virtual-machine-img-0.jpeg" alt="Cloud service hosts use warehouses with shelves of supercomputers">
+
+        <h2>Cloud service hosts use warehouses with shelves of supercomputers</h2>
+        <p>The company owning the cloud service owns physical computers, usually supercomputers, which take storage and processing for a fee from clients. They take these numerous supercomputers on shelves, with perhaps 100+ cores, 100TB, and 100GB+ RAM storage per computer, and section their cores & RAM into separate internally created computers. If one "virtual computer" within one supercomputer were to exist, let us say 100 evenly divided virtual computers or from now on we will call them virtual machines, then our example supercomputer would have 1 core, 1TB of storage & 1GB of RAM.</p>
+
+        <p>Let us say we take this virtual machine and we sell it to you for 1 cent per hour. You have now engaged in purchasing a cloud service from a cloud provider. 100 virtual machines in one supercomputer would be $1/hr. I will expound on the most frequent terms used in cloud servicing. Firstly is "Hypervisor". This example supercomputer would have an operating system, let us say Windows 10. And, I warn you this would be highly ineffective but it will give you the concept on how Amazon and Google do this. Windows 10 can then use operating systems within itself, using software like <a href="https://www.virtualbox.org/">Virtual Box</a> to section its hardware processors, storage, & RAM to virtual machines.</p>
+
+        <img src="../images/how-do-cloud-services-work-&-what-is-a-virtual-machine-img-1.jpeg" alt="Splitting with hypervisors is versatile">
+
+        <h2>Splitting with hypervisors is versatile</h2>
+        <p>This process would make Windows 10 the hypervisor and the virtual machines the service to sell to a client. A hypervisor supervises the operating systems within itself. The hypervisor is the operating system chief of all the operating systems within it. Though the Windows 10 example is not effective as a hypervisor. Each virtual machine is known as an instance. You, yourself, could split your home computer into instances with virtual box as a practice, even splitting the physical machine laterally or vertically. I recommend giving that a try with Virtual Box just for kicks.</p>
+
+        <p>If you were to split it vertically this means you have a machine within a machine within a machine. Windows holds Linux which holds Linux again. Or you could split laterally, Windows 10 with 10 Linux virtual machines, splitting your machine in 10 side by side. I emphasize Windows 10 is not effective for any type of cloud servicing apart from <a href="https://www.nvidia.com/en-us/geforce-now/">remote gaming</a> as a service. Instead, if you were to purchase a cloud service for business or a personal website Linux is a necessity.</p>
+
+        <img src="../images/how-do-cloud-services-work-&-what-is-a-virtual-machine-img-2.jpeg" alt="Linux saves cash">
+
+        <h2>Linux saves cash</h2>
+        <p>Linux is highly important due to efficiency, bloat free coding & streamlined/direct code. No space is wasted on GUIs, constant updates, unnecessary programs or legacy code, unremoved from previous versions(Each Windows version upgrade had a ghost of its previous version within itself, making it less effective). Linux is more primitive and versatile than Windows. Its evolution is simple, direct, making cloud servicing synonymous with Linux and therefore synonymous with servers as well.</p>
+
+        <p>Cloud servicing = Linux = most servers….</p>
+
+        <p>If you are a professional technologist there is great benefit from <a href="https://www.linux.org/">learning Linux</a> for server administration. For me, just to host a minecraft server on a cloud server I had to use Linux to save costs. Google cloud offers $300 credit for a 1 year trial and it is my hope to use the service fully with this game server. To save credits I used Linux instead of Windows in the virtual machine; it saved credits.</p>
+
+        <p>As a further example website hosts use Linux to give you a place to create a website. Most WordPress providers have a Linux back-end and WordPress front end likely using a cloud hosting service like AWS or Google cloud. Examples of website hosts using Linux are; WordPress.com, SquareSpace.com, Weebly.com, Shopify.com, etc.</p>
+
+        <h2>Reviewing cloud services</h2>
+        <p>Now that you understand a bit more about cloud servicing let us review. A cloud service is owned by a company with warehouses of shelves of supercomputers with ridiculous numbers of processors, storage, & RAM. Each of these supercomputers is split unevenly into virtual machines. Each virtual machine has its own operating system. The operating system that governs each virtual machine is the hypervisor. The hypervisor is the operating system of operating systems. You can split a computer laterally or vertically. You can also group all supercomputers into one hypervisor and split the whole laterally, vertically, and unevenly. If you are interested, check out <a href="https://en.wikipedia.org/wiki/Distributed_computing">distributed computing</a>. Each virtual machine is known as an instance. You need to use Linux when using cloud services. Linux is synonymous with cloud servicing.</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>
