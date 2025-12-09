@@ -1,5 +1,5 @@
 ---
-title: "OpenGL MMORPG Runescape Remake"
+title: "MMORPG Runescape Remake"
 excerpt: "A reverse-engineered game based on the original Runescape August 2012 client. Obfuscated Java was manually translated into plain English code and game server was created as a new project.<br/><img src='/images/Runescape.jpg' width='500' height='auto'>"
 collection: portfolio
 ---
