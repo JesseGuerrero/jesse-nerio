@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Python and Why Is It Slow?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>What Is Python and Why Is It Slow?</h1>
+        <div class="meta">
+            <span>Published: October 2, 2023</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Python is a super popular human-centric language, written in C, which is interpreted line by line in a top down fashion. The primary goal of the creators of Python is to make it easy for humans to understand.</p>
+
+        <h2>The Python vs C++ Speed Test</h2>
+        <p>Interestingly, Python is known for being many orders of magnitude slower than the language it is written in, C. If you were ever curious about this, take a look at this video. Basically, the video poses two test cases of Python vs C++ (as fast as C), whereby we compare how quickly Python and C++ can count to a billion and print to console.</p>
+
+        <img src="../images/python-slow-img-0.png" alt="Python vs C++ Performance">
+
+        <p>The end result? C++ did it in 2.4 seconds and Python did it in 1 minute 52 seconds. And, this is not an anomaly. Most operations in Python are much slower than C++/C.</p>
+
+        <img src="../images/python-slow-img-1.png" alt="Speed Comparison">
+
+        <h2>The Famous Python Meme</h2>
+        <p>There is a funny Python meme out there too. The Python meme states, "the most performant way to code in Python is... to not code in Python." Basically, there are libraries out there which allow you to translate Python code to C and run it that way, not in Python basically.</p>
+
+        <p>This reaches my other point. The real secret to fast Python is using libraries written in C. Libraries like NumPy, Pandas, and others are written in C and wrapped with Python interfaces. When you use these libraries effectively, you get C-like performance.</p>
+
+        <img src="../images/python-slow-img-2.png" alt="Python Libraries">
+
+        <h2>Why Python Is So Slow</h2>
+        <p>One of the main reasons Python is so slow, is, that it is interpreted line by line. The translator, which translates Python code to machine language, does this on the fly as your program runs.</p>
+
+        <img src="../images/python-slow-img-3.png" alt="Interpretation Process">
+
+        <p>This is vastly different from compiled languages like C++ and Java. These languages are compiled before they run. The translation happens once, before execution. Then the program runs on machine code or bytecode that's already been optimized.</p>
+
+        <p>Python's interpreted nature means:</p>
+        <ul>
+            <li><strong>Runtime overhead:</strong> Interpretation happens while the program is running</li>
+            <li><strong>No optimization:</strong> The interpreter can't look ahead and optimize the whole program</li>
+            <li><strong>Type checking:</strong> Python checks types at runtime, not compile time</li>
+            <li><strong>Dynamic nature:</strong> Objects can change type, requiring constant checking</li>
+        </ul>
+
+        <h2>The GIL (Global Interpreter Lock)</h2>
+        <p>Another culprit is the GIL (Global Interpreter Lock). In CPython (the default Python implementation), the GIL prevents true multithreading. Only one thread can execute Python bytecode at a time, even on multi-core processors.</p>
+
+        <p>This means that even if you have an 8-core processor, Python can only use one core at a time (when using threads). This is a massive limitation for parallel programming.</p>
+
+        <h2>Why Use Python Then?</h2>
+        <p>Given these limitations, you might ask: why use Python at all? The answer is simple: developer productivity. Writing a Python program that does something useful is much faster than writing the same thing in C++.</p>
+
+        <p>Python's simplicity means:</p>
+        <ul>
+            <li>Faster development time</li>
+            <li>Easier to read and maintain</li>
+            <li>Larger ecosystem and libraries</li>
+            <li>Great for prototyping and data science</li>
+        </ul>
+
+        <h2>How to Make Python Faster</h2>
+        <p>If you need speed in Python, here are some strategies:</p>
+
+        <ol>
+            <li><strong>Use NumPy/Pandas:</strong> These libraries do the heavy lifting in C</li>
+            <li><strong>Use PyPy:</strong> An alternative Python implementation that's much faster</li>
+            <li><strong>Use Cython:</strong> Write C extensions for your critical code</li>
+            <li><strong>Use multiprocessing:</strong> Bypass the GIL with separate processes</li>
+            <li><strong>Profile first:</strong> Find the bottlenecks before optimizing</li>
+            <li><strong>Consider Numba:</strong> JIT compilation for numerical code</li>
+        </ol>
+
+        <h2>Conclusion</h2>
+        <p>Python is slow because it's interpreted line by line and doesn't do compile-time optimization. But it's popular because it's easy to write. For most applications, Python is fast enough. For compute-intensive tasks, use specialized libraries or consider alternatives.</p>
+
+        <p>The key is understanding when Python is appropriate and when you need something faster. Most web applications, data science work, and automation scripting are perfectly fine with Python's performance.</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>
