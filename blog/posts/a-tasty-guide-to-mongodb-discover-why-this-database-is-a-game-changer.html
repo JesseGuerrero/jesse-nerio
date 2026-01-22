@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tasty Guide to MongoDB: Discover Why This Database is a Game-Changer</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>A Tasty Guide to MongoDB: Discover Why This Database is a Game-Changer</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Programmers use Mongo to create applications with simplicity. The entire purpose of Mongo is an easy database to read and write at scale.</p>
+
+        <p>It is both fast and simple. I consider MongoDB to be easier than SQL databases. Setting up, reading, writing and all the commands are easier.</p>
+
+        <p>The nicest thing about Mongo, we can use it for all applications-so long as we design the database well.</p>
+
+        <h2>What is the document model?</h2>
+
+        <p>Mongo is simple because it follows a <em>document model</em>. This method of storing data uses simple JSON files as a document.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/a-tasty-guide-to-mongodb--discover-why-this-database-is-a-game-changer---img-0.png" alt="Sample document">
+
+        <p>Here I have a simple User account for an application. Notice there are no tables and relations between tables. Because of this the document model is known as a NoSQL model.</p>
+
+        <p>Similar document model databases include DynamoDB by AWS, Couchbase, RavenDB and many other ones.</p>
+
+        <p>The most popular document model databases are DynamoDB and MongoDB.</p>
+
+        <p>These types of databases are easier to design, use and read than SQL. Coders sacrifice flexibility for ease of design in the document model.</p>
+
+        <h2>What are collections?</h2>
+
+        <p>These documents are placed in collections. Take a look:</p>
+
+        <img src="../images/a-tasty-guide-to-mongodb--discover-why-this-database-is-a-game-changer---img-1.png" alt="Collections of documents">
+
+        <p>This is the structure inside Mongo-we have databases which store collections which store documents.</p>
+
+        <p>The database is the highest level and the document is the lowest level. It is like a file system. In the database folder we have collection folders which hold document files.</p>
+
+        <p>It is a folder in a folder in a folder.</p>
+
+        <img src="../images/a-tasty-guide-to-mongodb--discover-why-this-database-is-a-game-changer---img-2.png" alt="Structure of Mongo">
+
+        <h2>What are some common commands?</h2>
+
+        <p>This folder structure is sooo simple. How in the world are we supposed to design a database around this structure? Isn't it too simple?</p>
+
+        <p>What makes Mongo so cool is <em>how we access documents</em>. Mongo creates internal maps which link things like firstName, tagName within <em>one collection</em> and allows you to ask for it directly.</p>
+
+        <p>We call this <em>indexing</em>. In the same way we access a variable in Python, we access Mongo documents in an index:</p>
+
+<pre><code># Creating a simple map using a dictionary
+simple_map = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+# Accessing data from the map
+print("Name:", simple_map["name"])</code></pre>
+
+        <p>Because it is a map, it a simple 1 operation move, O(1). This mapping between firstName, tagName and the collection is known the index itself.</p>
+
+        <p>Indexing is a common database feature. Those other document models do it, SQL does this too.</p>
+
+        <p>When we ask for a document id or set of firstName, tagName we are asking for a map. Lets look at a simple command that does this.</p>
+
+        <p>Take a look at this document:</p>
+
+        <img src="../images/a-tasty-guide-to-mongodb--discover-why-this-database-is-a-game-changer---img-3.png" alt="db: more-emails collection: emails">
+
+        <p>We have over 1000 emails inside a more-emails database folder inside the emails folder. We choose our documents using a shell command:</p>
+
+<pre><code>use more-emails # db is more-emails
+db.emails.findOne({
+  "firstName": "connor",
+  "tagName": "tag3"
+})</code></pre>
+
+        <p>First we specify db is more-emails. Then we enter the emails collection and we findOne with JSON firstName and tagName.</p>
+
+        <p>It returns a JSON object,</p>
+
+<pre><code>{
+    "_id": {
+        "$oid": "65f5368f3585ac7a228cca1c"
+    },
+    "userId": "65f4ba5bb306d8095bb44793",
+    "firstName": "connor",
+    "tagName": "tag3",
+    "subEmail": "ingrampaula@example.org",
+    "subscribed": true,
+    "__v": 0
+}</code></pre>
+
+        <p>In a nutshell that is all of mongo. We have a bunch of commands which access the documents with ease.</p>
+
+        <p>We specify the database folder and the collections folder and we ask Mongo "give us this document".</p>
+
+        <h2>How do coders/libraries access Mongo with code?</h2>
+
+        <p>These commands above are used inside the Mongo Shell. You start the Mongo Shell differently in every operating system but it generally goes like this:</p>
+
+<pre><code>mongosh
+use more-emails
+db.email.find({"firstName": "jesse"})</code></pre>
+
+        <p>The shell automatically goes to our localhost but we can go to remote databases this way:</p>
+
+<pre><code>mongosh "mongodb://72.168.9.1.1:27017"</code></pre>
+
+        <p>If it is secured then we enter a password. Then we can use any custom commands to access and manipulate documents, collections and databases.</p>
+
+        <p>Coders use wrappers for the Mongo Shell.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>public class MongoExample {
+    public static void main(String[] args) {
+        MongoClient mongo;
+        mongo = MongoClients.create("mongodb://localhost:27017")
+
+        // Access the 'more-emails' database
+        MongoDatabase database = mongo.getDatabase("more-emails");
+
+        // Access the 'emails' collection
+        MongoCollection&lt;Document&gt; collection;
+        collection = database.getCollection("emails");
+
+        // Create query to search for documents where firstName equals 'jesse'
+        Document query = new Document("firstName", "jesse");
+
+        // Execute the query
+        FindIterable&lt;Document&gt; documents = collection.find(query);
+
+        // Iterate over and print the documents
+        for (Document document : documents) {
+            System.out.println(document.toJson());
+        }
+    }
+}</code></pre>
+
+        <p>This is exactly the same as:</p>
+
+<pre><code>mongosh
+use more-emails
+db.email.find({"firstName": "jesse"})</code></pre>
+
+        <p>The difference is that we can use loops, custom functions, <em>all the mongo commands</em> translated to Java, Python, C++, every language.</p>
+
+        <p>These languages wrap the Mongo commands and Mongo shell into functions and classes we can use.</p>
+
+        <p>What is cool, once you learn a majority of the commands and 1 or 2 programming languages-you can <em>easily</em> use Mongo in <em>any language</em>.</p>
+
+        <p>The way the database is organized in code is very similar across frameworks and languages.</p>
+
+        <h2>Scalability</h2>
+
+        <p>I was surprised when I first started using Mongo. I created some stress tests in Python to see how quickly I can process Mongo documents.</p>
+
+        <p>In the script I placed 50,000 documents into one collection then asked for a bunch of documents 10 at a time sorted by firstName and by pages.</p>
+
+        <img src="../images/a-tasty-guide-to-mongodb--discover-why-this-database-is-a-game-changer---img-4.png" alt="MongoDB collection statistics">
+
+        <p>What is insane, even organizing 50K documents the total size of the collection was under 2MB and the sorting was instant.</p>
+
+        <p>Because of how many documents Mongo can hold and how quickly I can access documents I can see why companies use this for enterprise.</p>
+
+        <p>It is totally valid for <em>real production</em>.</p>
+
+        <p>These enterprises can store millions upon millions of documents with minimal storage used and call it <em>big data</em>.</p>
+
+        <p>Why?</p>
+
+        <p>Because relative to other databases and file systems, Mongo takes up very little space and is extremely fast.</p>
+
+        <h2>How to learn Mongo</h2>
+
+        <p>Databases are a service which you use to <em>your liking</em>. You can take any app that you are creating and plug & play databases. Mongo is no different.</p>
+
+        <p>You can make video games, web apps, mobile apps, graphics programming projects, web tools, GUI programs, all kinds of programs in a SQL model, NoSQL or document model.</p>
+
+        <p>If you want to learn Mongo you can include it in your app like any other database.</p>
+
+        <p>There is nothing wrong with a little experimentation. For each of these apps I do recommend creating a backend API.</p>
+
+        <h2>Multiplayer video game</h2>
+
+        <p>For us-in a multiplayer video game I contribute to-we have the game server, game client, website, Mongo database and backend API.</p>
+
+        <p>The backend API is the fulcrum of all those services and how everything accesses the database.</p>
+
+        <p>By separating the code this way we make our development much easier. We learn more and we know where the errors can be.</p>
+
+        <p>The backend API can be written in <em>any language</em> and looks like the Java code above.</p>
+
+        <h2>Web application</h2>
+
+        <p>I also have a personal web application which uses MongoDB. I separated the application between a frontend, a backend API and the database.</p>
+
+        <p>This is the gold standard. You have a client-it can be a website, a video game in Unity, a mobile app, a GUI, whichever- as the frontend and you hook it up to a backend API which accesses the database.</p>
+
+        <p>If you follow this gold standard a few times you should find it easier and easier to recreate applications with a separate frontend and backend.</p>
+
+        <p>All the examples above came from my personal web application.</p>
+
+        <h2>Other uses</h2>
+
+        <p>You can create small scripts and tools that are completely independent to keep track of application data.</p>
+
+        <p>Stuff like Bit Coin, stock market trends, all kinds of things.</p>
+
+        <p>You can also learn Mongo by creating plugins or hooks to a database. Such as a 7 Days to Die mod, a Minecraft plugin, a ModPack or any other video game extension.</p>
+
+        <p>In Minecraft there are plugins which use databases to store currency. Vault is one of them-whereby you use your own database to store everything,with no data saved on your server or your player's server.</p>
+
+        <p>Let's get into some questions...</p>
+
+        <h2>FAQ</h2>
+
+        <h2>Can I use MongoDB with any application?</h2>
+
+        <p>Yes, Mongo is extensible to any application so long as you design the database well. An improperly designed Mongo Database will not scale. Hopefully you can find someone to help you design it if you plan to scale it.</p>
+
+        <h2>Do I have to be an advanced programmer to use Mongo?</h2>
+
+        <p>Hmm, the requirements for learning Mongo is knowing the fundamentals of programming and at least half a language. Beyond that you become an advanced programmer by using Mongo.</p>
+
+        <p>You + Mongo = More advanced</p>
+
+        <h2>How do I install MongoDB?</h2>
+
+        <p>When you install Mongo I recommend Mongo Compass and the Mongo software.</p>
+
+        <p>Take a look at these videos for more:</p>
+
+        <p>Windows: <a href="https://youtu.be/xhSm4o-lDb4?si=VVrl2cm2YZuQrA-0">https://youtu.be/xhSm4o-lDb4?si=VVrl2cm2YZuQrA-0</a></p>
+
+        <p>Mac: <a href="https://youtu.be/MyIiM7z_j_Y?si=VVHOl3JtIT69MsfA">https://youtu.be/MyIiM7z_j_Y?si=VVHOl3JtIT69MsfA</a></p>
+
+        <p>Ubuntu Linux: <a href="https://youtu.be/ZiQPyD82ojk?si=01FBuP7zfwDvGWhm">https://youtu.be/ZiQPyD82ojk?si=01FBuP7zfwDvGWhm</a></p>
+
+        <h2>How do I learn the individual commands of Mongo?</h2>
+
+        <p>First and foremost I recommend looking up an example API on GitHub which uses your language/framework on Mongo. Then keep the code in a separate window, read it, copy it and learn from it.</p>
+
+        <p>In addition, language models are very well trained for Mongo. I recommend asking a language model how to create X, Y, Z on your application and slowly learning Mongo from the LLM.</p>
+
+        <p>You can also ask the language model what that example API means on GitHub.</p>
+
+        <p><strong>Combining these two, an example project and a language model is a fantastic way to learn anything in programming.</strong></p>
+
+        <h2>How do I backup and store my MongoDB?</h2>
+
+        <p>Mongo comes with two commands, mongodump and mongorestore. The typical way programmers backup their data is by using these commands in a shell script.</p>
+
+        <p>We run the shell script with either a task scheduler in Windows or a cronjob in Linux. We dump the MongoDB into a binary then upload it to a cloud storage or separate hard drive.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my <a href="https://a.co/d/b56kpK9">book on learning code</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Why databases: <a href="how-databases-work-and-why-they-are-so-cool.html">How Databases Work and Why They Are So Cool</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

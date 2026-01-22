@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Object-Oriented Programming Is Epic: Understanding Classes, Abstraction, and More</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Why Object-Oriented Programming Is Epic: Understanding Classes, Abstraction, and More</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Object oriented programming (OOP for short) is a style of code design.</p>
+
+        <p>It tells the programmer how to structure his code.</p>
+
+        <p>Like OOP there are other styles of code design, such as these:</p>
+
+        <ul>
+            <li>Functional programming</li>
+            <li>Modular programming</li>
+            <li>Imperative programming</li>
+            <li>Declarative programming</li>
+            <li>Logical programming</li>
+            <li>And more...</li>
+        </ul>
+
+        <p>But unlike these other code styles, OOP is the most widely used and well known among developers.</p>
+
+        <p>It is considered an essential code style to learn.</p>
+
+        <h2>What is an object?</h2>
+
+        <p>Objects are the center of OOP.</p>
+
+        <p>The purpose of objects is to take something really specific and make it super generalized.</p>
+
+        <p>Lets take a look at one thing to generalize...</p>
+
+<pre>public class Coordinate {
+    private double x;
+    private double y;
+    private double z;
+
+    public Coordinate(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public double distanceTo(Coordinate other) { //Built-in function
+        double dx = this.x - other.x;
+        double dy = this.y - other.y;
+        double dz = this.z - other.z;
+        return Math.sqrt(dx * dx + dy * dy + dz * dz);
+    }
+
+    public static void main(String[] args) {
+        Coordinate point1 = new Coordinate(1.0, 2.0, 3.0);
+        Coordinate point2 = new Coordinate(4.0, 5.0, 6.0);
+        double distance = point1.distanceTo(point2)
+        System.out.println("Distance is " + distance);
+    }
+}</pre>
+
+        <p>Notice how Coordinate takes something specific, x, y, z.</p>
+
+        <p>It then generalizes it as a coordinate.</p>
+
+        <p>In addition you have a built-in function, "distanceTo", which uses the Pythagorean theorem to show distance.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-0.jpeg" alt="Pythagorean theorem illustration">
+
+        <p>This generalization is known as "Abstraction".</p>
+
+        <p>We are abstracting x, y, z to coordinate.</p>
+
+        <p>Why?</p>
+
+        <p>Abstraction allows code to be re-used in a readable and understandable way.</p>
+
+        <p>Manipulating a Coordinate class is much easier than manipulating x, y, z in lets say a "Player" class.</p>
+
+        <p>Look at this...</p>
+
+<pre>public class Player {
+    private Coordinate coordinate;
+    private Bank bank;
+    private String username;
+
+    public Player(String name) {
+        this.username = name;
+        this.coordinate = new Coordinate(0, 0, 0);
+        this.bank = new Bank();
+    }
+}</pre>
+
+        <p>Notice how we have two abstractions called Coordinate and Bank. These are "Objects" or generalizations if you will.</p>
+
+        <p>Now lets look at the same code without abstraction...</p>
+
+<pre>public class Player {
+    private double x;
+    private double y;
+    private double z
+    private int[][] bankedItems;
+    private int[][] isNotedItem
+    private String bankPin;
+
+    private String username;
+
+    public Player(String name) {
+        this.username = name;
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        this.bankedItems = new int[10][10];
+        this.isNotedItem = new int[10][10];
+        this.bankPin = "";
+    }
+}</pre>
+
+        <p>Notice how I have to get very specific.</p>
+
+        <p>I am using more variables and at first glace it is difficult to really understand what is going on.</p>
+
+        <p>All those "int[][]" and "x, y, z" can be placed safely inside Coordinate and Bank without any fear of confusing the reader.</p>
+
+        <h2>How classes are structured</h2>
+
+        <p>We call these abstractions "classes".</p>
+
+        <p>These are a custom variable that abstracts other variables.</p>
+
+        <p>What is crazy, you can place a custom variable within a custom variable.</p>
+
+        <p>This is like that player class. Look at it again...</p>
+
+<pre>public class Player {
+    private Coordinate coordinate;
+    private Bank bank;
+//...
+}</pre>
+
+        <p>Those are custom variables within your custom variable.</p>
+
+        <p>Pretty cool right?</p>
+
+        <p>Classes are objects, classes are abstractions, classes are custom variables.</p>
+
+        <p>It is a way of structuring memory for the developer.</p>
+
+        <p>We allocate x, y, z as integers in computer memory then create a custom variable for it.</p>
+
+        <p>When we create the custom variable there are 4 types of data we can put inside...</p>
+
+        <ul>
+            <li>Inner variables</li>
+            <li>Inner functions</li>
+            <li>A constructor</li>
+            <li>Magic functions</li>
+        </ul>
+
+        <p>These hold data into memory in a way the developer can understand, once learned.</p>
+
+        <p>Read through this code again, I will mark the types of inner memory as comments.</p>
+
+<pre>public class Player {
+    //Inner variable
+    private Coordinate coordinate;
+    private Bank bank;
+    private String username;
+
+    //Constructor
+    public Player(String name) {
+        this.username = name;
+        this.coordinate = new Coordinate(0, 0, 0);
+        this.bank = new Bank();
+    }
+
+    // Inner function
+    public changeUsername(String name) {
+        this.username = name;
+    }
+
+    // Magic function
+    public toString() {
+        return "Player " + username;
+    }
+}</pre>
+
+        <p>Okay, lets go from top to bottom.</p>
+
+        <p><strong>Inner variables</strong> are the custom variables within your custom variables</p>
+
+        <p><strong>The constructor</strong> tells you how to create your class as a variable.</p>
+
+        <p><strong>The inner function</strong> is only usable from within that player.</p>
+
+        <p><strong>Magic functions</strong> are called "magic" because the language takes these functions and uses them in some way.</p>
+
+        <p>Magic in programming means something that is taken away from the developer.</p>
+
+        <p>Magic works in the background without us really knowing what is happening, thus it is magical.</p>
+
+        <p>When you print the player the language magically converts it "toString"...</p>
+
+<pre>Player player = new Player("Jesse");
+System.out.print(player);
+//Output -> "Player Jesse"</pre>
+
+        <p>There are many many magic functions in all languages.</p>
+
+        <p>You basically have to look each one up because they are all different.</p>
+
+        <h2>You can use other classes</h2>
+
+        <p>Inheritance is a way to take a class and give it more details.</p>
+
+        <p>When we obtain all the data of another class as lets say a different abstraction, it is known as inheritance.</p>
+
+        <p>Lets look at our Player example...</p>
+
+<pre>class Entity {
+    private Coordinate coordinate;
+    private int hitpoints;
+
+    public Entity() {
+        this.coordinate = new Coordinate(0, 0, 0);
+        this.hitpoints = 10;
+    }
+
+    public toString() {
+        return "Entity has hitpoints: " + hitpoints.toString();
+    }
+}
+
+public class Player extends Entity {
+    private Bank bank;
+    private String username;
+
+    public Player(String name) {
+        super(); //Calls Entity constructor
+        this.username = name;
+        this.bank = new Bank();
+    }
+
+    public changeUsername(String name) {
+        this.username = name;
+    }
+}</pre>
+
+        <p>In here we extend or give further detail to Entity.</p>
+
+        <p>Player absorbs everything from Entity, including the functions, constructor and magic functions.</p>
+
+        <p>Player then will have 10 hit points, coordinate 0, 0, 0 and will print "Entity has hit points: 10".</p>
+
+<pre>Player player = new Player("Jesse");
+System.out.print(player)
+// Output: "Entity has hitpoints: 10"</pre>
+
+        <h2>When making classes you get free data</h2>
+
+        <p>For all your custom variables you get free inner variables, functions, constructor and magic functions.</p>
+
+        <p>These form a core of every class for how it is stored in memory.</p>
+
+        <p>This is something that the language itself does.</p>
+
+        <p>No matter what you do your class will extend or inherit from a class called "Object".</p>
+
+        <p>This is the way it looks...</p>
+
+<pre>public class Object {
+    @IntrinsicCandidate
+    public Object() {}
+
+    @IntrinsicCandidate
+    public final native Class&lt;?&gt; getClass();
+
+    @IntrinsicCandidate
+    protected native Object clone() throws CloneNotSupportedException;
+
+    public String toString() {
+        return getClass().getName() + "@" + Integer.toHexString(hashCode());
+    }
+    //More built-in Functions
+}</pre>
+
+        <p>So in reality when we create a class it is actually this...</p>
+
+<pre>public Coordinate extends Object {
+    double x;
+    double y;
+    double z;
+    //Etc.
+}</pre>
+
+        <p>However in most to all languages we do not add the "extends Object".</p>
+
+        <p>We just magically know it inherits from Object.</p>
+
+        <p>You can check out the Object class in Java if you look inside the language code.</p>
+
+        <p>It is quite huge and structures all classes the same way.</p>
+
+        <h2>All Objects are based on primitives</h2>
+
+        <p>Primitives are considered the lowest built-in variables types in a language.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-1.png" alt="Primitives illustration">
+
+        <p>All Objects are based on them.</p>
+
+        <p>All abstractions are based on them.</p>
+
+        <p>In a Coordinate class (like a video game) we can use three double primitives, x, y, z.</p>
+
+        <p><strong>When creating new classes without depending on other classes, we <em>have</em> to use primitives.</strong></p>
+
+        <p>Literally nothing else exists.</p>
+
+        <p>Classes are then abstractions of abstractions of primitives.</p>
+
+        <h2>For classes there is a creator and consumer</h2>
+
+        <p>When a coder creates a class they design it in a way to be used.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-2.png" alt="Creator and consumer illustration">
+
+        <p>The class itself is an interface, almost like an API, between the consuming developer and the primitives inside the class.</p>
+
+        <p>For example let us say the original creator of the Player class made it 5 years ago.</p>
+
+        <p>That creator intended the class to be used in a specific way.</p>
+
+        <p>They defined the magic, inner variable/functions and constructor.</p>
+
+        <p>If that Player class has been made standard in the source other developers are not meant to touch that class.</p>
+
+        <p>We are meant to <em>use</em> that class or consume it.</p>
+
+        <p>But, we are not meant to edit that class.</p>
+
+        <p>When you start on a new project with other developers you become a consumer of all the objects which are standard.</p>
+
+        <p>If you create a new standard, other developers become your consumers and vice versa.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-3.jpeg" alt="Blacksmith crafting">
+
+        <p>Think of the class design like using an API.</p>
+
+        <h2>The 4 pillars of OOP</h2>
+
+        <p>This is something you always learn in Computer Science 1 or Computer Science 2 college courses.</p>
+
+        <p>Very academic.</p>
+
+        <p>You can naturally pick up on this while you learn coding but its better to explain.</p>
+
+        <h2>Abstraction</h2>
+
+        <p>Abstraction is a generalization of a custom variable from other variables and primitives.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-4.png" alt="Abstraction illustration">
+
+        <p>It is the whole goal of OOP.</p>
+
+        <p>Abstraction is meant to make reading and writing code easier for the developer.</p>
+
+        <h2>Encapsulation</h2>
+
+        <p>Encapsulation is another word for putting inner variables within variables.</p>
+
+        <p>This is known as <em>wrapping</em>.</p>
+
+        <p>Wrapping like putting candy inside a paper container.</p>
+
+        <p>We are <em>wrapping</em> primitives and making them abstract.</p>
+
+        <p>Another word you hear about encapsulation is <em>hiding</em>.</p>
+
+        <p>Hiding means calling an inner variable "private" and not allowing other developers to use it.</p>
+
+        <p>As a class creator, hiding inner variables and functions from developers is essential for their consumption.</p>
+
+        <h2>Inheritance</h2>
+
+        <p>Inheritance means using the inner functions, inner variables, constructors, inner magic in a different class.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-5.png" alt="Inheritance illustration">
+
+        <p>When one class inherits another, it is known as a child-parent relationship.</p>
+
+        <p>The child inherits from the parent all its inner workings.</p>
+
+        <p>The flexibility this allows in abstraction is amazing.</p>
+
+        <p>You would be surprised how easy this makes code to read.</p>
+
+        <h2>Polymorphism</h2>
+
+        <p>Polymorphism is where we inherit multiple classes to define one custom variable.</p>
+
+        <p>Here is an example...</p>
+
+<pre>Player player = new Player("Jesse");
+Entity entity = (Entity) player;
+System.out.print(entity);
+// Output: entity.toString() magic function</pre>
+
+        <p>Here we are converting Player into its parent class Entity.</p>
+
+        <p>This conversion is polymorphism or the ability to turn a class into another.</p>
+
+        <p>This can also be done with interface classes which we wont get into.</p>
+
+        <h2>Should I use Object Oriented Programming?</h2>
+
+        <p>The use of OOP depends on the language, personal preference and project requirements.</p>
+
+        <p>If you need a highly threaded mega optimized project, for example, then you would use functional programming.</p>
+
+        <p>If you are making an API which requires no generalizations you can use a procedural approach.</p>
+
+        <img src="../images/why-object-oriented-programming-is-epic--understanding-classes,-abstraction,-and-more---img-6.png" alt="Team discussion">
+
+        <p>Some people are just addicted to OOP and want to use it for everything.</p>
+
+        <p>That is okay too! Very controversial.</p>
+
+        <p>As of now Java forces you to use classes/OOP in all of its programming.</p>
+
+        <p>Yes you can do procedural programming, but technically you have to use classes up until Java 21.</p>
+
+        <p>In the next few versions Java can be written without classes, making Java finally have the option to truly program without OOP.</p>
+
+        <p>In the end its up to the team.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my other articles and, if you feel like it, sponsor me on GitHub: <a href="https://github.com/sponsors/JesseGuerrero">https://github.com/sponsors/JesseGuerrero</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>What are magic functions: <a href="how-the-awesome-might-of-magic-functions-works-and-is-so-simple.html">How the Awesome Might of Magic Functions Works and Is So Simple</a></p>
+
+        <p>What is Computer Science: <a href="a-short-and-insightful-answer-what-is-computer-science.html">A Short and Insightful Answer: What is Computer Science?</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

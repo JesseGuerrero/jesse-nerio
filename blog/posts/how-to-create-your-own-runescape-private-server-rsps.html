@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Your Own Runescape Private Server (RSPS)</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+        ol, ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Create Your Own Runescape Private Server (RSPS)</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>The featured image for this post is a meme I love to send to new people who want to create an RSPS.</p>
+
+        <p>Me, personally, I learned programming through RSPS.</p>
+
+        <p>It was a great experience and I had a ton of fun.</p>
+
+        <p>At the end of the day though, RSPS development is a niche. The main reason to learn how to make a Runescape clone is to learn how to code and have fun.</p>
+
+        <p>Every era of Runescape has been created already. They are at a depth where no single person can recreate it in under 3-5 years of constant development all day.</p>
+
+        <p>Remember Runescape was built by a large team. A single person cannot completely do all tasks of this larger team which took them many years.</p>
+
+        <p>I am saying this to help you set expectations.</p>
+
+        <p>The reality is, most RSPS are mediocre because, well RSPS takes a lot of time.</p>
+
+        <p>Of these four steps for learning to code:</p>
+
+        <ol>
+            <li>Fundamentals</li>
+            <li>Language</li>
+            <li>Framework</li>
+            <li>Niche</li>
+        </ol>
+
+        <p>RSPS is at the very end, #4.</p>
+
+        <p>There is no super in-depth documentation on RSPS and most sources you use as reference are completely different</p>
+
+        <h2>Choose a Language</h2>
+
+        <p>The default and most used language in RSPS is Java.</p>
+
+        <p>However, to start with RSPS I recommend picking any language. It can be any <em>complete</em> language.</p>
+
+        <img src="../images/rsps-img-0.jpeg" alt="Programming languages chart">
+
+        <p>Photo by <a href="https://www.flickr.com/photos/linuxscreenshots/">Linux Screenshots</a></p>
+
+        <p>The goal should be to learn that language well through RSPS.</p>
+
+        <p>You will be using other code sources as a reference. But you should be able to translate their code to your chosen language.</p>
+
+        <p>Much of the functionality of the server should wrap around pre-built libraries.</p>
+
+        <p>So when working in a language like C++, you have to find similar libraries as in your referred source.</p>
+
+        <h2>Choose a Database</h2>
+
+        <p>SQL, No-SQL, Amazon S3, pick the database you want to learn & create.</p>
+
+        <p>I recommend using JSON as your player save and converting in-memory player classes into JSON.</p>
+
+        <p>This is known as serialization.</p>
+
+        <p>Basically, convert the instance of Player into JSON and re-read the JSON file upon server start up.</p>
+
+        <p>Often there are libraries for this, like GSON in Java or nlomann in C++.</p>
+
+        <p>Like this:</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;nlohmann/json.hpp&gt;
+
+using json = nlohmann::json;
+
+class MyClass {
+public:
+    int id;
+    std::string name;
+
+    // Constructor
+    MyClass(int _id = 0, const std::string& _name = "") : id(_id), name(_name) {}
+
+    // Function to serialize the class to JSON
+    json toJson() const {
+        return {
+            {"id", id},
+            {"name", name}
+        };
+    }
+
+    // Function to deserialize the class from JSON
+    static MyClass fromJson(const json& j) {
+        return MyClass(j.at("id").get&lt;int&gt;(), j.at("name").get&lt;std::string&gt;());
+    }
+};</code></pre>
+
+        <p>You essentially convert classes to and from JSON and into your database.</p>
+
+        <h2>Choose Closed-Source or Open-Source</h2>
+
+        <p>There are pros and cons to open-source & closed-source.</p>
+
+        <p>Typically, if you plan on doing microtransactions closed-source is the way to go. You completely own private source servers.</p>
+
+        <p>But, you get a lot of attention with open-source projects.</p>
+
+        <p>I have gotten 15 or so followers on GitHub in 8 months when I was making my open 727 Runescape base.</p>
+
+        <p>The goal of the base was to completely open up 727 to new RSPS developers.</p>
+
+        <p>It got a little popular and I had a lot of fun.</p>
+
+        <p>In the end I joined Darkan RSPS and absolutely love the Darkan source.</p>
+
+        <h2>Always Work From a Base</h2>
+
+        <p>A base is an already functional Client, server & cache which all work together out of the box.</p>
+
+        <p>I always would recommend starting with a base.</p>
+
+        <img src="../images/rsps-img-1.jpeg" alt="Construction workers building">
+
+        <p>Photo by <a href="https://unsplash.com/@etiennegirardet">Etienne Girardet</a></p>
+
+        <p>At the minimum an RSPS base should have the ability to login, have a lobby, have path-finding and combat.</p>
+
+        <p>This is the minimum and you should not start from a base without these.</p>
+
+        <p>It would take waay to much time and effort starting from a base without these features.</p>
+
+        <p>It is worth searching high and low for bases meeting these requirements.</p>
+
+        <p>In addition I recommend using one primary base and a few secondary reference ones.</p>
+
+        <h2>Choose an era according to a good base</h2>
+
+        <p>The base is the most important part of starting an RSPS.</p>
+
+        <p>Instead of starting with your "favorite era" of Runescape.</p>
+
+        <p>You should have some leeway with yourself and choose a Runescape version which matches a good base.</p>
+
+        <p>I will list some great bases to start from for different revisions:</p>
+
+        <ol>
+            <li>2012 Open727: <a href="https://github.com/CSS-Lletya/open727">https://github.com/CSS-Lletya/open727</a></li>
+            <li>2011Scape: <a href="https://github.com/2011Scape/installation-guide">https://github.com/2011Scape/installation-guide</a></li>
+            <li>2009Scape: <a href="https://gitlab.com/search?search=2009scape&nav_source=navbar">https://gitlab.com/search?search=2009scape&nav_source=navbar</a></li>
+            <li>2006Scape: <a href="https://github.com/2006-Scape/2006Scape">https://github.com/2006-Scape/2006Scape</a></li>
+            <li>2004Scape: <a href="https://github.com/2004scape">https://github.com/2004scape</a></li>
+            <li>RSC: <a href="https://github.com/Open-RSC">https://github.com/Open-RSC</a></li>
+            <li>2001Scape: <a href="https://gitlab.com/open-runescape-classic/core">https://gitlab.com/open-runescape-classic/core</a></li>
+        </ol>
+
+        <p>So pick one main base to refer to like the ones above and several other bases to refer to during your development.</p>
+
+        <h2>Always refer to Rune-Server and other RSPS devs</h2>
+
+        <p>When building on top of a base, google search, LLMs and other RSPS devs are your greatest research resources.</p>
+
+        <p>Most answers will be on Rune-Server. You should also join the <a href="https://discord.gg/rune-server">Rune-server discord</a> to ask questions to other developers.</p>
+
+        <h2>The best reference RSPS base</h2>
+
+        <p>I have looked through a lot of RSPS bases. By far, the cleanest, most performant and thorough code source is <a href="https://github.com/DarkanRS/world-server">DarkanRSPS Remake</a>.</p>
+
+        <img src="../images/rsps-img-2.png" alt="Darkan 2012 Remake logo">
+
+        <p>Every feature you need for recreating Runescape exists in that open-source project.</p>
+
+        <p>In reality, Darkan has a lobby that is closed -source.</p>
+
+        <p>Which means you cannot use it as a base.</p>
+
+        <p>But, Darkan is a treasure trove of information you can use in your private source as a reference.</p>
+
+        <h2>Create a Plugin System</h2>
+
+        <p>This is standard RSPS practice.</p>
+
+        <p>One of the first things you should do when coding an RSPS is create a plugin system.</p>
+
+        <p>The goal is to be able to write gameplay code anywhere in your code source.</p>
+
+        <p>An example of this can be found in Darkan, take a look:</p>
+
+<pre><code>@PluginEventHandler
+public class ImpCatcher extends QuestOutline {
+    //...
+    public static NPCClickHandler mizgogHandler = new NPCClickHandler(new Object[] { WIZARD_MIZGOG }, e -&gt; {
+        if (e.getOption().equalsIgnoreCase("talk-to"))
+            e.getPlayer().startConversation(new MizgogD(e.getPlayer()));
+        else if (e.getOption().equalsIgnoreCase("trade") && e.getPlayer().isQuestComplete(Quest.IMP_CATCHER))
+            ShopsHandler.openShop(e.getPlayer(), "wizard_mizgog");
+        else
+            e.getPlayer().startConversation(new MizgogD(e.getPlayer()));
+    });
+}</code></pre>
+
+        <p>NPCClickHandler is one of 25+ plugins. These plugins allow you to attach code to NPCs, items, tiles, game objects, the player, the server itself and more.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/rsps-img-3.png" alt="Plugin handlers list in IDE">
+
+        <p>I can copy and paste any of those handlers anywhere in the source and it will work.</p>
+
+        <h2>Create Views in a Database</h2>
+
+        <p>As you develop your server, you should make a highscores file to database output to constantly update your hiscores.</p>
+
+        <p>Player save files and hiscores save files inside a database are a requirement for creating a website for your RSPS.</p>
+
+        <p>This likely is best embedded in the server.</p>
+
+        <p>In Darkan there is a grand exchange view, highscores view and player view.</p>
+
+        <img src="../images/rsps-img-4.png" alt="Database views in IDE">
+
+        <p>From there you have the choice of making an API inside your server or as a microservice.</p>
+
+        <h2>Summary</h2>
+
+        <p>It can be frustrating to not make the progress you would like in RSPS development.</p>
+
+        <p>It is a slow process and instead of aiming for extraordinary progress, it is best instead to just have fun.</p>
+
+        <img src="../images/rsps-img-5.jpeg" alt="Code on screen">
+
+        <p>Photo by <a href="https://unsplash.com/@6heinz3r">Gabriel Heinzer</a></p>
+
+        <p>In addition, you will find yourself refactoring all your code every few months.</p>
+
+        <p>Your first draft of RSPS code will always be dirty and non-performant, at least to your future self.</p>
+
+        <p>Keep in mind you will grow. A year from now you may cringe at the code you write today.</p>
+
+        <p>Lastly, remember, picking a good primary base is the most impactful part to your development speed.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>What is an RSPS: <a href="what-is-a-runescape-private-server.html">What Is a Runescape Private Server?</a></p>
+
+        <p>Learn Java: <a href="unlock-your-java-brilliance.html">Unlock Your Java Brilliance</a></p>
+
+        <p>Darkan Documentation: <a href="https://darkan.readme.io/docs">https://darkan.readme.io/docs</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

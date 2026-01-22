@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Send an Email for Any Coding Language for All Companies</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Send an Email for Any Coding Language for All Companies</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Sending emails through code is ultra cool.</p>
+
+        <p>You can use this SMTP code in all applications you create, including APIs, GUI, websites and mobile apps.</p>
+
+        <p>I will only be using Large Language Model, like Chat-GPT, friendly libraries.</p>
+
+        <p>So you can copy and paste all the code here and ask your LLM to write it for you.</p>
+
+        <p>After reading this article you will be able to understand the underlying concepts of sending emails.</p>
+
+        <p>My goal here for you is to understand <em>how</em> to send SMTP emails in <em>any</em> language.</p>
+
+        <h2>What is SMTP?</h2>
+
+        <p>Simple Mail Transfer Protocol is about sending mail.</p>
+
+        <img src="../images/how-to-send-an-email-for-any-coding-language-for-all-companies---img-0.jpeg" alt="Photo by Joel Moysuh">
+
+        <p>Email storage, sending & receiving each use a different protocol.</p>
+
+        <p>Here they are...</p>
+
+        <ul>
+            <li><strong>Sending emails</strong>: SMTP</li>
+            <li><strong>Receiving emails</strong>: POP3, IMAP</li>
+            <li><strong>Storing emails</strong>: Provider, like Gmail or Outlook, owned databases</li>
+        </ul>
+
+        <p>In the backend of a email client like Gmail, take a look:</p>
+
+        <img src="../images/how-to-send-an-email-for-any-coding-language-for-all-companies---img-1.png" alt="Gmail email client">
+
+        <p>The website programmatically uses SMTP for sending emails and either POP3 or IMAP for receiving emails.</p>
+
+        <p>You can completely rewrite the Gmail client or any provider like Outlook or Hotmail like in the above picture using pure code and SMTP & POP3 protocols.</p>
+
+        <p>You just need to wrap a user interface either using a website or desktop framework around SMTP & POP3 code.</p>
+
+        <p>The majority of email providers give you full access to SMTP & POP3 under certain conditions.</p>
+
+        <p>Some providers do make you pay for using email in code though.</p>
+
+        <p>I believe Gmail, Outlook and Proton are all free but have some steps you have to take for security purposes.</p>
+
+        <p>What is cool, SMTP & POP3 are completely universal.</p>
+
+        <p>So all email providers from Yahoo to AOL use these protocols.</p>
+
+        <img src="../images/how-to-send-an-email-for-any-coding-language-for-all-companies---img-2.jpeg" alt="Photo by Paula Hayes">
+
+        <p>So it all looks the same in code!</p>
+
+        <p>These examples I list here just need the SMTP credentials copied and pasted from the different providers.</p>
+
+        <p>Just note, some providers require you to allow developer access to the email account.</p>
+
+        <p>I will assume you can look that up for your provider on your own.</p>
+
+        <p>But for now, let's get into SMTP.</p>
+
+        <h2>How does SMTP work?</h2>
+
+        <p>Your email provider is publicly hosting a server which only accepts a specific socket connection.</p>
+
+        <p>If you want to read more about how sockets and packets work you can read <a href="a-quick-guide-on-how-epic-coders-connect-the-world-through-sockets.html">my sockets guide</a>.</p>
+
+        <p>SMTP is a TCP protocol.</p>
+
+        <p>That means it is written through code in a specific way.</p>
+
+        <p>In pseudo code it would look something like this:</p>
+
+<pre>@Override
+ public Packet encodeAndSendData(OutputStream stream) {
+ Data data = new Data();
+ Packet p = new Packet(data);
+ p.subject = stream.readByte();
+ p.body = stream.readTriByte();
+
+ sendPacketToServer(p);
+ return p;
+ }</pre>
+
+        <p>The packet would be organized to send bytes over a network with a specific size, format and order.</p>
+
+        <p>All TCP packets have to be implemented using byte streams in this way.</p>
+
+        <p>SMTP, POP3, IMAP, HTTP, SSH and many more use TCP packet implementations like the above.</p>
+
+        <p>They are just packet code implementations with a fancy name slapped on it.</p>
+
+        <p>When you use SMTP programmatically, you are actually using an abstraction of these packets.</p>
+
+        <p>Beneath the abstraction, the actual SMTP implementation, among the other TCP packet protocols, are kept standard and the same across all email providers.</p>
+
+        <p>The standards are kept by the IETF, Internet Engineering Task Force.</p>
+
+        <p>The whole reason we can use SMTP in any language for any provider is because of the IETF standards.</p>
+
+        <p>For security purposes the SMTP protocol actually includes like 7 packet implementations like the above and all have to be sent in order.</p>
+
+        <p>We won't go into the 7 packet implementation SMTP uses but at least you know its all just a few TCP packets and not a big deal.</p>
+
+        <h2>What credentials do you need for SMTP?</h2>
+
+        <p>For all SMTP connections you need these things:</p>
+
+        <ul>
+            <li>SMTP Email Provider Server URL</li>
+            <li>Provider port</li>
+            <li>Your email for the provider</li>
+            <li>Your email password</li>
+        </ul>
+
+        <p>You programmatically insert them into the code, like these:</p>
+
+        <h2>The simplest code example</h2>
+
+        <p>This is fundamentally how all SMTP code works.</p>
+
+        <p>Perhaps the easiest way to see how to send SMTP code is through Python without encryption.</p>
+
+        <p>Though with these examples anybody with Wireshark or a packet sniffer can read your emails, this is a simple way to understand the basics of sending emails.</p>
+
+        <p>We can add encryption later.</p>
+
+        <p>Take a look at this code...</p>
+
+<pre>import smtplib
+server = smtplib.SMTP("smtp.gmail.com", 25)
+# Login to your Gmail account
+server.login("your@gmail.com", "your_password")
+# Compose the email
+subject = "Subject of the email"
+body = "This is the body of the email."
+# Combine subject and body into the message
+message = f"Subject: {subject}\n\n{body}"
+# Send the email
+server.sendmail("your@gmail.com", "recipient@example.com", message)
+print("Email sent successfully!")</pre>
+
+        <p>We connect to a Gmail SMTP server using our email and password, just like we would in an email client.</p>
+
+        <p>You are using the same type of code in the backend of a web app like Gmail.</p>
+
+        <p>We then add a subject and body into a message and send it to a recipient email.</p>
+
+        <h2>How to include formatting in emails</h2>
+
+        <p>On the SMTP server side there is a subject and email body reader AKA parser which will automatically recreate the email to be sent.</p>
+
+        <p>Technically you can send plain text emails and with the right order of characters and strings you can add HTML, structure and attach files to the email.</p>
+
+        <p>It is very cumbersome and you have to memorize the way plain text would be sent.</p>
+
+        <p>If you were to do this the plain text way, your email text would look like this:</p>
+
+<pre>Subject: Example Email with Attachment
+
+&lt;html&gt;
+&lt;head&gt;
+ &lt;style&gt;
+ body {
+ background-color: #000000; /* Black background */
+ color: #ffffff; /* White text color */
+ }
+ &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;Please find attached the PDF document.&lt;/p&gt;
+--- Begin PDF Attachment ---
+JVBERi0xLjQNJeLjz9MNCjE5MDk3IDE2IDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDIxODUxL08gMjcvVHlwZS9QYWdlTmFtZS9TdWJ0eXBlL1R5cGUvWE9ia
+[Base64-encoded PDF content goes here]
+--- End PDF Attachment ---
+&lt;p&gt;Below is a link to our website:&lt;/p&gt;
+&lt;a href="https://example.com" style="color: #ffffff;"&gt;Visit Our Website&lt;/a&gt;
+&lt;p&gt;Best regards,&lt;br&gt;John Doe&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <p>Here you would have to memorize these things...</p>
+
+        <ul>
+            <li>"Begin PDF Attachment"</li>
+            <li>PDF or attachment encoding</li>
+            <li>Write down every attachment type Begin and End</li>
+            <li>Subject and email formatting</li>
+            <li>A lot of other stuff</li>
+        </ul>
+
+        <p>There is an easier way to do this is with an abstraction.</p>
+
+        <p>It makes formatting emails and attachments faster, easier and more consistent in all programming languages.</p>
+
+        <p>This abstraction is called MIME or Multipurpose Internet Mail Extension.</p>
+
+        <p>It seems like MIME is making things more complicated but in reality it makes sending emails simpler and faster.</p>
+
+        <p>You just use MIME to manipulate the plain text to be written in a way the remote server will understand.</p>
+
+        <p>This allows you to do it without memorizing all the keywords and placements you would have to do for emails.</p>
+
+        <p>Just trust me, it is really cumbersome to write emails without MIME.</p>
+
+        <p>Lets take a look at the same thing using MIME format:</p>
+
+<pre>import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
+server = smtplib.SMTP("smtp.gmail.com", 25)
+server.login("your@gmail.com", "your_password")
+
+# Write the email in multiple parts: subject, body attachments
+message = MIMEMultipart()
+#Subject
+message['Subject'] = "Example Email with Attachment"
+#Body
+html_content = """&lt;html&gt;&lt;head&gt;&lt;style&gt;body{background-color:#000000;color:#ffffff;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Hello,&lt;/p&gt;&lt;p&gt;Pl..."""
+body = MIMEText(html_content, 'html')
+message.attach(body)
+#Attachments
+pdf_file = open('path/to/your/file.pdf', 'rb')
+pdf_MIME = MIMEApplication(pdf_file.read(), _subtype="pdf")
+pdf_MIME.add_header('Content-Disposition', 'attachment', filename='document.pdf')
+message.attach(pdf_MIME)
+# Send the email
+server.sendmail("your@gmail.com", "recipient@example.com", message.as_string())
+print("Email sent successfully!")</pre>
+
+        <p>All we did was take MIME into multiple parts; the subject, the body and the attachment, then send it.</p>
+
+        <p>MIME automatically encodes the email like the format mentioned above, but makes it much easier for you to do so.</p>
+
+        <p>With some practice you will find your self pumping out great emails using MIME just as if you were in the GMail client.</p>
+
+        <p>Obviously it takes a little more time, but it has great potential for automation so in the end it should save more time!</p>
+
+        <h2>Emojis</h2>
+
+        <p>Oh this is easy you will like this.</p>
+
+        <p>Look up the emoji online and copy and paste it into the code.</p>
+
+        <p>Sometimes it shows up as an actual emoji in the code and sometimes its encoded like this:</p>
+
+        <img src="../images/how-to-send-an-email-for-any-coding-language-for-all-companies---img-3.png" alt="Emoji encoding example">
+
+        <p>Or this</p>
+
+<pre># Using Unicode escape for the grinning face emoji
+emoji_unicode = "\U0001F601"</pre>
+
+        <p>You can place this in the body or subject of the email and it will work.</p>
+
+        <p>Like this:</p>
+
+<pre># Connect to the Gmail SMTP server
+server = smtplib.SMTP("smtp.gmail.com", 25)
+server.login("jessework@proton.me", "ilikepeas1")
+# Write the email in multiple parts: subject, body attachments
+message = MIMEMultipart()
+# Subject with emojis
+subject = "Example Email with emojis Attachment"
+message['Subject'] = subject</pre>
+
+        <p>You will be able to send it.</p>
+
+        <h2>How to encrypt emails</h2>
+
+        <p>Different encryption protocol for SMTP servers use different ports.</p>
+
+        <p>At this current time for Gmail port 587 is TLS and 465 is SSL.</p>
+
+        <p>Every provider arbitrarily chooses their own ports for the public SMTP server.</p>
+
+        <p>So you will have to look up SMTP credentials in a Google search for your email company.</p>
+
+        <p>Here are two examples of email encryption.</p>
+
+        <h2>TLS</h2>
+
+<pre>import smtplib
+server = smtplib.SMTP("smtp.gmail.com", 587)
+#Encryption
+server.starttls()
+server.login("your@gmail.com", "your_password")
+subject = "Subject of the email"
+body = "This is the body of the email."
+message = f"Subject: {subject}\n\n{body}"
+server.sendmail("your@gmail.com", "recipient@example.com", message)
+print("Email sent successfully!")</pre>
+
+        <h2>SSL</h2>
+
+<pre>import smtplib
+import ssl
+# Create a secure SSL context
+context = ssl.create_default_context()
+# Connect to the Gmail SMTP server
+server = smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context)
+server.login("your@gmail.com", "your_password")
+subject = "Subject of the email"
+body = "This is the body of the email."
+message = f"Subject: {subject}\n\n{body}"
+server.sendmail("your@gmail.com", "recipient@example.com", message)
+print("Email sent successfully!")</pre>
+
+        <p>Notice there are only some slight differences.</p>
+
+        <p>It is like that in every language.</p>
+
+        <p>The idea of using SMTP is the same, you just have to add a little code to encrypt it under a different port.</p>
+
+        <p>You can use an LLM to convert these script examples to other languages and frameworks.</p>
+
+        <p>Just note, outside of Python it looks like more code, but all the concepts are the same.</p>
+
+        <h2>Outlook Java example</h2>
+
+        <p>It is funny, as we go down the lower level languages the code gets much more cumbersome.</p>
+
+        <p>But, it is the exact same thing as Python, it is just Java being Java and C++ being C++.</p>
+
+        <p>If you understand the above examples, its all the same concepts.</p>
+
+        <p>You just have to deal with the flippin 50 lines of code required.</p>
+
+        <p>What can you do...</p>
+
+        <p>Here is an example using Outlook:</p>
+
+<pre>import javax.mail.*;
+import javax.mail.internet.*;
+import java.util.Properties;
+
+class MyAuthenticator extends Authenticator {
+    private final String username;
+    private final String password;
+
+    public MyAuthenticator(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    @Override
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(username, password);
+    }
+}
+
+public class SendEmail {
+    public static void main(String[] args) {
+        // Set up the properties for the SMTP server without encryption
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.outlook.com");
+        properties.put("mail.smtp.port", "25"); // Use port 25 for unencrypted SMTP
+        properties.put("mail.smtp.auth", "true");
+        // Create a session with authentication
+        Session session = Session.getInstance(properties, new MyAuthenticator("your@outlook.com", "your_password"));
+        // Create a MimeMessage object
+        Message message = new MimeMessage(session);
+        // Set the sender and recipient addresses
+        message.setFrom(new InternetAddress("your@outlook.com"));
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress("recipient@example.com"));
+        // Set the subject
+        message.setSubject("Subject of the email");
+        // Set the content directly as text
+        message.setText("This is the body of the email in a simple text format.");
+        // Send the message
+        Transport.send(message);
+        System.out.println("Email sent successfully!");
+    }
+}</pre>
+
+        <p>You really can't get around Java being so verbose.</p>
+
+        <p>But that is what SMTP code should look like in Java.</p>
+
+        <p>If you know the concepts from the Python examples, you should be able to play around with an LLM to convert it to Java frameworks or other languages.</p>
+
+        <h2>Proton C++ example</h2>
+
+        <p>The main way to create SMTP requests in C++ is libcurl.</p>
+
+        <p>Though there are a few simpler libraries out there this library is the one most people use and is LLM friendly.</p>
+
+        <p>It looks like this:</p>
+
+<pre>#include &lt;iostream&gt;
+#include &lt;curl/curl.h&gt;
+
+int main() {
+    CURL *curl;
+    CURLcode res = CURLE_OK;
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+    // Set SMTP server and port
+    curl_easy_setopt(curl, CURLOPT_URL, "smtp://smtp.proton.com:25");
+    // Set login credentials
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "your@proton.me");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "your_password");
+    // Compose the email
+    const char *subject = "Subject of the email";
+    const char *body = "This is the body of the email.";
+    // Combine subject and body into the message
+    std::string message = "Subject: " + std::string(subject) + "\r\n\r\n" + body;
+    // Set email data
+    curl_easy_setopt(curl, CURLOPT_READDATA, &amp;message);
+    curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
+    // Set recipient email
+    struct curl_slist *recipients = NULL;
+    recipients = curl_slist_append(recipients, "recipient@example.com");
+    curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
+    // Perform the SMTP operation
+    res = curl_easy_perform(curl);
+    // Cleanup
+    curl_slist_free_all(recipients);
+    curl_easy_cleanup(curl);
+    // Cleanup libcurl
+    curl_global_cleanup();
+    return 0;
+}</pre>
+
+        <p>Cumbersome right?</p>
+
+        <h2>Use LLMs to convert to all languages and frameworks</h2>
+
+        <p>All the examples I posted above are very LLM friendly.</p>
+
+        <p>I only chose libraries that are most popular so you can take these examples and see conversions.</p>
+
+        <p>LLMs are very good at creating SMTP email code. You just have to understand it to really use it.</p>
+
+        <p>With the right SMTP code you can start automating emails in all your applications.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Sockets guide: <a href="a-quick-guide-on-how-epic-coders-connect-the-world-through-sockets.html">A Quick Guide on How Epic Coders Connect the World Through Sockets</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

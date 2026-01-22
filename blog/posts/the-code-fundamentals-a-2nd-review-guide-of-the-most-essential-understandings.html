@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code Fundamentals: A 2nd Review Guide of the Most Essential Understandings</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>The Code Fundamentals: A 2nd Review Guide of the Most Essential Understandings</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>I have always written about why the fundamentals are important and how they could help you as a programmer.</p>
+
+        <p>But, I never had directly written what the fundamentals were.</p>
+
+        <p>That is what this series is.</p>
+
+        <p>This article is a direct explanation of the fundamentals.</p>
+
+        <p>Let's get into it....</p>
+
+        <h2>Data structure</h2>
+
+        <p>A data structure is anything that holds binary numbers.</p>
+
+        <p>In software this means variables, classes and even the code source itself.</p>
+
+        <p>The reason we use the word <em>structure</em> is because the memory container for binary numbers is always structured by the developer.</p>
+
+        <p>The memory is ordered for faster and easier access.</p>
+
+        <p>The idea of organized storage is a data structure.</p>
+
+        <p>No matter what you do, in order to create any program you need data structures.</p>
+
+        <h2>Data types</h2>
+
+        <p>Data types are the name of the data structure you are using.</p>
+
+        <p>Lets say we want to create data or reserve memory for future use.</p>
+
+        <p>We can create a specific data type by naming and writing its type.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-0.png" alt="Data types example showing String, Integer, int, char">
+
+        <p>We are saying, "hey, reserve some memory for a String, Integer, int, char".</p>
+
+        <p>All of those are data structures which have previously been written for us to put values inside.</p>
+
+        <p>Data types are the type of data structure we are using.</p>
+
+        <h2>Primitives</h2>
+
+        <p>Primitives are the built-in data types of a programming language.</p>
+
+        <p>Primitives typically have a different color in an IDE and often are treated differently in code than other data structures.</p>
+
+        <p>These are considered special in the language.</p>
+
+        <p>Primitives are used to build the entirety of bigger data structures.</p>
+
+        <p>Lets take a look at the primitives in Python:</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-1.png" alt="Python primitives example">
+
+        <p>Now lets take a look at the primitives in Java:</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-2.png" alt="Java primitives example">
+
+        <p>Notice the orange coloring in Java.</p>
+
+        <p>This is typical in most programming languages.</p>
+
+        <p>Just remember, they are primitive because they have no sophistication and are built-in the language.</p>
+
+        <p>They hold data in a certain format and every other data structure is built on them..</p>
+
+        <p>They are the lowest level memory containers built-in to the language.</p>
+
+        <h2>Variables</h2>
+
+        <p>Variables are the actual container in programming.</p>
+
+        <p>We them and use them after they are defined</p>
+
+        <p>They specify that you are placing something in memory in a specific format.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-3.png" alt="Variables example showing int, char, boolean">
+
+        <p>i, c, b are three variables stored in three different data types.</p>
+
+        <p>i is an integer data type AKA data structure.</p>
+
+        <p>c is a character data type.</p>
+
+        <p>b is a boolean data type.</p>
+
+        <p>Each has a different size in bits of 0s and 1s and each is treated differently in code.</p>
+
+        <p>When we create a variable we place a value to it. This value has to be specific to that variable's data type.</p>
+
+        <h2>Keywords</h2>
+
+        <p>Keywords are any words which are reserved by the programming language.</p>
+
+        <p>Many have been created for us and cannot be used for naming things.</p>
+
+        <p>In an IDE built-in keywords are always colored differently and cannot be used to describe things as names.</p>
+
+        <p>Look at these for example...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-4.png" alt="Keywords example">
+
+        <p>These are the keywords in the picture...</p>
+
+        <ul>
+            <li>int</li>
+            <li>public</li>
+            <li>char</li>
+            <li>boolean</li>
+            <li>void</li>
+            <li>static</li>
+            <li>true</li>
+        </ul>
+
+        <p>Notice how I have used keywords to name a variable.</p>
+
+        <p>I cannot do this for any naming and get errors.</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-5.png" alt="Keyword errors example">
+
+        <p>Keywords are reserved and can only be used in ways specified by the language.</p>
+
+        <h2>Blocks</h2>
+
+        <p>Blocks are chunks of code within 1 file which represent a section in code.</p>
+
+        <p>If you take any code file and pick a level that entire level is a block.</p>
+
+        <p>They key rules are..</p>
+
+        <ol>
+            <li>It must be in one file</li>
+            <li>It must not skip any lines</li>
+            <li>It must be on the same level</li>
+        </ol>
+
+        <p>Let us look at some examples...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-6.png" alt="Code blocks example in Java">
+
+        <p>The brackets in this code example note that there is a certain level.</p>
+
+        <p>These brackets make the entire inner code a block.</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-7.png" alt="Python blocks example">
+
+        <p>In Python, blocks are considered using indentation.</p>
+
+        <p>This means anything with open and close brackets are blocks...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-8.png" alt="Blocks with brackets example">
+
+        <p>In that picture, each block is a red rectangle.</p>
+
+        <p>Notice the open and close brackets express it is a block.</p>
+
+        <p>Look at the blocks in Python...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-9.png" alt="Python blocks with indentation">
+
+        <p>It is because the indentations replace the curly brackets.</p>
+
+        <h2>Scope</h2>
+
+        <p>Within each block is considered a scope.</p>
+
+        <p>So usually, when you enter a code block the variables on the outside of the block enter into the inner block.</p>
+
+        <p>Take a look at variable x in this example where it is passed into inner blocks.</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-10.png" alt="Scope example with variable x">
+
+        <p>Notice the open and close brackets, showing inner blocks.</p>
+
+        <p>x is passed into the inner blocks, called an inner scope.</p>
+
+        <p>It stays defined at the outer most level because it was created in the outer most level.</p>
+
+        <p>The level or block level it was created it is called the <em>scope</em>.</p>
+
+        <p>This is the scope of where it was defined.</p>
+
+        <p>The inner blocks inherit the outer block and as the variable changes it remains.</p>
+
+        <p>Scope means within these blocks and the blocks inside it, the variable is defined in memory.</p>
+
+        <h2>Loops</h2>
+
+        <p>Loops are statements which make future statements repeat.</p>
+
+        <p>There are typically two types of loops...</p>
+
+        <ul>
+            <li>For loops</li>
+            <li>While loops</li>
+        </ul>
+
+        <p>For loops are intended to repeat code a finite number of times.</p>
+
+        <p>While loops are intended to repeat infinitely but break the loop when you want to.</p>
+
+        <p>Here is an example of a for loop...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-11.png" alt="For loop example">
+
+        <p>Can you guess what it does?</p>
+
+        <p>From left to right if you read the inner parenthesis of the for loop we do three things...</p>
+
+        <ol>
+            <li>Define i as 0</li>
+            <li>Set a break once i hits 10</li>
+            <li>Add 1 to i at the end of the block.</li>
+        </ol>
+
+        <p>Another way to write this is with a while loop...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-12.png" alt="While loop example">
+
+        <p>They both do the same thing.</p>
+
+        <p>i is defined as 0 and passed inside the loop's code block and the code block repeats 10 times.</p>
+
+        <p>Lets see what i looks like...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-13.png" alt="For loop with i output">
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-14.png" alt="Loop output showing Hello 0 through Hello 9">
+
+        <p>Once i reaches 10 it breaks.</p>
+
+        <p>Inside the while loop we have a condition which can be set for when we want to break a potentially infinite loop.</p>
+
+        <p>Meaning this print hello will never run...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-15.png" alt="While false example that never runs">
+
+        <h2>Arrays</h2>
+
+        <p>Arrays are lists of data types, including primitives.</p>
+
+        <p>In most programming languages the square brackets determine what is an array.</p>
+
+        <p>Like so...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-16.png" alt="Python array example">
+
+        <p>Python</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-17.png" alt="Java array example">
+
+        <p>Java</p>
+
+        <p>In both these languages it is the same thing, but Java is just more cumbersome.</p>
+
+        <p>We are creating an array of int primitives.</p>
+
+        <p>Say we want to create an array of a non-primitive data type, like String.</p>
+
+        <p>It would look like this...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-18.png" alt="Python string array">
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-19.png" alt="Java string array">
+
+        <h2>Function</h2>
+
+        <p>These are blocks of code which can be re-run.</p>
+
+        <p>For example:</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-20.png" alt="JavaScript function code">
+
+        <p>Code</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-21.png" alt="JavaScript function output">
+
+        <p>Output</p>
+
+        <p>printHello() in this case is a function which we can re-run.</p>
+
+        <p>Let's see this same thing in Python...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-22.png" alt="Python function code">
+
+        <p>Python code</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-23.png" alt="Python function output">
+
+        <p>Output</p>
+
+        <p>And now in Java...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-24.png" alt="Java function code">
+
+        <p>Java code</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-25.png" alt="Java function output">
+
+        <p>Output</p>
+
+        <p>What is cool, we can place functions inside functions...</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-26.png" alt="JavaScript nested functions code">
+
+        <p>Javascript Code</p>
+
+        <img src="../images/the-code-fundamentals--a-2nd-review-guide-of-the-most-essential-understandings---img-27.png" alt="JavaScript nested functions output">
+
+        <p>Output</p>
+
+        <p>Pretty cool right?</p>
+
+        <p>We can place mostly any code inside functions then re-run it.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Why fundamentals are important: <a href="why-coding-fundamentals-are-important-questions-you-should-be-asking.html">Why Coding Fundamentals Are Important & Questions You Should Be Asking</a></p>
+
+        <p>What is Computer Science: <a href="a-short-and-insightful-answer-what-is-computer-science.html">A Short and Insightful Answer: What is Computer Science?</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

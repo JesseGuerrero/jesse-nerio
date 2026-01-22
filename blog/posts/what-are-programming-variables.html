@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What are programming variables?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>What are programming variables?</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>A variable is a named storage location. You can manipulate memory using the properties of this storage.</p>
+
+        <p>In the same way you can rent a space physically-you can rent space digitally. Using programming you can determine the size of the memory and how it operates.</p>
+
+        <p>When we first start programming we think variables would be a memory location which we declare. What we likely imagined or what I imagined when I first started was a pointer.</p>
+
+        <p>We say...</p>
+
+<pre>x = "hello"</pre>
+
+        <p>And we think "x" is points to a memory address and the size of the memory just holds it. We think we could use any type of memory in the variable.</p>
+
+        <p>This is true. We can use pointers.</p>
+
+        <p>In the past this was a standard even for higher level languages. But programming has become more abstract.</p>
+
+        <p>Instead we have two types of variables. Variables by value and variables by pointer.</p>
+
+        <img src="../images/what-are-programming-variables----img-0.png" alt="Variables in Programming">
+
+        <p>In lower level languages like C and C++ pointers are the standard for programming. But for higher level languages we are abstracted away to values.</p>
+
+        <h2>Similar in every language (language examples)</h2>
+
+        <p>This is similar in every language. Take a look...</p>
+
+<pre>// Java
+int x = 5;
+String a = "yaaas";
+
+# Python
+x = 5
+x: int
+a = "yaas"
+a: str
+
+// Typscript
+x: number = 5
+a: string = "hello"</pre>
+
+        <p>Here we say-make a storage location for x of type number and give it the value 5.</p>
+
+        <p>We have abstracted a named memory location to a type and a value. This is meant to make our programming easier. Pointers still exist, where the type of data is separate from the memory.</p>
+
+        <h2>What are data types?</h2>
+
+        <p>Each data type designates a memory size. When we declare a data type we are saying we want the variables to have certain abilities.</p>
+
+        <p>Numbers have different abilities than strings. Booleans have different abilities than floats. Each data type has its own.</p>
+
+        <p>We can determine the behavior of a data type using classes.</p>
+
+        <p>The whole point of classes is to create our own datatype to give it its own abilities.</p>
+
+        <p>Lets take a look at a simple new data type:</p>
+
+<pre>public class MegaString {
+    private string text;
+    public MegaString(string text) {
+        text = text;
+    }
+
+    public string Text {
+        get { return text; }
+        set { text = value; }
+    }
+
+    public int WordCount() {
+        string[] words = text.Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+        return words.Length;
+    }
+
+    public string Reverse() {
+        char[] charArray = text.ToCharArray();
+        Array.Reverse(charArray);
+        return new string(charArray);
+    }
+
+    public string ToTitleCase() {
+        return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+    }
+}</pre>
+
+        <p>This data type wraps around a String datatype. We give it its own functionality. Read through the code real quick. Notice the naming "WordCount", "Reverse" and "ToTitleCase".</p>
+
+        <p>These are the extra abilities I give to a new data type called "MegaString". Now when I declare a variable as a MegaString I can call on its extra abilities...</p>
+
+<pre>MegaString myString = new MegaString("hello world");
+Console.WriteLine("Original String: " + myString.Text);
+Console.WriteLine("Word Count: " + myString.WordCount());
+Console.WriteLine("Reversed String: " + myString.Reverse());
+Console.WriteLine("Title Case String: " + myString.ToTitleCase());</pre>
+
+        <p>Notice the abilities I call on the right side of the "Console.WriteLine". These are what declaring a variable does. When we say x is an integer, we give it the abilities of an integer.</p>
+
+        <p>When we say a is a string, we give it the abilities of a string. And when we declare the myString to be a MegaString-we are giving it the custom abilties we have created.</p>
+
+        <h2>Initialization</h2>
+
+        <p>Declare is an official terminology. It means to give a variable a data type. Initialization is another official terminology. It means to give a variable a value.</p>
+
+        <p>Here is their usage in programming...</p>
+
+<pre>//Declare
+int x;
+String a;
+float y;
+boolean b;
+
+//Initialize
+x = 5;
+a = "Yaaas"
+y = 1.5;
+b = true;
+
+//Declare and initialize
+int x = 5;
+String a = "Yaaas"
+float y = 1.5
+boolean b = true;</pre>
+
+        <h2>Scoping</h2>
+
+        <p>Let's talk about scopes. When we dedicate memory to a variable name the memory passes deeper into scoping. It goes inside scopes but it does not go out.</p>
+
+        <p>Here is an example of a scope...</p>
+
+<pre>// Global Scope
+{
+    // Local Scope
+    {
+        // Inner Scope
+    }
+}</pre>
+
+        <p>Variables go in but not out. Meaning if you make a variable in global it will go to all scopes. Also remember the code is read by the compiler from the <em>top going down</em>.</p>
+
+        <p>If you make it in local it will only be in that local and its inner scope. Then if you make a variable in the inner scope-thats as far as it goes.</p>
+
+        <p>Here take a look...</p>
+
+<pre>/** Global **/
+String text = "hello"
+{
+    print(text); // Works
+    {
+        print(text); // Works
+    }
+}
+print(text); // Works
+
+/** Local **/
+{
+    String text = "hello"
+    print(text); // Works
+    {
+        print(text); // Works
+    }
+}
+print(text); // Does'nt work
+
+/** Inner Scope **/
+{
+    {
+        String text = "hello"
+        print(text); // Works
+    }
+    print(text); // Does'nt work
+}
+print(text); // Does'nt work</pre>
+
+        <p>So global means all scopes can inherit the variable. Local means only within that scope. Inner scopes are local scopes. Outside the scope the variable no longer exists.</p>
+
+        <h2>Primitives</h2>
+
+        <p>Primitives are the built in data types to a language. Here is an example in Java...</p>
+
+        <ul>
+            <li>byte</li>
+            <li>short</li>
+            <li>int</li>
+            <li>long</li>
+            <li>float</li>
+            <li>double</li>
+            <li>char</li>
+            <li>boolean</li>
+        </ul>
+
+        <p>All of these are the most pivotal data types. They are used in all further computation in whichever language you are in. All custom data types are built off of these primitives.</p>
+
+        <h2>Constants</h2>
+
+        <p>When we create a variable we can give it the property of being constant. That means you cannot change the value of the variable.</p>
+
+        <p>For our own custom objects this means very little. We can still manipulate its inner values.</p>
+
+        <p>But for primitives it makes them unchangeable. Changing them gives an error.</p>
+
+        <p>Take a look...</p>
+
+<pre>/** Constants Example **/
+const short myShort = 1000;
+const int myInt = 10000;
+print(myInt); // Works
+myInt = 7; // Error</pre>
+
+        <p>Everything you can do with a regular variable you can do with a constant variable. You just cannot edit it.</p>
+
+        <h2>Instances</h2>
+
+        <p>In the above constants example notice how myInt is being used after printing it. It is independent on its own. It has its own value and represents the memory location of the constant number 10,000.</p>
+
+        <p>Because we are using the variable it is an <em>instance of the variable</em>. These instances have all the abilities of the original. They represent the original.</p>
+
+        <h2>Naming conventions</h2>
+
+        <p>Names of variables have great impact on the legibility of your code. There are unsaid rules to this naming that we must follow.</p>
+
+        <p>They are...</p>
+
+        <ul>
+            <li><strong>Follow language rules</strong>: Each of these below are different per language. Ask or look around to see the naming rules of each language. For example C# uses title case while Java uses camel case.</li>
+            <li><strong>Describe well</strong>: The point of good names is for the next programmer to understand your code. Give naming a lot of thought.</li>
+            <li><strong>Avoid keywords</strong>: Keywords are those taken by the programming language. You cannot call a string "String". This would give a compiler error.</li>
+            <li><strong>Camel case</strong>: Words can be placed together with the first word lower case and the rest upper case. "thisIsACamel"</li>
+            <li><strong>Snake case</strong>: Words can be placed together with an underscore "this_is_a_snake".</li>
+            <li><strong>Title case</strong>: All words are put together with a title. "ThisIsATItle"</li>
+        </ul>
+
+        <h2>Vocabulary</h2>
+
+        <ul>
+            <li><strong>Primitives</strong>: The lowest level data types in programming</li>
+            <li><strong>Constant</strong>: Makes primitives unchangeable</li>
+            <li><strong>Declare</strong>: Gives a variable a name and data type</li>
+            <li><strong>Initialize</strong>: Gives a variable a value</li>
+            <li><strong>Instance</strong>: A give representation of a variable</li>
+            <li><strong>Pointer</strong>: A variable which uses memory location instead of being abstract.</li>
+            <li><strong>Scope</strong>: A block of code where we keep variables or let them go.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+
+        <h3>How does a variable disappear out of scope?</h3>
+
+        <p>There are two types of programming languages. Garbage collected languages and manually allocated language.</p>
+
+        <p>Most high level languages automatically delete variables when you leave a scope. That is a garbage collected language.</p>
+
+        <p>Lower level languages have you delete them yourself. That is manual allocation.</p>
+
+        <h3>How do we know how much memory is allocated?</h3>
+
+        <p>Primitives have set memory sizes. For example:</p>
+
+        <ul>
+            <li><strong>boolean</strong>: Typically 1 byte</li>
+            <li><strong>byte</strong>: 1 byte</li>
+            <li><strong>char</strong>: 2 bytes in Java and C#, 1 byte in C and C++</li>
+            <li><strong>int</strong>: 4 bytes.</li>
+            <li><strong>float</strong>: 4 bytes.</li>
+            <li><strong>Etc...</strong></li>
+        </ul>
+
+        <p>Memory size per data type are different per language. Custom data types are automatically allocated by the language. We would have to measure the size of the data type with some type of 3rd party library.</p>
+
+        <h3>How do I convert one data type to another?</h3>
+
+        <p>This is known as casting. You can convert floats to integer or boolean to integer. Here are some examples:</p>
+
+<pre>double doubleValue = 10.5;
+int intValue = (int) doubleValue;
+int intValue = 130;
+byte byteValue = (byte) intValue;
+boolean boolValue = true;
+String stringValue = String.valueOf(boolValue);</pre>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

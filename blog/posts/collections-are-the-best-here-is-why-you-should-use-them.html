@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections Are the Best, Here Is Why You Should Use Them</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Collections Are the Best, Here Is Why You Should Use Them</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Collections are very similar across the different programming languages. They involve the same data structures, the same functions and essentially look the same in every language.</p>
+
+        <p>If you are learning collections, just know you are learning it for <em>all</em> languages so be encouraged about learning these data types.</p>
+
+        <p>In every language they are a library of data structures used in every day programming. They are called <em>collections</em> because each data structure is a collection of objects. These collections manipulate memory in a certain way. They are implementations of stacks, queues, maps, lists, etc, given to you for your convenience.</p>
+
+        <p>The way you manipulate memory is structured by its collection type. A stack for example is LIFO (Last-In-First-Out). Let's look at this in Java:</p>
+
+<pre>import java.util.Stack;
+
+Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+System.out.println(stack.pop()); // Outputs 3</pre>
+
+        <p>The key part, <em>stack</em> already exists in the collections library. java.util.* has all the collections inside it. You do not have to implement any collections. They come with the functions and inner data structures. They are meant to make your problem solving easier.</p>
+
+        <p>Let's look at one more, Maps:</p>
+
+<pre>import java.util.HashMap;
+import java.util.Map;
+
+Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("Alice", 30);
+map.put("Bob", 25);
+map.put("Charlie", 35);
+System.out.println("Age of Bob: " + map.get("Bob")); // Outputs 25</pre>
+
+        <p>You place three numbers in three different keys from String to Integer. You do not implement the data structure, you just import it.</p>
+
+        <p>In the background these collections are wrappers of primitives. If you look inside the data structure you will see an int[] array, or a String[] array. Basic primitives.</p>
+
+        <p>This is impossible to avoid as all custom classes are simply wrappers for primitives, no matter what you implement.</p>
+
+        <h2>Why use collections?</h2>
+
+        <p>Collections make you more efficient, need less code and are convenient for the programmer. The reason, these data structures are meant to be used with custom classes. If you make say the Coordinate class,</p>
+
+<pre>public class Coordinate {
+    private int x;
+    private int y;
+
+    public Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public static void main(String[] args) {
+        Coordinate point = new Coordinate(3, 4);
+        Coordinate point2 = new Coordinate(6, 7);
+        Coordinate point3 = new Coordinate(4, 5);
+        Map&lt;String, Coordinate&gt; map = new HashMap&lt;&gt;();
+        map.put("Alice", point);
+        map.put("Bob", point2);
+        map.put("Charlie", point3);
+    }
+}</pre>
+
+        <p>You can add it to any collection data structure. This is where all the power of collections comes from. You can use either primitives or custom classes, organizing and storing in an optimal way.</p>
+
+        <p>On the lowest level though, there is some bloat to these data structures. They cost a little more memory and processing power than the primitive versions of the data structures.</p>
+
+        <p>Meaning a List in C# is more bloated both in memory and processing than an array. What we sacrifice we more than make up for in the ease of making applications for the programmer.</p>
+
+        <h2>Types of Collections</h2>
+
+        <p>These would be considered part of programming fundamentals. They are standard in each language. It is always good practice to use these collections for your applications.</p>
+
+        <h2>Lists</h2>
+
+        <p>A List is a mutable string of objects. Remember we can place any class here, including primitives. Let's look at it in C#:</p>
+
+<pre>using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Create a new List of integers
+        List&lt;int&gt; numbers = new List&lt;int&gt;();
+
+        // Add elements to the List
+        numbers.Add(1);
+        numbers.Add(2);
+        numbers.Add(3);
+        numbers.Add(4);
+        numbers.Add(5);
+
+        // Access elements by index
+        Console.WriteLine("Second element: " + numbers[1]);
+    }
+}</pre>
+
+        <p>We have basically an array [1, 2, 3, 4, 5]. There really is no difference between an array and a list.</p>
+
+        <p>The Collection, <em>list</em>, just includes functions which wrap around the array. Take a look:</p>
+
+<pre>class Program
+{
+    static void Main()
+    {
+        List&lt;int&gt; list = new List&lt;int&gt;();
+        int index = 3;
+        int item = 5;
+        list.RemoveAt(index);
+        list.Insert(index, item);
+        list.Clear();
+        list.Contains(item);
+        list.IndexOf(item);
+        list.Count;
+        list.Sort();
+        list.Reverse();
+        //etc.
+    }
+}</pre>
+
+        <p>Primitive arrays do not come with those functions. Yes Lists are simply arrays, but <strong>they are arrays with functions</strong>.</p>
+
+        <h2>Sets</h2>
+
+        <p>Sets are a collection of elements which are unique. They are a List, except there are no duplicate elements. <strong>In Sets we limit the functions to only those which are hash-able</strong>. This allows the data structure to map each element in the data structure.</p>
+
+        <p>Lets look at an example:</p>
+
+<pre>import java.util.HashSet;
+import java.util.Set;
+
+public static void main(String[] args) {
+    Set&lt;String&gt; set = new HashSet&lt;&gt;();
+    set.add("Apple");
+    set.add("Banana");
+    set.add("Orange");
+    set.remove("Banana");
+    boolean containsOrange = set.contains("Orange");
+}</pre>
+
+        <p>The power behind sets is where that add and remove banana is actually mapped. There are fewer functions for Sets than Lists, but this is done intentionally. It is a dictionary in the background. If you know your elements are going to be unique, then that is the moment to use a Set.</p>
+
+        <p>This means less processing and less memory usage.</p>
+
+        <h2>Maps</h2>
+
+        <p>These are dictionaries. <strong>You get key-value pairs for the fastest processing possible</strong>. You call a value by its key, AKA its name, <strong>so you do not have to iterate over the entire data structure.</strong></p>
+
+        <p>Lets look at an example:</p>
+
+<pre>#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main() {
+    // Create a map of string keys and int values
+    std::map&lt;std::string, int&gt; ageMap;
+
+    // Insert key-value pairs into the map
+    ageMap["Alice"] = 30;
+    ageMap["Bob"] = 25;
+    ageMap["Charlie"] = 35;
+
+    // Access a value by its key
+    std::cout &lt;&lt; "Age of Bob: " &lt;&lt; ageMap["Bob"] &lt;&lt; std::endl;
+}</pre>
+
+        <p>We call "Bob" as the number 25. So whenever we ask for "Bob" in the age map we get 25 the quickest possible. The main feature of maps is how huge we can make the entire data structure and still only have O(1) or just 1 super fast function call for its value, like 25.</p>
+
+        <h2>Queue</h2>
+
+        <p>Queues are a First-In-First-Out data structure. They are meant for any type of waiting line in processing. They are used everywhere in programming. However nowadays people just use Lists and only use the queue-like functions.</p>
+
+        <p>Here is an example of a Queue:</p>
+
+<pre>import java.util.LinkedList;
+import java.util.Queue;
+
+public static void main(String[] args) {
+    // Create a new LinkedList as a Queue
+    Queue&lt;String&gt; queue = new LinkedList&lt;&gt;();
+
+    // Add elements to the queue
+    queue.offer("Apple");
+    queue.offer("Banana");
+    queue.offer("Orange");
+
+    // Peek at the head of the queue without removing it
+    System.out.println("Head of the queue: " + queue.peek());
+
+    // Remove and return the head of the queue
+    System.out.println("Removed from the queue: " + queue.poll());
+}</pre>
+
+        <h2>Stack</h2>
+
+        <p>Stacks are in essence the same as queues except it is Last-In-First-Out. Instead of getting the beginning of the list, we get the end.</p>
+
+        <p>Like said before most people just use the List data structure but use the stack-like functions.</p>
+
+        <p>Here is how it looks:</p>
+
+<pre>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+int main() {
+    // Create a stack of integers
+    std::stack&lt;int&gt; stack;
+
+    // Push elements onto the stack
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    // Access the top element of the stack
+    std::cout &lt;&lt; "Top of the stack: " &lt;&lt; stack.top() &lt;&lt; std::endl;
+}</pre>
+
+        <h2>Choosing the right type</h2>
+
+        <p>Choosing the right type of Collection is a chicken and egg problem. You need to have used the data structures in the past to know what Collection to use right now.</p>
+
+        <p>I recommend experimenting with the different collections. Take the descriptions I gave you above and use them. It is good to use them wrongly and realize it was wrong later. Fix the error and learn a way not to use that data structure.</p>
+
+        <p>The best learning methods are trial and error, reading other peoples code, having your code reviewed and solving LeetCode problems.</p>
+
+        <p>As you learn all the ways collections are used you develop an instinct for data structures. You eventually will be able to just look at a problem and quickly know which data structure to use. Other people's code can help clarify that instinct and code reviews will be teaching moments for your own code.</p>
+
+        <p>Lastly, You will be surprised how dependent LeetCode is on Collections. The problem descriptions always ask for a specific Collection to be used. LeetCode problems are a great way to figure out when and when not to use data structures.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my <a href="https://a.co/d/b56kpK9">book on learning code</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Programming fundamentals: <a href="why-coding-fundamentals-are-important-questions-you-should-be-asking.html">Why Coding Fundamentals Are Important & Questions You Should Be Asking</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

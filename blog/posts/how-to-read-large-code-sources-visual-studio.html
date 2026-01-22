@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Read Large Code Sources: Visual Studio</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Read Large Code Sources: Visual Studio</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Bookmark this one. It will take you to the next level in Visual Studio. Personally, me, I needed this article like 2 years ago when I started exploring large C++/C# projects.</p>
+
+        <p>In a past article I showed you a <a href="how-to-learn-a-large-code-source-efficiently-and-effectively.html">general guide to reading large code sources</a>. In that article I showed you the most important thing you can do to learn a large code source. I showed you how to navigate huge projects.</p>
+
+        <p>The only problem is that every IDE does this differently. Many many projects are locked into an IDE for its development. I want to save you time and show you how to navigate huge projects in Visual Studio.</p>
+
+        <p>I highly recommend memorizing these navigations and practicing them as much as possible with a large code source. The goal is to make them second nature so you can read code with ease.</p>
+
+        <p>For this tutorial I will be using only the community edition with no plugins and no extra features. This guide applies to Visual Studio 2012-2023. I will have to make sure its all 100% for 2024 next year. We will see when we get there.</p>
+
+        <p>For this article I will show you the meaning of the GUIs and a little about hot keys as we go.</p>
+
+        <p>Let's take a look...</p>
+
+        <h2>How to Navigate the Stack</h2>
+
+        <p>In my previous article navigating the stack was done with one or two simple GUIs or commands. Though this is ideal, Visual Studio is a different beast.</p>
+
+        <p>Instead of one or two ways to navigate a stack we have three. First you can see a function stack, second you can find the usages/references, and third you can go to definitions.</p>
+
+        <h2>Look at a function stack</h2>
+
+        <p>First on our agenda is to look at the function stack. This is known in Visual Studio as the "call hierarchy".</p>
+
+        <p>For some reason this is restricted to functions. This restriction is the whole reason why we need to split our navigation between function stack, find usages/reference and go to implementation/definition.</p>
+
+        <p>Though of the three navigation methods, going up and down the function stack is the most useful.</p>
+
+        <p>Right click any function in your project and click "View Call Hierarchy":</p>
+
+        <img src="../images/visual-studio-temp-img-0.png" alt="Right click menu showing View Call Hierarchy option">
+
+        <p>You will then see this GUI:</p>
+
+        <img src="../images/visual-studio-temp-img-1.png" alt="Call Hierarchy GUI showing Tick function">
+
+        <p>All of the functions displayed with this symbol:</p>
+
+        <img src="../images/visual-studio-temp-img-2.png" alt="Function symbol in Call Hierarchy">
+
+        <p>Is a root. Just double click it to go to its code.</p>
+
+        <img src="../images/visual-studio-temp-img-3.png" alt="Double click to navigate to code">
+
+        <p><strong>Calls to Tick()</strong> means you are becoming more abstract. Try to follow along and practice with me.</p>
+
+        <p>You are essentially seeing which functions call Tick(). You can memorize which is which this way, the upper folder means you are going up the stack. So if its a folder up above another, it is going up the stack.</p>
+
+        <img src="../images/visual-studio-temp-img-4.png" alt="Call hierarchy showing Engine Tick calling Audio Tick">
+
+        <p>Take a look, Engine Tick() calls the Audio Tick():</p>
+
+        <img src="../images/visual-studio-temp-img-5.png" alt="Engine Tick function code">
+
+        <p>We are getting more abstract. Let's abstract further and take a look at where Engine::Tick() is called...</p>
+
+        <img src="../images/visual-studio-temp-img-6.png" alt="Call hierarchy showing Editor calling Engine Tick">
+
+        <p>The Editor class calls the Engine Tick().</p>
+
+        <img src="../images/visual-studio-temp-img-7.png" alt="Editor Tick function code">
+
+        <p>We are getting more and more abstract here from our audio tick -> engine tick -> editor tick as we navigate the upper folders inside each function.</p>
+
+        <p><strong>Calls from Tick()</strong> means you are seeing all functions called within the block of that function. You are becoming <em>more specific</em>.</p>
+
+        <p>All functions within Audio::Tick() are displayed:</p>
+
+        <img src="../images/visual-studio-temp-img-8.png" alt="Calls from Tick showing all functions called within Audio::Tick">
+
+        <img src="../images/visual-studio-temp-img-9.png" alt="Audio Tick function implementation">
+
+        <p>Take a look at the bottom and top pictures. You will see <em>all functions called in Audio::Tick()</em> are inside the From Tick() layer....</p>
+
+        <p>Pretty cool right? So as you get more specific going down the call stack you have to choose between functions.</p>
+
+        <p>On the right you will see <strong>Call Sites</strong>.</p>
+
+        <p>This is highly useful as you can see all places the function/root is called...</p>
+
+        <img src="../images/visual-studio-temp-img-10.png" alt="Call Sites panel showing where function is called">
+
+        <p>When you select a function/root you can see where it is called.</p>
+
+        <p>Just double click the call site and you will go to its call.</p>
+
+        <img src="../images/visual-studio-temp-img-11.png" alt="Double click call site to navigate">
+
+        <p>This is useful in case the function implementation is used multiple times. You can see all its usages in this way.</p>
+
+        <p>Lastly you can <strong>add roots and display them</strong>.</p>
+
+        <p>Just right click and call hierarchy again:</p>
+
+        <img src="../images/visual-studio-temp-img-12.png" alt="Adding another root to call hierarchy">
+
+        <p>That function will be added as a root and you can see more up and down the stack.</p>
+
+        <img src="../images/visual-studio-temp-img-13.png" alt="Multiple roots in call hierarchy">
+
+        <p>These are very powerful in projects which require Visual Studio. Practice these diligently.</p>
+
+        <h2>Find reference</h2>
+
+        <p>You can read more about a function, variable or class by finding usages.</p>
+
+        <p>In JetBrains the usages are brought on by middle click. Here is is by "find all references" which is essentially "find usages".</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/visual-studio-temp-img-14.png" alt="Find All References menu option">
+
+        <img src="../images/visual-studio-temp-img-15.png" alt="References results showing Audio class usages">
+
+        <p>From here you can read more about the different methods and variables used in the Audio class.</p>
+
+        <p>Try to memorize this. It is the only easier way to look up usages for variables and classes.</p>
+
+        <h2>Go to definition</h2>
+
+        <p>We have to explain this individually because the other GUIs do not allow you to look at a definition with ease. It is much easier to just right click the class/function/variable and look for the direct definition.</p>
+
+        <p>Right click your class/function/variable and click "go to definition":</p>
+
+        <img src="../images/visual-studio-temp-img-16.png" alt="Go To Definition menu option">
+
+        <p>You will see the initialization or code written for that object. So for example, column count is 2:</p>
+
+        <img src="../images/visual-studio-temp-img-17.png" alt="Variable definition showing column_count = 2">
+
+        <p><strong>For classes</strong>, If you go to the definition of a class it will lead you to the header.</p>
+
+        <img src="../images/visual-studio-temp-img-18.png" alt="Go To Definition for class">
+
+        <p>From there just go to the declaration of one of its functions or variables:</p>
+
+        <img src="../images/visual-studio-temp-img-19.png" alt="Class header showing Audio class definition">
+
+        <h2>The Problem With Hot Keys...</h2>
+
+        <p>Visual Studio does not allow us to set hot keys with mouse clicks. Instead we have to opt-in for keyboard shortcuts. In addition software based hotkey programs like AutoHotkey have some compatibility issues for running with Visual Studio.</p>
+
+        <p>If you want to try it despite the compatibility issues it is easy to create AutoHotkey scripts with an LLM. Here is an example of me asking Chat-GPT to create a hook-up to middle mouse button on Visual Studio:#IfWinActive, ahk_exe devenv.exe ; Check if Visual Studio 2022 is active
+MButton:: ; Define a hotkey for the middle mouse button as call hierarchy
+Send, ^k ; Send Ctrl+K key combination
+Sleep, 1000 ; Sleep for 1 seconds (1000 milliseconds)
+Send, ^t ; Send Ctrl+T key combination
+#If ; Reset the context-sensitive window check</p>
+
+        <p>In this script I attached "call hierarchy" to the middle mouse button. It works 50% of the time due to compatibility issues.</p>
+
+        <p>For this reason you are stuck with plain keyboard commands and right click menus. It seems easier to memorize and practice right clicking than setting your own keyboard shortcuts.</p>
+
+        <p>But if you desire, you can ask an LLM to hook up mouse buttons to keys and edit the keyboard shortcuts this way:</p>
+
+        <img src="../images/visual-studio-temp-img-20.png" alt="Visual Studio Tools menu">
+
+        <p>Click tools</p>
+
+        <img src="../images/visual-studio-temp-img-21.png" alt="Tools Options menu">
+
+        <p>Click Options</p>
+
+        <img src="../images/visual-studio-temp-img-22.png" alt="Options dialog with Keyboard selected">
+
+        <p>Click keyboard</p>
+
+        <img src="../images/visual-studio-temp-img-23.png" alt="Keyboard shortcut configuration">
+
+        <p>Type here</p>
+
+        <p>You can set keys here, though I don't really recommend using hotkeys too much. If you want to do it, that is how.</p>
+
+        <h2>Link the File You Are In to the Project Explorer</h2>
+
+        <p>You want to easily link your active file to you project explorer, like this:</p>
+
+        <img src="../images/visual-studio-temp-img-24.png" alt="File linked in Solution Explorer">
+
+        <p>To do this, you can only use keyboard shortcuts (Unless you hook a hotkey to your mouse with AutoHotkey).</p>
+
+        <p>Now, head to the keyboard shortcut area and type in "syncw" like this:</p>
+
+        <img src="../images/visual-studio-temp-img-25.png" alt="SyncWithActiveDocument command in keyboard options">
+
+        <p>Add a shortcut to the "SyncWithActiveDocument" command and you can activate your file in Solution Explorer.</p>
+
+        <h2>Use a Structural View</h2>
+
+        <p>The goal of a structural view is to see a summary of a class or file. This is the quickest way to pick 1 function or variable out of 100s in a large file.</p>
+
+        <p>In Visual Studio, there are two ways. Either we can open the file in project explorer (in C++ use the .cpp):</p>
+
+        <img src="../images/visual-studio-temp-img-26.png" alt="File expanded in Solution Explorer showing structure">
+
+        <p>Or we can create a seperate window known as a "Solution Explorer View". We can just right click a file and view the Solution Explorer View. In C++ make sure to do this with the header/.h file:</p>
+
+        <img src="../images/visual-studio-temp-img-27.png" alt="New Solution Explorer View option">
+
+        <img src="../images/visual-studio-temp-img-28.png" alt="Solution Explorer View showing class structure">
+
+        <p>So after finding the file in the project explorer, just do one of the above and read through the properties.</p>
+
+        <p>The properties are in different order depending on if you use a .h or .cpp. Header files are alphabetical and cpp files are in order of implementation. You can look for the file properties(inner functions/variables/classs) from this view.</p>
+
+        <h2>Use a Find in All Files</h2>
+
+        <p>This is useful for finding text, functions and classes within an entire project. It is super simple and super powerful.</p>
+
+        <img src="../images/visual-studio-temp-img-29.png" alt="Solution Explorer search dropdown">
+
+        <p>Step 1</p>
+
+        <img src="../images/visual-studio-temp-img-30.png" alt="Search within file contents option">
+
+        <p>Step 2</p>
+
+        <img src="../images/visual-studio-temp-img-31.png" alt="Search results showing PlaySound occurrences">
+
+        <p>Step 3</p>
+
+        <p>For example. you can find all occurrences of "playsound" (Not case sensitive).</p>
+
+        <p>In step 2 you can choose to include project files and/or external dependencies.</p>
+
+        <p>Extremely useful, even for debugging external dependencies.</p>
+
+        <h2>Always Make Sure You Have Intellisense</h2>
+
+        <p>I know this is basic but I want to emphasize how much of an advantage you get from intellisense.</p>
+
+        <p>You can type the beginning of a class or function and see the potential objects you can use. When selecting each function or class, the documentation inside that class is shown.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/visual-studio-temp-img-32.png" alt="Intellisense showing function documentation">
+
+        <p>This way you can easily type out and remember functions you once used in a library.</p>
+
+        <p>If the developer of that library did not include documentation inside his code you won't see documentation. Just keep that in mind.</p>
+
+        <h2>Use a Good Commit Viewer and Diff Tree</h2>
+
+        <p>These features are a bit messy. They work though. Let us look into it.</p>
+
+        <p>Open up these two windows:</p>
+
+        <img src="../images/visual-studio-temp-img-33.png" alt="View menu showing Git Changes and Git Repository">
+
+        <img src="../images/visual-studio-temp-img-34.png" alt="Git Changes and Git Repository windows">
+
+        <p>Click on both and you will see something like this...</p>
+
+        <img src="../images/visual-studio-temp-img-35.png" alt="Full Git interface with changes and repository">
+
+        <p>On the top left you will see the current commit. This is for what you have staged on git at this moment.</p>
+
+        <p>On the bottom right will be the commits viewer. This way you can look into each individual commit.</p>
+
+        <p>The top left current commit, you can right click those files and view changes. In addition there is a blame annotation that is very nice.</p>
+
+        <img src="../images/visual-studio-temp-img-36.png" alt="Blame annotation context menu">
+
+        <p>This way you can see who last edited a line.</p>
+
+        <p>Just manage your commits with the current commits viewer. It just takes some practice as you make pushes to your repo.</p>
+
+        <h2>Commit Viewer</h2>
+
+        <p>In the commit viewer you can double click a commit and inspect it.</p>
+
+        <img src="../images/visual-studio-temp-img-37.png" alt="Commit diff viewer showing changes">
+
+        <p>When doing so you will see a diff viewer per file for the files on the right.</p>
+
+        <p>See where Camera.cpp is on the right? Just click those to see the differences.</p>
+
+        <p>You can also create a diff view between two separate commits which is useful for debugging across months of changes.</p>
+
+        <p><strong>Control + Left-click two commits</strong> and right click then "compare commits"</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/visual-studio-temp-img-38.png" alt="Compare Commits context menu">
+
+        <p>Two CTRL+Clicked commits</p>
+
+        <img src="../images/visual-studio-temp-img-39.png" alt="Comparing two commits diff view">
+
+        <p>In total we are comparing the versions of the project 4 commits apart. We can do this between any number of commits.</p>
+
+        <p>In this case it is the two underlined commits.</p>
+
+        <p>On the right we see all the file changes done between those two commits. If we double click one file we see the diff viewer for that file.</p>
+
+        <p>You can see the difference, color coded, in the big red square in the middle.</p>
+
+        <h2>Use a UML Generator</h2>
+
+        <p>The UML generator for Visual Studio has to be added from the Visual Studio Installer.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/visual-studio-temp-img-40.png" alt="Visual Studio Installer with Class Designer component">
+
+        <p>This is not available for .NET core projects. But it is available for other C#/C++ projects.</p>
+
+        <p>Once it is installed you can create UML Diagrams.</p>
+
+        <p>But, it is kind of wonky.</p>
+
+        <p>It is still useful, but it is not as refined as Jetbrains.</p>
+
+        <p>Sadly, it does not automatically generate parent and child classes, unlike JetBrains.</p>
+
+        <p>In Visual Studio you have to build the UML Diagram on your own.</p>
+
+        <p>But, also unlike JetBrains you can save these UML Diagrams as a file and revisit/edit them later.</p>
+
+        <p>Like this:</p>
+
+        <img src="../images/visual-studio-temp-img-41.png" alt="Class diagram file in Solution Explorer">
+
+        <p>Because you can save it as a file I would consider this feature still useful.</p>
+
+        <p>Lastly, in C++ you have to choose the header files for the diagrams.</p>
+
+        <p>Let's take a look at this:</p>
+
+        <img src="../images/visual-studio-temp-img-42.png" alt="View Class Diagram context menu">
+
+        <p>After clicking "View Class Diagram" you have to click and drag all child and parent classes into the diagram.</p>
+
+        <p>Like this:</p>
+
+        <img src="../images/visual-studio-temp-img-43.png" alt="Dragging classes into the diagram">
+
+        <p>The diagram editor automatically links the child and parent classes. You just have to actually drag them in yourself.</p>
+
+        <img src="../images/visual-studio-temp-img-44.png" alt="Class diagram with Component and Camera classes">
+
+        <p>Once again, it is not possible to generate it automatically like in JetBrains but you can create and save diagrams for your own viewing.</p>
+
+        <p>Here I made one for the Spartan Engine...</p>
+
+        <img src="../images/visual-studio-temp-img-45.png" alt="Complete UML diagram for Spartan Engine showing inheritance hierarchy">
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my other articles and follow me on medium.</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Spartan Engine (Used as an example): <a href="https://github.com/PanosK92/SpartanEngine">https://github.com/PanosK92/SpartanEngine</a></p>
+
+        <p>Parent article to this article: <a href="how-to-learn-a-large-code-source-efficiently-and-effectively.html">How to Learn a Large Code Source Efficiently and Effectively</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

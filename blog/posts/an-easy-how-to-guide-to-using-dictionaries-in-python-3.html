@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Easy How-To Guide to Using Dictionaries in Python 3</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>An Easy How-To Guide to Using Dictionaries in Python 3</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>A dictionary is a built-in data type in Python. It is structured based on JSON files. In JSON format you start a JSON file like the following:</p>
+
+<pre><code>{}</code></pre>
+
+        <p>In Python, dictionaries are declared in the same way. {} curly brackets are used to store formatted data.</p>
+
+        <p>Here are some examples:</p>
+
+<pre><code># List
+l = []
+# Tuple
+t = ()
+# Set
+s = set()
+# Dictionary
+d = {}</code></pre>
+
+        <p>Each of these uses characters to initialize its data type.</p>
+
+        <h2>How Dictionaries are Formed</h2>
+
+        <p>Dictionaries have to follow a format.</p>
+
+        <p>An example:</p>
+
+<pre><code>example = {"key": "value"}</code></pre>
+
+        <h2>Key to Value Pair</h2>
+
+        <p>Dictionary data always exists in a key to value pair, like the above. Each key has a value and can never exist without a value.</p>
+
+        <p>For example this is wrong:</p>
+
+<pre><code>example = {"key"} # wrong, will error</code></pre>
+
+        <p>But, this is right:</p>
+
+<pre><code>example = {} # valid</code></pre>
+
+        <p>You can either have no key or a key-value pair. That is it.</p>
+
+        <p>A key is always a string and must be unique so that it represents a specific value.</p>
+
+        <p>If you pick two equal keys within one dictionary, the one that comes afterward will be chosen.</p>
+
+<pre><code>example = {
+  "key1": "value",
+  "key1": "other value"
+}
+print(example["key1"]) #&lt;- other value</code></pre>
+
+        <h2>Data types in dictionaries</h2>
+
+        <p>Values are only allowed certain data types.</p>
+
+        <p>Here they are:</p>
+
+        <ul>
+            <li>Strings</li>
+            <li>Integers</li>
+            <li>Floats</li>
+            <li>Booleans</li>
+            <li>Lists</li>
+            <li>None</li>
+            <li>Inner dictionaries</li>
+        </ul>
+
+        <p>This means we can look at our original example to include more types.</p>
+
+        <p>This one:</p>
+
+<pre><code>employees = {
+  "John": {
+    "US Citizen": True,
+    "age": 30,
+    "address": {
+        "city": "Mexico City",
+        "country": "Mexico"
+      }
+  },
+  "Joan": {
+    "US Citizen": False,
+    "age": 21,
+    "address": {
+        "city": "Austin",
+        "country": "USA"
+      }
+  }
+}</code></pre>
+
+        <p>"John" & "Joan" are keys and they contain a value of an inner dictionary.</p>
+
+        <p>Those inner dictionaries contain data types which are allowed according to the list above.</p>
+
+        <h2>Dictionaries vs lists</h2>
+
+        <p>A dictionary is a direct mapping between keys and values.</p>
+
+        <p>So every key within a dictionary is called with a string.</p>
+
+        <p>Like so:</p>
+
+<pre><code>#Look at employees above....
+print(employees["john"]) #&lt;- the key is called
+'''Output
+{
+    "US Citizen": True,
+    "age": 30,
+    "address": {
+        "city": "Mexico City",
+        "country": "Mexico"
+      }
+  }
+'''</code></pre>
+
+        <p>However with a list, you must use an index number.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>namesList = ["john", "mary", "joseph"]
+print(namesList[2]) #&lt;- the position is called
+'''Output
+joseph
+'''</code></pre>
+
+        <p>Instead of a key, we have a number denoting the position within namesList[].</p>
+
+        <h2>How do you include inner dictionaries & lists?</h2>
+
+        <p>Inner dictionaries and lists are created with their original characters.</p>
+
+        <p>Here, take a look:</p>
+
+<pre><code>d = {
+  "dictionary": {},
+  "list": []
+}</code></pre>
+
+        <p>A dictionary works within a dictionary and can be nested indefinitely.</p>
+
+        <p>A list is simply any number of values ordered after another and not a key-value pair.</p>
+
+        <p>Why can't we use key-value pairs?</p>
+
+        <p>Because it is not a direct mapping but an order of values.</p>
+
+        <p>Here is an example of a valid list:</p>
+
+<pre><code>d = {
+  "randomList": [
+    "yes", 1, True, None, 1.1, {}, []
+   ]
+}
+
+for element in d["randomList"]:
+  print(str(element))
+'''Output
+yes
+1
+True
+None
+1.1
+{}
+[]
+'''</code></pre>
+
+        <p>The different elements of the list are simply called by its position.</p>
+
+        <h2>Keys are refreshed within each dictionary</h2>
+
+        <p>Within each dictionaries keys are reset. Which is why we can have repeating key names within different inner dictionaries.</p>
+
+        <p>Let's look at the example again:</p>
+
+<pre><code>employees = {
+  "John": {
+    "US Citizen": True,
+    "age": 30,
+    "address": {
+        "city": "Mexico City",
+        "country": "Mexico"
+      }
+  },
+  "Joan": {
+    "US Citizen": False,
+    "age": 21,
+    "address": {
+        "city": "Austin",
+        "country": "USA"
+      }
+  }
+}</code></pre>
+
+        <p>Notice within "John" there is an inner dictionary.</p>
+
+        <p>It contains "US Citizen", "age" & "address" as key-value pairs.</p>
+
+        <p>Also notice "Joan" has the same keys.</p>
+
+        <p>Why are the keys re-used?</p>
+
+        <p>Because we use an inner dictionary and the dictionary outside only applies to the outside.</p>
+
+        <p>The inner keys only apply to the inner dictionary.</p>
+
+        <p>Let's look at an example:</p>
+
+<pre><code>print(str(employees["John"]["US Citizen"]))
+print(str(employees["Joan"]["US Citizen"]))
+'''Output
+True
+False
+'''</code></pre>
+
+        <p>We are calling the dictionary within the dictionary, and within that inner dictionary there are new key-value pairs.</p>
+
+        <h2>How to add to a dictionary</h2>
+
+        <p>To add to a dictionary you can first initialize it:</p>
+
+<pre><code>dictionary = {}</code></pre>
+
+        <p>Next up we define a key:</p>
+
+<pre><code>dictionary["key"] = "value"
+print(dictionary)
+'''Output
+{
+  "key": "value"
+}
+'''</code></pre>
+
+        <p>If we wanted to define a list, we can do so within a key-value pair.</p>
+
+        <p>For example:</p>
+
+<pre><code>dictionary = {}
+dictionary["key"] = "value"
+dictionary["list"] = []
+print(dictionary)
+'''Output
+{
+  "key": "value",
+  "list": []
+}
+'''</code></pre>
+
+        <p>And when we add to this list, it is the same as a regular list in Python.</p>
+
+        <p>We can use the append command to add values within the list:</p>
+
+<pre><code>dictionary = {}
+dictionary["key"] = "value"
+dictionary["list"] = []
+dictionary["list"].append("element")
+dictionary["list"].append(15)
+print(dictionary)
+'''Output
+{
+  "key": "value",
+  "list": ["element", 15]
+}
+'''</code></pre>
+
+        <p>Inner dictionaries are the same:</p>
+
+<pre><code>dictionary = {}
+dictionary["key"] = "value"
+dictionary["list"] = ["element", 15]
+dictionary["dictionary"] = {}
+dictionary["dictionary"]["innerKey"] = "innerValue"
+print(dictionary)
+'''Output
+{
+  "key": "value",
+  "list": ["element", 15],
+  "dictionary": {
+    "innerKey": "innerValue"
+  }
+}
+'''</code></pre>
+
+        <h2>Defaultdict</h2>
+
+        <p>If you try to call a key-value pair that does not exist, you get an error in Python.</p>
+
+<pre><code>dictionary = {}
+dictionary["key"] = "value"
+print(dictionary["key1"])
+'''Output
+Traceback (most recent call last):
+  File "C:\test.py", line 3, in &lt;module&gt;
+    print(dictionary["key1"])
+KeyError: 'key1'
+'''</code></pre>
+
+        <p>The error appears because there is no key value pair with "key1" as the key.</p>
+
+        <p>Because of this, an alternate dictionary is often used.</p>
+
+        <p>It is called "defaultdict".</p>
+
+        <p>Defaultdict sets values automatically by default when a key does not exist.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>from collections import defaultdict
+
+default_false_dict = defaultdict(bool)
+default_false_dict["key1"] = True
+default_false_dict["key2"] = True
+
+print(default_false_dict["key1"])  # True
+print(default_false_dict["key3"])  # False (default value)</code></pre>
+
+        <p>By default all missing keys will be a boolean.</p>
+
+        <p>Which boolean? False.</p>
+
+        <p>Now let us look at another example:</p>
+
+<pre><code>from collections import defaultdict
+
+default_false_dict = defaultdict(int)
+default_false_dict["key1"] = 50
+default_false_dict["key2"] = 14
+
+print(default_false_dict["key1"])  # 50
+print(default_false_dict["key3"])  # 0 (default value)</code></pre>
+
+        <p>A default dictionary with a default of integer is 0.</p>
+
+        <p>This is highly useful.</p>
+
+        <p>But what if you wanted some specific value?</p>
+
+        <p>Well defaultdict has you covered:</p>
+
+<pre><code>from collections import defaultdict
+
+default_false_dict = defaultdict(lambda: "default")
+default_false_dict["key1"] = 50
+default_false_dict["key2"] = 14
+
+print(default_false_dict["key1"])  # 50
+print(default_false_dict["key3"])  # "default"</code></pre>
+
+        <p>Just use the lambda operator and whichever value you want after.</p>
+
+        <h2>Dictionary.get(key, default_value)</h2>
+
+        <p>However, let us say you want to use a default value but don't want to create a defaultdict.</p>
+
+        <p>Let us see an example of that with the "get" function.</p>
+
+<pre><code>ordinary_dict = {"key1": 50, "key2": 65}
+
+# Example usage with get() to create a default value
+value1 = ordinary_dict.get("key1", None)
+value3 = ordinary_dict.get("key3", None)
+
+print(value1)  # 50
+print(value3)  # None (default value)</code></pre>
+
+        <p>The get function calls a key and if that key is missing uses None as a default value.</p>
+
+        <p>This is useful for algorithms and cases where you want different default values at different times.</p>
+
+        <h2>Dictionary.keys()</h2>
+
+        <p>This is a function which only works for dictionaries.</p>
+
+        <p>For this example let us revisit the previous example:</p>
+
+<pre><code>employees = {
+  "John": {
+    "US Citizen": True,
+    "age": 30,
+    "address": {
+        "city": "Mexico City",
+        "country": "Mexico"
+      }
+  },
+  "Joan": {
+    "US Citizen": False,
+    "age": 21,
+    "address": {
+        "city": "Austin",
+        "country": "USA"
+      }
+  }
+}</code></pre>
+
+        <p>Let us use employees as an example and get the keys of the dictionary:</p>
+
+<pre><code>print(employees.keys())
+'''Output
+dict_keys(['John', 'Joan'])
+'''</code></pre>
+
+        <p>The results are a custom datatype called dict_keys.</p>
+
+        <p>But for our purposes, think of them as a list.</p>
+
+        <p>We have a list of keys.</p>
+
+        <p>But notice the keys are only within the outer most dictionary.</p>
+
+        <p>When we call keys() it only shows the keys for that level of dictionary.</p>
+
+        <p>Inner dictionaries have to be called individually.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>print(employees["John"].keys())
+'''Output
+dict_keys(['US Citizen', 'age', 'address'])
+'''</code></pre>
+
+        <p>Within "John" you have "US Citizen", "age" & "address".</p>
+
+        <p>That inner dictionary's keys are called.</p>
+
+        <p>But look further, isn't "address"'s value also a dictionary?</p>
+
+        <p>Let us look into the keys for that one:</p>
+
+<pre><code>print(employees["John"]["address"].keys())
+'''Output
+dict_keys(['city', 'country'])
+'''</code></pre>
+
+        <p>We are calling the keys within the inner, inner dictionary.</p>
+
+        <p>Pretty cool right?</p>
+
+        <h2>Dictionary.values()</h2>
+
+        <p>The same type of information and format can be seen, but as values.</p>
+
+        <p>This only works for dictionaries.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>print(employees.values())
+'''Output
+dict_values([
+{
+  'US Citizen': True,
+  'age': 30,
+  'address': {
+    'city': 'Mexico City',
+    'country': 'Mexico'
+   }
+},
+{
+  'US Citizen': False,
+  'age': 21,
+  'address': {
+    'city': 'Austin',
+    'country': 'USA'
+  }
+}
+])
+'''</code></pre>
+
+        <p>The actual values in the key pair of the outer most dictionary is called.</p>
+
+        <p>This can be applied to inner dictionaries:</p>
+
+<pre><code>print(employees["John"].values())
+'''Output
+dict_values([
+  True,
+  30,
+  {
+    'city': 'Mexico City',
+    'country': 'Mexico'
+  }
+])
+'''</code></pre>
+
+        <p>At this inner level, .values() is calling a list of the value side of the key-pair.</p>
+
+        <p>We can go into an inner inner dictionary:</p>
+
+<pre><code>print(employees["John"]["address"].values())
+'''Output
+dict_values(['Mexico City', 'Mexico'])
+'''</code></pre>
+
+        <p>And, we go to the inner most dictionary and get all the values of "address".</p>
+
+        <p>Pretty cool right?</p>
+
+        <h2>Dictionary.items()</h2>
+
+        <p>All of the above applies, but for .items() we get the key: pair itself:</p>
+
+<pre><code>print(employees["John"].items())
+'''Output
+dict_items([
+  ('US Citizen', True),
+  ('age', 30),
+  ('address', {
+      'city': 'Mexico City',
+      'country': 'Mexico'
+    }
+  )
+])
+'''</code></pre>
+
+        <p>These key pairs are tuples of size 2. They are always tuples of size 2 because a key-pair is two items.</p>
+
+        <p>A tuple is a list in python which cannot be changed.</p>
+
+        <p>So what you are returning here with items is a list of unchangeable key-pairs.</p>
+
+        <p>You can get the key-pair of any inner dictionary:</p>
+
+<pre><code>print(employees["John"]["address"].items())
+'''Output
+dict_items([
+  ('city', 'Mexico City'),
+  ('country', 'Mexico')
+])
+'''</code></pre>
+
+        <p>Pretty awesome right?</p>
+
+        <h2>You can iterate through keys(), values() & items()</h2>
+
+        <p>The purpose of these three functions is to go through them and use them.</p>
+
+        <p>Take a look:</p>
+
+<pre><code>for key in employees.keys():
+    print(key)
+
+for value in employees.values():
+    print(value)
+
+for key, value in employees.items():
+    print("key: " + str(key) + " value: " + str(value))
+
+'''Output
+John
+Joan
+{'US Citizen': True, 'age': 30, 'address': {'city': ...
+{'US Citizen': False, 'age': 21, 'address': {'city': ...
+key: John value: {'US Citizen': True, 'age': 30, ...
+key: Joan value: {'US Citizen': False, 'age': 21, ...
+'''</code></pre>
+
+        <p>You can create all kinds of logic with dictionaries.</p>
+
+        <p>Often there are problems which can only be efficiently solved with dictionaries.</p>
+
+        <p>Anywho, I hope you learned something.</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Want to learn about slices?: <a href="an-easy-how-to-guide-to-slicing-lists-in-python-3.html">An Easy How-To Guide to Slicing Lists in Python 3</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

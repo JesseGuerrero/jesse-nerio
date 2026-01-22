@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why is Docker awesome? An Introduction to Using Docker Everyday</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Why is Docker awesome? An Introduction to Using Docker Everyday</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Docker has become an essential skill for advanced development. It is almost as common as Git.</p>
+
+        <p>Like version control, developer teams use Docker in everyday tasks.</p>
+
+        <p>We save our project, upload a Docker copy of the app to a registry and voila, mass distribution with no dependency issues.</p>
+
+        <p>Docker is worth the hassle. Yea it can take months to learn and fully understand. But you will use this software tool in most to all advanced projects where scalability or dependencies are needed.</p>
+
+        <p>Once it is learned it is not hard, like Git you just have to overcome that initially learning curve.</p>
+
+        <p>And what is nuts, a lot of other technologies depend on Docker. Kubernetes, scaling with AWS/Google Cloud/Azure, load balancers and so many other applications require you to know Docker before touching them.</p>
+
+        <p>But yes, this is a technology you generally learn as an intermediate or advanced developer.</p>
+
+        <p>If you want to know what the heck Docker is, read on!</p>
+
+        <h2>How to practice Docker</h2>
+
+        <p>The first and foremost way to learn Docker is through a Udemy course. I tried the various videos out there on YouTube but found them to be sub-par.</p>
+
+        <p>I bought a few Udemy courses, tried them out, then returned them to find which suited me best.</p>
+
+        <p>Here is the one I settled on in the end:</p>
+
+        <img src="../images/why-is-docker-awesome-img-0.png" alt="Udemy Docker course">
+
+        <p>What is cool, the instructor Maximilian Scharzmuller is a great teacher. He has been updating this course every few months, keeping it to the latest.</p>
+
+        <p>You can use this course as an encyclopedic reference after finishing as well. Highly recommend.</p>
+
+        <p>Outside a Udemy course I recommend packing all your applications into Docker and publishing them on Docker Hub.</p>
+
+        <img src="../images/why-is-docker-awesome-img-1.png" alt="Docker Hub">
+
+        <p>Docker Hub stores all public images online, just like GitHub. I recommend you purposefully <em>use existing images</em> whenever you try a new project.</p>
+
+        <p>Projects, applications and dependencies are called <em>images</em>.</p>
+
+        <h2>Develop with Docker</h2>
+
+        <p>For example, if you download a website as source code, it likely will have online Docker images integrated. Use it.</p>
+
+        <p>Try to run the application in Docker as you develop the app. You won't even have to install any dependencies. It is all automatically downloaded from Docker Hub.</p>
+
+        <p>Configuration files in Docker look like this:</p>
+
+<pre># Downloads Node from DockerHub
+FROM node:14
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "index.js"]</pre>
+
+        <p>At the very top of all configuration files we place our online images. These are whole applications. From Docker Hub, here we download Node 14 then setup an application for Node.</p>
+
+        <p>Pretty cool huh?</p>
+
+        <p>We even setup a working directory in the file. If we configure this right we can develop the source code without ever installing Node on our machine. Instead it is downloaded and pre-installed inside docker.</p>
+
+        <p>Have Docker installed, use an LLM to show you how to run the application in Docker as you code it.</p>
+
+        <p>This can be done by mapping directories into Docker. But yes, you can write code and have it run in Docker any way you like.</p>
+
+        <h2>LLMs are great at teaching Docker</h2>
+
+        <p>There is plenty of documentation on how to use Docker. Data science companies and individuals have scraped a lot of Docker material, making LLMs a great tutor.</p>
+
+        <p>As you go through a Udemy course you can ask your LLM questions on how concepts are used, commands used, and how all features come together.</p>
+
+        <p>Today I find myself asking my LLM to create Docker configuration files, commands and how to use all kinds of features.</p>
+
+        <p>So yes, you will benefit from asking an LLM questions.</p>
+
+        <h2>You need drivers and proper installation</h2>
+
+        <p>For more advanced development, like machine learning, or parallel computing, you will need to install drivers that hook into Docker.</p>
+
+        <img src="../images/why-is-docker-awesome-img-2.jpeg" alt="RTX 4070 Graphics Card">
+
+        <p>For example, when I run a PyTorch project I have to ensure I installed the <em>latest video card drivers for Docker</em>.</p>
+
+        <p>Video cards come with Docker drivers. So make sure its in there before running parallel computing and machine learning.</p>
+
+        <p>If this seems overwhelming it is only like that at the beginning. After learning all these processes Docker <em>saves time</em> and puts you in a league of your own to other developers.</p>
+
+        <p>Why? Because you can actually work on their projects (they use Docker).</p>
+
+        <h2>How does Docker work?</h2>
+
+        <p>Docker can be thought of as a partial virtual machine. It is a machine within a machine.</p>
+
+        <p>When we start up Docker we place an entire inner operating system in our computer.</p>
+
+        <p>It is an operating system within an operating system.</p>
+
+        <p>This inner operating system is called the Docker Engine.</p>
+
+        <p>The Docker Engine can have multiple operating systems stacked on top of it. This is like a supervisor managing employees.</p>
+
+        <p>Well really, it is an API for your Linux, Mac or Windows machine. The Docker engine uses hooks into your OS for using your hardware. When the Docker container hooks into your hardware, it links inner operating systems to say, your video card.</p>
+
+        <img src="../images/why-is-docker-awesome-img-3.jpeg" alt="Shipping containers representing Docker containers">
+
+        <p>What is insane about this process. Docker shares resources and existing dependencies across images. <strong>Docker shares all resources and the entire inner operating system does not repeat software.</strong></p>
+
+        <p>These shared operating systems run applications within it. The entire goal of Docker is to never have to install dependencies and simply run an app using a virtual copy of an entire machine.</p>
+
+        <p>For example, if we run a website in Docker, inside our virtual copy we will have all our libraries, Node and operating system pre-installed and usable for us.</p>
+
+        <p>We never have to run "npm install" or have to install our databases on out local computer. It is all done within Docker.</p>
+
+        <p>These virtual copies of whole applications + operating system are the <em>images</em>.</p>
+
+        <p>That is the beauty and major selling point of Docker. It is hyper lightweight due to its sharing of inner operating system, resources and inner hooks. And you don't need to install dependencies yourself.</p>
+
+        <p>Everything is way more efficient than say Virtual Box.</p>
+
+        <h2>Virtual machine vs Docker</h2>
+
+        <p>Virtual box or other virtual software makes an entire copy of the firmware, operating system and entire machine for <em>each image</em>.</p>
+
+        <p>Docker <em>shares all software and OS hooks</em> between images. Just wow! Super cool!</p>
+
+        <img src="../images/why-is-docker-awesome-img-4.png" alt="VM vs Docker Container comparison diagram">
+
+        <p>Where as your computer will lag with 5 virtual machines, your computer won't even use a quarter of the processing power with 5 Docker images.</p>
+
+        <p>If you want power and efficiency you want Docker.</p>
+
+        <h2>Docker's inner and outer network</h2>
+
+        <p>Inside the Docker engine is an entire local network. Across all the virtual copies you use among your inner apps, you can configure a mini network connection among your applications.</p>
+
+        <p>You can also port forward the inner network outward to the public and link inner and outer applications for yourself.</p>
+
+        <p>There are many features of Docker like this that make scaling your application easy once you know how.</p>
+
+        <p>You have to use this network feature when you hook together a Node application and a database like say MySQL.</p>
+
+        <p>They use inner ports and ports forwarded to the internet. The previously mentioned Udemy course covers all this.</p>
+
+        <h2>Portability</h2>
+
+        <p>Because we can imagine Docker images as an inner operating system for our applications we know it is portable.</p>
+
+        <p>We can copy paste the source code and run it anywhere. How is this possible?</p>
+
+        <p>Docker Hub makes this possible. The Hub is a humongous repository of software placed in images..</p>
+
+        <p>Docker software in your machine has an internet API built inside it. This means, to even use Docker you need an internet connection. Bummer I know, but hey that is how it works.</p>
+
+        <p>Docker will download whole dependent images such as MySQL, Node, Java, React and run it on your machine.</p>
+
+        <p>You simply need to create a configuration file called a dockerfile. Docker reads it and downloads everything for you, running the app with automation.</p>
+
+        <img src="../images/why-is-docker-awesome-img-5.png" alt="GitLab Dockerfile example">
+
+        <p>It will take a minute to get adjusted to this automation but you will find it very efficient to never have to install software on your own.</p>
+
+        <h2>Scalability in cloud and Kubernetes</h2>
+
+        <p>Due to the nature of this connection with Docker Hub, you can use Docker wrappers, like Kubernetes or Cloud software to distribute virtual copies of your applications on a fleet of machines.</p>
+
+        <p>Each machine will behave the same because of the virtual nature of Docker. It will even be efficient.</p>
+
+        <p>Scalability is an advanced concept, but it highlights how to use Docker in production. Many software contractors use Docker this way to run entire enterprises on a load balancer and API.</p>
+
+        <p>Using these technologies you can distribute your visitor requests to multiple exact copies of your application.</p>
+
+        <h2>Many job applications require Docker</h2>
+
+        <p>This technology can be a selling point in your job hunting for sure.</p>
+
+        <p>I applied to over 1,500 jobs and saw many job descriptions on Software Engineering.</p>
+
+        <p>From my personal estimation recruiter descriptions use Docker 30-40% of the time.</p>
+
+        <p>Those positions ask for <em>the basics</em>. Teams use Docker as a part of development, not always scaling.</p>
+
+        <p>You will benefit from learning Docker and I hope you are inspired to do so.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my <a href="https://a.co/d/b56kpK9">book on learning code</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>How an advanced developer looks: <a href="from-novice-to-ninja-what-it-really-means-to-be-an-advanced-developer.html">What It Really Means to Be an Advanced Developer</a></p>
+
+        <p>Why LLMs are so helpful: <a href="why-programming-with-a-language-model-rocks.html">Why programming with a language model rocks!</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

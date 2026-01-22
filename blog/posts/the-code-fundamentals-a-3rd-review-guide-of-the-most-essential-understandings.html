@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code Fundamentals: A 3rd Review Guide of the Most Essential Understandings</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>The Code Fundamentals: A 3rd Review Guide of the Most Essential Understandings</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>The goal of this article series is to overview a good chunk of the fundamentals.</p>
+
+        <p>Some, more granular, fundamentals are being skipped but we should be able to quickly go over important concepts.</p>
+
+        <p>If you wish to fill-in missing gaps or are overviewing the fundamentals for the first time, this is a good series for you.</p>
+
+        <p>Let's get into it...</p>
+
+        <h2>Class</h2>
+
+        <p>The very definition of a class is a data structure that uses primitives.</p>
+
+        <p>It is a data type.</p>
+
+        <p>Classes are data types and data types are classes.</p>
+
+        <p>The difference is that we can make our own data types.</p>
+
+        <p>Class comes from classification, or a classification of a memory container.</p>
+
+        <p>Thus we define how the data of a memory container is structured using class.</p>
+
+        <p>Classes can be placed inside of classes.</p>
+
+        <p>Data types can be placed inside of data types.</p>
+
+        <p>Because of this, the end result of going inside the deepest layers of data types inside data types, you find only primitives.</p>
+
+        <p>In the deepest class inside each class you will find all that remains is primitives.</p>
+
+        <p>Classes are all just abstractions of primitives moving in a certain fashion.</p>
+
+        <p>They are abstractions of abstractions.</p>
+
+        <p>In Java, let us take a look at the data type String as an example of how primitives are the deepest data structures in a data type..</p>
+
+        <p>String essentially look like this...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-0.png" alt="Java String class code example">
+
+        <p>Yea I gutted out all the functions and a few other primitives.</p>
+
+        <p>But at the end of the day it is just an array of bytes.</p>
+
+        <p>We can create classes like these ourselves, like this...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-1.png" alt="Coordinate class example">
+
+        <p>Also we can make classes within classes...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-2.png" alt="String and Person classes example">
+
+        <p>Notice the String class is inside the Person class.</p>
+
+        <p>This can be done for all classes.</p>
+
+        <h2>Constructors</h2>
+
+        <p>In the coordinate and String classes, notice there is a code block that exists in both.</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-3.png" alt="Constructor code blocks highlighted">
+
+        <p>The code block is named the same as the class.</p>
+
+        <p>This is a constructor.</p>
+
+        <p>It defines how to create a memory container, variable, data structure, based off of the class.</p>
+
+        <p>We can create the memory container and call it a variable.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-4.png" alt="Creating a Coordinate variable in Java">
+
+        <p>We basically create a Coordinate memory container AKA class.</p>
+
+        <p>We use the <em>new</em> key word in Java to say, "make a memory container" and call it the coordinate variable.</p>
+
+        <p>1, 2, 3 are the x, y, z.</p>
+
+        <p>Every language creates constructors differently.</p>
+
+        <p>Take a look at Javascript...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-5.png" alt="JavaScript constructor example">
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-6.png" alt="Python constructor example">
+
+        <p>In Javascript, constructors are straight up called constructor which is super interesting.</p>
+
+        <p>In Python it would look like this...</p>
+
+        <p>Notice the constructor here is "__init__".</p>
+
+        <h2>Class Properties</h2>
+
+        <p>Python is peculiar in the way it create constructors.</p>
+
+        <p>It doesn't even use the "new" keyword but simple uses the name of the class.</p>
+
+        <p>In the above examples you will see there is the "this" keyword in Java and Javascript. Or the "self" keyword in Python.</p>
+
+        <p>In addition you can see variables.</p>
+
+        <p>All variables and functions that are stored inside a class are known as properties.</p>
+
+        <p>Properties are the individual parts that make up a class.</p>
+
+        <p>In this String...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-7.png" alt="String class properties highlighted">
+
+        <p>The properties are the ones in a red square.</p>
+
+        <p>Properties are variables and functions inside a class so those fit the bill.</p>
+
+        <p>Here is another example...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-8.png" alt="Coordinate class properties in Java">
+
+        <p>And also, take a look at Python's...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-9.png" alt="Python class properties">
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-10.png" alt="JavaScript class properties">
+
+        <p>The three functions and the three x, y, z are properties.</p>
+
+        <p>The same is true for Javascript...</p>
+
+        <p>Notice also, some languages don't even have you write out the properties completely, like in Java.</p>
+
+        <p>You can literally make this.x instead of defining it.</p>
+
+        <p>This is what I mean...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-11.png" alt="JavaScript this.x shorthand">
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-12.png" alt="Java property definition">
+
+        <p>Javascript</p>
+
+        <p>Java</p>
+
+        <h2>"this" keyword</h2>
+
+        <p>In the above examples you will also notice the <em>this</em> keyword.</p>
+
+        <p>This directly says we are talking about a property.</p>
+
+        <p>Sometimes it can be confusing when there are two x's, like in the coordinate class.</p>
+
+        <p>Notice...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-13.png" alt="Two x variables in Coordinate class">
+
+        <p>There are two x's.</p>
+
+        <p>One from the constructor and one from the class property.</p>
+
+        <p>We directly say this.x from the properties is x from the constructor.</p>
+
+        <h2>Algorithm</h2>
+
+        <p>An algorithm is a repeatable series of steps which allow you to solve a problem.</p>
+
+        <p>Algorithms are the entire goal of computation.</p>
+
+        <p>It is for solving a problem.</p>
+
+        <p>An example of an algorithm is to print 15 seven times.</p>
+
+        <p>Here are two examples of algorithms for that:</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-14.png" alt="Print 15 seven times - manual approach">
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-15.png" alt="Print 15 seven times - loop approach">
+
+        <p>Both solve the problem of print 15 seven times, but they do it entirely different.</p>
+
+        <h2>Space complexity</h2>
+
+        <p>How complex is a code source?</p>
+
+        <p>We measure it in memory size and how long the code takes from start to finish.</p>
+
+        <p>This measurement of memory is known as space complexity.</p>
+
+        <p>This measurement of time is, guess it, time complexity.</p>
+
+        <p>As strange as it sounds algorithms require memory.</p>
+
+        <p>Algorithms are simply a manipulation of memory.</p>
+
+        <p>It is impossible to create algorithms like the above without memory.</p>
+
+        <p>No matter what you do nothing can excuse an algorithm from taking memory.</p>
+
+        <p>But how much memory is it taking?</p>
+
+        <p>Typically for an application you can right click the project folder and click properties to view the size.</p>
+
+        <p>That is for applications.</p>
+
+        <p>But we are talking for algorithms here.</p>
+
+        <p>This is small pieces of code which solve small problems.</p>
+
+        <p>Perhaps the size of 20 lines or so.</p>
+
+        <p>How do we measure the size of 20 lines?</p>
+
+        <p>We do it with space complexity.</p>
+
+        <h2>Big O for space complexity</h2>
+
+        <p>This is an <em>estimation</em> of how complex a small portion of your code is.</p>
+
+        <p>We can measure the space complexity of smaller bits of code by counting the space data structures take.</p>
+
+        <p>So the idea is to take primitives and count how many there are inside a data structure.</p>
+
+        <p>Here is an example:</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-16.png" alt="Array with O(3) space complexity">
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-17.png" alt="Two sum algorithm example">
+
+        <p>This is big O of 3 or O(3).</p>
+
+        <p>So we say this code portion is Big O of 3,</p>
+
+        <p>When we want to think of big O we think O(N).</p>
+
+        <p>Or big O of N.</p>
+
+        <p>O stands for complexity and N stands for the number of primitives.</p>
+
+        <p>So when we say O(3) we are saying the complexity is 3 primitives throughout the program.</p>
+
+        <p>In addition time complexity is also big O.</p>
+
+        <p>Always when you see O(N) think about it as complexity of either time or space.</p>
+
+        <p>If you are presenting a small code snippet and want to describe its complexity you use big O.</p>
+
+        <p>Big O just means either time complexity or space complexity.</p>
+
+        <p>But you specifically have to tell the listener whether or not it is time complexity or space complexity because it could be either or.</p>
+
+        <p>The entire purpose of big O is to give you an intuitive sense of how complex your code is at runtime.</p>
+
+        <p>It is not meant to be used in every program you ever make. It is instead used for you to understand what type of space complexity you are taking.</p>
+
+        <p>This way you do not create 15n^99 complexity and run out of disk space without predicting it.</p>
+
+        <p>After taking the time to learn big O notation you should be able to understand how to create more efficient programs.</p>
+
+        <h2>Time complexity</h2>
+
+        <p>Time complexity is the measurement of time for a piece of code.</p>
+
+        <p>Typically we can do this for an application by starting a timer, then starting an application, then when the application ends we stop the timer.</p>
+
+        <p>We get the number of seconds the application took and we move on.</p>
+
+        <p>But with smaller code we cannot do this.</p>
+
+        <p>Often we would have to run small amounts of code 50+ times and get the average to truly compare between code sources.</p>
+
+        <p>We want a reliable and easy way to <em>estimate</em> how long code would take to run.</p>
+
+        <p>In addition we want to do this <em>as we code it</em>.</p>
+
+        <p>Is this possible?</p>
+
+        <p>How would we measure time without a timer?</p>
+
+        <p>Well the first thing is we count memory changes.</p>
+
+        <p>In space complexity we counted primitives in memory.</p>
+
+        <p>In time complexity we count the number of memory changes.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-18.png" alt="Memory changes example">
+
+        <p>Here we have 3 memory changes.</p>
+
+        <p>We assume multiplication, addition and division have the same unit of time per memory change.</p>
+
+        <p>Although this is not true, we just assume it.</p>
+
+        <p>Every memory change is an additional piece of time.</p>
+
+        <p>There is a difference between measuring in milliseconds and measuring memory changes.</p>
+
+        <p>Milliseconds measure the true time complexity.</p>
+
+        <p>Memory changes give us an estimation.</p>
+
+        <p>If we were to measure real time complexity in terms of milliseconds Python would take many times more milliseconds for every memory change than say C.</p>
+
+        <p>This is due to Python being written in C.</p>
+
+        <p>Most Python memory changes actually call many memory changes in C in order to make it simple for the developer.</p>
+
+        <p>But usually we are only measuring within one language as we write it so it is safe to assume as we write the code, all memory changes are approximately the same time.</p>
+
+        <p>But because we are measuring it in static memory change units and not milliseconds we can say it is O(N) with n being the number of memory changes.</p>
+
+        <h2>Big O for time complexity</h2>
+
+        <p>This is similar to space complexity in that we use big O to measure the complexity with some number N, like O(N).</p>
+
+        <p>But instead of measuring the number of primitives in the data structures of the code snippet, we are measuring the number of <em>memory changes</em>.</p>
+
+        <p>Every instance of memory change are considered a number.</p>
+
+        <p>So lets see an example:</p>
+
+        <img src="../images/the-code-fundamentals--a-3rd-review-guide-of-the-most-essential-understandings---img-19.png" alt="O(3) time complexity example">
+
+        <p>We have 3 memory changes in 3 lines.</p>
+
+        <p>N is the number of memory changes and O stands for complexity.</p>
+
+        <p>So we say the complexity is of 3 memory changes or O(3) for short.</p>
+
+        <p>The entire purpose of learning big O for time complexity is to intuitively be able to measure the how long your code will take to run <em>as you code it</em>.</p>
+
+        <p>After practicing making big O notation for time and space complexity you should be able to create more efficient code by the intuitively measuring how much space and time a code takes relative to the rest of the language.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Why fundamentals are important: <a href="why-coding-fundamentals-are-important-questions-you-should-be-asking.html">Why Coding Fundamentals Are Important & Questions You Should Be Asking</a></p>
+
+        <p>What is Computer Science: <a href="a-short-and-insightful-answer-what-is-computer-science.html">A Short and Insightful Answer: What is Computer Science?</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

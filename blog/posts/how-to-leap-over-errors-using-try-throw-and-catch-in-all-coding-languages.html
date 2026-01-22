@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Leap Over Errors Using Try, Throw and Catch in All Coding Languages</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        .caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Leap Over Errors Using Try, Throw and Catch in All Coding Languages</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Exceptions are used in all of programming.</p>
+
+        <p>I would consider this topic part of the fundamentals of computer programming.</p>
+
+        <p>Exceptions are used in making all applications robust and understanding them will take out a great deal of programming mysticism for you.</p>
+
+        <p>Let's get into it...</p>
+
+        <h2>What is an exception?</h2>
+
+        <p>An exception is a particular piece of code which your computer skips.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-0.jpeg" alt="Person leaping over obstacles">
+        <p class="caption">Photo by Gabriel Jimenez</p>
+
+        <p>Your computer says I will run all of this application <em>except this part</em>.</p>
+
+        <p>While the computer is running if your computer were to run this particular piece of code, you would experience a computer <em>failure</em>.</p>
+
+        <p>If the code were to actually be ran there could be system corruption or a <em>computer shutdown</em>.</p>
+
+        <p>At the lowest level of programming these application exceptions or potential system failures are all already handled.</p>
+
+        <p>If we were back in the 1990s many of these cases would not be handled.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-1.jpeg" alt="Back to the Future meme - Don't go back to the 1990s">
+
+        <p>Programmers back then often crashed their computer while coding because these issues actually ran with no code checking ahead for the crashable code.</p>
+
+        <p>After decades of creating software, operating systems, programming languages and executing libraries we have covered all potential failure cases by skipping them before they happen.</p>
+
+        <p>These failure cases are all skipped at the lowest level because they have been experienced in the past.</p>
+
+        <p>This is the way our computers have become so robust from crashing up into the 2020s.</p>
+
+        <p>Today it is to the point where we have to <em>try to fail</em> our systems because low level programmers have made our computers so robust with exception cases.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-2.jpeg" alt="Pikachu meme - When your computer can't crash no matter what you do">
+
+        <p>Instead of crashing we just stop the application code right before the code that would cause a crash.</p>
+
+        <p>This is the whole point of stopping code before the application crashes us.</p>
+
+        <h2>What does it mean to throw an exception?</h2>
+
+        <p>If the error is seen ahead of time, the low level code interrupts your application and say "<em>hey stop!</em>" right before potential failure.</p>
+
+        <p>This "hey stop!" is known as <em>throwing an exception</em> also known as an interrupt.</p>
+
+        <p>Let us run the code, <em>except this part</em>.</p>
+
+        <p>The exception is the <em>reason name</em> and the interrupt or <em>throw</em> is the <em>stop</em>.</p>
+
+        <p>If you wanted to see at the lowest level code how an exception works, here is an example...</p>
+
+<pre>#include &lt;stdio.h&gt;
+
+// Function that "throws" an exception by returning -1 on error
+int divide(int numerator, int denominator) {
+    if (denominator == 0)
+        // Throw exception: Division by zero
+        return -1;
+    // Perform the division
+    return numerator / denominator;
+}
+
+int main() {
+    int result;
+    result = divide(10, 0);
+    if (result != -1)
+        printf("Result of division: %d\n", result);
+    else
+        printf("Error code: Division by zero\n");
+    return 0;
+}</pre>
+
+        <p>In this C code we are checking ahead of time for a divide by zero.</p>
+
+        <p>We return -1 if there is a 0 in the bottom division and we skip the actual divide.</p>
+
+        <p>This is what operating system developers and low level coders did to create 1000s of future error cases to skip potentially disastrous code.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-3.jpeg" alt="Shoulder throw wrestling move">
+        <p class="caption">Shoulder throw is Public Domain</p>
+
+        <p>Your low level applications <em>throw</em> you ahead a few lines or interrupts you before dividing by zero.</p>
+
+        <p>If we did not have this check ahead of time who knows what would happen to our computers.</p>
+
+        <p>Because we are in the 2020s I am sure the operating system will throw you ahead some lines at an even lower level but yea the program would crash to say the least.</p>
+
+        <p>Without the lower level code checking for you, you would have to predict every potential piece of code that would crash your computer.</p>
+
+        <p>Then you would have to stop or skip ahead the application before that point.</p>
+
+        <h2>What types of potential errors are handled?</h2>
+
+        <p>When you check ahead for potential errors if a potential error is found you throw an exception.</p>
+
+        <p>Another word for this is <em>triggering an exception</em>.</p>
+
+        <p>Throw and trigger are the same thing but high level coders all use the word <em>throw</em>.</p>
+
+        <p>If you use the word trigger they will look at you funny.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-4.png" alt="Is it triggered or throw? America explain meme">
+
+        <p>High level coders believe triggering an exception means either the programming language or the operating system is erroring out.</p>
+
+        <p>They often do not know its to prevent system failure.</p>
+
+        <p>They believe <em>throw</em> means you wrote it and <em>trigger</em> means the language or OS developer wrote it.</p>
+
+        <p>Tricks on them trigger and throw means the same thing in low level coding because, well, someone had to code it, right?</p>
+
+        <p>Someone had to stop the computer from failing by <em>throwing</em> it.</p>
+
+        <p>But yea throw, trigger, same thing but high level coders say "triggering an exception" when the exception is built-in the language or OS.</p>
+
+        <p>Here are some example error cases those low level coders baked into the language and OS ahead of time for us.</p>
+
+        <p><strong>Dividing by zero</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-5.png" alt="Divide by zero exception code example">
+
+        <p><strong>Index out of bounds</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-6.png" alt="Index out of bounds exception code example">
+
+        <p><strong>File not found</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-7.png" alt="File not found exception code example">
+
+        <p><strong>Null object</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-8.png" alt="Null object exception code example">
+
+        <p><strong>Type error</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-9.png" alt="Type error exception code example">
+
+        <p><strong>Key error</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-10.png" alt="Key error exception code example">
+
+        <p><strong>Many more...</strong></p>
+
+        <p>What is cool, you can make your own error cases and throw exceptions based on your ahead of time code.</p>
+
+        <p>We will see how to make our own exception cases later in the article.</p>
+
+        <p>For now lets see how to handle these built-in errors the low level coders put in for us.</p>
+
+        <h2>How to use try catch</h2>
+
+        <p>In higher level languages we have the built-in ability to throw exceptions with <em>way less code</em>.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-11.jpeg" alt="Binary code background">
+        <p class="caption">Photo by Marco Verch</p>
+
+        <p>If we were to do it in C or Assembler we would have to create every case where the error would be, then throw ourselves ahead a few lines manually.</p>
+
+        <p>Instead, with higher level programming languages we have built-in ways to do this quicker, easier and with more readability.</p>
+
+        <p>We do this with the keywords "throw, try, catch and finally".</p>
+
+        <p>The whole point of throw, try, catch, etc. is to save you from writing the future case before an error and write code in less lines.</p>
+
+        <p>Let's look at two examples...</p>
+
+        <p><strong>Python</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-12.png" alt="Python try except example">
+
+        <p><strong>Java</strong></p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-13.png" alt="Java try catch example">
+
+        <p>In both examples above right before dividing 10 by zero the application interrupts and is thrown into the "except" AKA "catch" portion of the code.</p>
+
+        <p>This is exactly like check ahead and skipping however instead of writing the entire future error check yourself it is done by the programming language.</p>
+
+        <p>You do not run the division by zero or anything after result = 10 / 0.</p>
+
+        <p>It is just thrown ahead.</p>
+
+        <p>What is cool is that you can continue running the application.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-14.png" alt="Python while loop with try except example">
+
+        <p>By wrapping a while loop around it we will skip bottomNumber being 0, then print future results.</p>
+
+        <h2>The different phases of an exception</h2>
+
+        <p>There are three phases of an exception.</p>
+
+        <p>The phases use keywords try, catch and finally.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-15.png" alt="Try except finally structure example">
+
+        <p>Inside the try phase, we are trying code in case of an exception.</p>
+
+        <p>If we reach a potential error we go the the catch AKA except phase.</p>
+
+        <p>Afterward we always go to a finally stage which is the code after the error.</p>
+
+        <p>Often you do not need finally, as the code will just continue running.</p>
+
+        <p>But I wanted to show you that because you will see finally in a lot of languages.</p>
+
+        <h2>You should make a catch for every error case</h2>
+
+        <p>If you are running a bulk of code with potentially two or three different error types you can catch each one and do something different for each.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-16.png" alt="Java multiple catch blocks example">
+        <p class="caption">Java</p>
+
+        <p>Notice we have 3 different errors inside the try block.</p>
+
+        <p>We handle each one from top to bottom.</p>
+
+        <p>Once an exception is thrown we check errors in the order we wrote them.</p>
+
+        <p>This order is arbitrary but once an error is found the application checks all your catch code blocks in this order:</p>
+
+        <ol>
+            <li>Divide by zero</li>
+            <li>Null pointer</li>
+            <li>Type error</li>
+            <li>General error</li>
+        </ol>
+
+        <p>We can choose any order we want but you always want to check the more specific errors first.</p>
+
+        <p>If we were to put a general error exception first, the rest would not run.</p>
+
+        <p>So if we did this...</p>
+
+        <ol>
+            <li>General error</li>
+            <li>Divide by zero</li>
+            <li>Null pointer</li>
+            <li>Type error</li>
+        </ol>
+
+        <p>Numbers 2-4 would never run.</p>
+
+        <p>This is because we are checking a general error first which covers all erorrs.</p>
+
+        <p>This leaves no room for future more specific errors and the other catches do not run.</p>
+
+        <h2>How to throw an exception yourself</h2>
+
+        <p>What is cool, try catch blocks also check errors deep into inner functions and classes.</p>
+
+        <p>It doesn't matter how deep into a stack you go, throw exceptions follow up the stack all the way to main or the top of the application.</p>
+
+        <p>It looks for a catch.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-17.png" alt="Java throw exception from inner function example">
+
+        <p>Prints "Error: This is an exception!"</p>
+
+        <p>Notice I threw an exception in an inner function.</p>
+
+        <p>This means I am telling the application, "<em>hey stop!</em>" right before an error.</p>
+
+        <p>In this case we are preventing result = 10/0; from happening.</p>
+
+        <p>The inner function stops right before the division, goes up the stack and is <em>caught</em> in main.</p>
+
+        <h2>How do I make my own Exception?</h2>
+
+        <p>An exception is a class.</p>
+
+        <p>Every exception type from DivideByZero to NullPointer is an extension of Exception.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-18.png" alt="ArithmeticException extends RuntimeException">
+        <p class="caption">DivideByZero is an extension of RuntimeException</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-19.png" alt="RuntimeException extends Exception">
+        <p class="caption">RuntimeException is an extension of Exception</p>
+
+        <p>So when we need to create our own exception for perhaps our own Python, Java, C++, etc. library we can extend the exception class.</p>
+
+        <p>Take a look at a custom made exception in Java:</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-20.png" alt="Custom NotEmailStringException example in Java">
+
+        <p>In the above we are checking an email is formatted correctly.</p>
+
+        <p>We then check if our email is valid.</p>
+
+        <p>Then if it is not we throw our custom exception</p>
+
+        <p>It is a simple exception which just passes a message "Invalid email format".</p>
+
+        <p>This is basic, but you can see how we create our own exception class in a majority of programming languages.</p>
+
+        <p>Of course we will always need to check our error case ahead of time before throwing our custom exception.</p>
+
+        <p>But, this makes your code abstractions highly intuitive for someone using your code if you were to say make a framework or library.</p>
+
+        <h2>Where do I use exceptions?</h2>
+
+        <p>Exceptions are used to make your application robust in specific cases.</p>
+
+        <p>A majority of web development, games, mobile apps and tick based editors use a series of exceptions to continue a loop.</p>
+
+        <p>Most of these programs have a core loop, like a while loop, that makes your application highly interactive.</p>
+
+        <p>Continuing a loop in the case of an error is <em>the most</em> common use case of throwing an exception.</p>
+
+        <p>The majority of applications out there are running on a loop, including the website you are on right now and the browser you are running on your phone or computer.</p>
+
+        <p>Inside that loop in your application right now there are a bunch of exception cases saving you from a crashing device or program.</p>
+
+        <p>These loops can just continue on when a file is not found, a network connection doesn't pan out, a graphics programming render has bad math, there is a security issue and many more exception cases!</p>
+
+        <p>Not only this, try catch exceptions are considered <em>best practice</em> for creating programs that don't crash.</p>
+
+        <p>So, this is highly useful stuff and it applies to <em>every</em> application.</p>
+
+        <h2>Use an LLM to add exceptions</h2>
+
+        <p>Because of how widely documented exceptions are, LLMs are fantastic at creating exception cases for you.</p>
+
+        <p>You can copy and paste your code into an LLM and ask it to create a try catch block for you.</p>
+
+        <p>The only thing I would say about that, is to minimize how large your try block is.</p>
+
+        <img src="../images/how-to-leap-over-errors-using-try,-throw-and-catch-in-all-coding-languages---img-21.png" alt="Keep try blocks small example">
+
+        <p>Create smaller try blocks.</p>
+
+        <p>Making 100 line try blocks is really ugly and makes the code hard to read.</p>
+
+        <p>So if you ask an LLM to make a try catch block, just make sure its small enough to be readable.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>How the greatest power of code is abstraction: <a href="how-the-greatest-power-of-code-is-abstraction.html">How the Greatest Power of Code Is Abstraction</a></p>
+
+        <p>Why programming fundamentals are so good: <a href="why-coding-fundamentals-are-important-questions-you-should-be-asking.html">Why Coding Fundamentals Are Important & Questions You Should Be Asking</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

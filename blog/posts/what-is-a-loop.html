@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a loop?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>What is a loop?</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>When coding it is common to need to repeat lines of code. Loops help us do this in mass for all our coding needs. You can stuff anything into a block or section of code and make it repeat again and again.</p>
+
+        <p>This repetition is the center of all applications you use. This software I am using to type-it cycles on a while loop. I am using the Medium platform which likely uses Node on a loop. Your browser cycles with a while loop, your video games cycle one massive while loop. YouTube, Instagram, heck even ChatGPT cycles on a while loop.</p>
+
+        <p>If you were to get on GitHub and look through most software-you are likely to find a <em>main loop</em>. A main loop controls a <em>main thread</em> from which all other code branches.</p>
+
+        <p>Here is an example:</p>
+
+        <img src="../images/what-is-a-loop-img-0.png" alt="2012 Runescape Java Client">
+
+        <p>2012 Runescape Java Client</p>
+
+        <p>Notice the for loop here. That is the main loop for the entire Runescape client in 2012. All operations related to your Runescape game play spawn from that for loop. Game engines, graphics applications, rendering and anything with a UI does this.</p>
+
+        <h2>The different kinds of loops</h2>
+
+        <p>If you dedicate yourself to programming you <em>will</em> end up creating loops like these. When you do-different kinds of loops exist for specific use cases. You goal should be to learn which type of loop best fits your code logic.</p>
+
+        <p>So lets start with three specific loops. They are the <em>for</em>, <em>while</em> and <em>do while</em> loops. These are the essential loops you will use in almost every application you write.</p>
+
+        <h2>Basic For loop</h2>
+
+        <p>The for loop uses the "for" keyword and creates 3 states which are pieced together. Take a look...</p>
+
+<pre>for (let i = 0; i &lt; 5; i++)
+    console.log(i); // prints 0 1 2 3 4</pre>
+
+        <p>Take a look at that code. It prints 0 1 2 3 4. Console.log is the print function which is repeated 5 times. It goes through 3 steps:</p>
+
+        <ol>
+            <li><strong>Initialization</strong>: 'let i = 0;'</li>
+            <li><strong>Condition</strong>: 'i &lt; 5;'</li>
+            <li><strong>Update</strong>: 'i++'</li>
+        </ol>
+
+        <p>We start 'i' off at zero. Then set a permanent condition to only continue looping if 'i' is less than 5. Lastly at the end of each loop block we add one to 'i'.</p>
+
+        <p>With this we repeat the entire block under the loop 0 1 2 3 4 times. Which ends up being five times.</p>
+
+        <p>Lets see a bigger block used in a for loop:</p>
+
+<pre>for (let i = 0; i &lt; 5; i++) {
+    console.log('This is iteration number:', i);
+    let square = i * i;
+    console.log('The square of', i, 'is', square);
+    console.log('Hello, World!');
+    console.log('Iteration completed.\n');
+}</pre>
+
+        <p>That entire block will be repeated 0 1 2 3 4 times which is five times...</p>
+
+        <h2>Array for loop</h2>
+
+        <p>We can select an element from an array like so....</p>
+
+<pre>const fruits = ['apple', 'banana', 'cherry'];
+for (let i = 0; i &lt; fruits.length; i++) {
+    console.log(fruits[i]);
+}</pre>
+
+        <p>It's the same thing as a basic for loop but instead of a plain number we use the length.</p>
+
+        <p>We can short hand this like so...</p>
+
+<pre>const fruits = ['apple', 'banana', 'cherry'];
+for (const fruit of fruits) {
+    console.log(fruit);
+}</pre>
+
+        <p>These three versions of a for loop are used in <em>all languages</em> and everywhere out there in software. You cannot escape it.</p>
+
+        <p>They <strong>do</strong> have different use cases. For some problems you need to know the current value of 'i'. In others it is cleaner to just use the short hand. Others don't even have an array. You learn when it is appropriate as you use them.</p>
+
+        <h2>While loop</h2>
+
+        <p>The particular use case of a while loop is their infinite cycling. You can run a while loop forever, unlike a for loop....</p>
+
+<pre>while(true)
+    console.log("hello");</pre>
+
+        <p>As long as what is in parenthesis is true, the loop will run indefinitely. Even with big blocks and cycles.</p>
+
+<pre>while(true) {
+    console.log('This is iteration number:', i);
+    let square = i * i;
+    console.log('The square of', i, 'is', square);
+    console.log('Hello, World!');
+    console.log('Iteration completed.\n');
+}</pre>
+
+        <p>This will repeat all 5 lines of that code forever. Lets look at this...</p>
+
+<pre>let x = 0;
+while(x != 5) {
+    x = x + 1;
+    console.log(x) // Prints 1 2 3 4 5
+}</pre>
+
+        <p>We run an infinite loop-a while loop. But we set an exit condition. So long as x is not 5 we can continue. So the code prints 1 2 3 4 5 then exits the loop.</p>
+
+        <h2>Do-while loop</h2>
+
+        <p>If we wanted to shift the values over. Or move the logic a little bit we can use a <em>do while</em> loop.</p>
+
+<pre>let i = 0;
+do {
+    console.log(i); //prints 0 1 2 3 4
+    i++;
+} while (i &lt; 5);</pre>
+
+        <p>The only difference between <em>do while</em> and a while loop is when the condition is checked. The condition is checked last and not first. This allows you to use a certain logic with it.</p>
+
+        <p><em>Do while</em> loops are not a requirement for any project. All logic can be adjusted to use a regular while loop. In real programming <em>do while</em> loops are rare.</p>
+
+        <h2>How to continue</h2>
+
+        <p>For all loops we can use two important keywords, <em>break</em> and <em>continue</em>. Lets see an example...</p>
+
+<pre>for (let i = 0; i &lt; 5; i++) {
+    if (i == 3)
+        continue; // Skip 3
+    console.log(i); // prints 0 1 2 4
+}</pre>
+
+        <p>This is the same for loop as before but instead of printing 0 1 2 3 4 we want to print 0 1 2 4, skipping the 3. The same can be done for the while loop...</p>
+
+<pre>let x = 0;
+while(x != 5) {
+    x = x + 1;
+    if(x == 3)
+        continue;
+    console.log(x) // Prints 1 2 4 5
+}</pre>
+
+        <h2>How to break</h2>
+
+        <p>Okay now lets use these two examples but with break.</p>
+
+<pre>for (let i = 0; i &lt; 5; i++) {
+    if (i == 3)
+        break; // Exit at 3
+    console.log(i); // prints 0 1 2
+}</pre>
+
+        <p>We use the same for loop but instead of skipping at 3 we exit at 3. The same is true to while loops...</p>
+
+<pre>let x = 0;
+while(x != 5) {
+    x = x + 1;
+    if(x == 3)
+        break; // Exit at 3
+    console.log(x) // Prints 1 2
+}</pre>
+
+        <p>At x == 3 we break and we print 1 and 2.</p>
+
+        <h2>More loops</h2>
+
+        <p>These loops are less commonly used but still useful. I have been coding for 7 years and know all 6 of these types of loops very well. These are great for when you are coding something that requires them. You won't get confused if you can use them.</p>
+
+        <h2>For each loop</h2>
+
+        <p><em>For each</em> loops are the most common here. They are applied to a stream of data where each element is acted upon. Almost all languages have these. JavaScript in particular uses <em>for each</em> quite a lot.</p>
+
+        <p>In languages like Python or Java you have to code these intentionally. You do not stumble on for each looping casually. There is usually a use case you are fulfilling.</p>
+
+        <p>But in JavaScript the language itself leads the programmer into using for each loops. Here is an example:</p>
+
+<pre>const fruits = ["Apple", "Banana", "Cherry"];
+fruits.forEach((fruit) =&gt; {
+    console.log(fruit); // Prints "Apple Banana Cherry"
+});</pre>
+
+        <p>We take an array <em>fruits</em> and select each element to print out. From this <em>forEach</em> loop we create an instance of each element then do what we like.</p>
+
+        <h2>Iterator-based loops</h2>
+
+        <p>In languages like Python and Java, iterators and iterables are used to traverse through elements of a collection or sequence. These loops typically use methods like <code>next()</code> to iterate through the elements.</p>
+
+        <p>It looks something like this...</p>
+
+<pre>fruits = ["Apple", "Banana", "Cherry"]
+iterator = iter(fruits)
+while True:
+    try:
+        fruit = next(iterator) # Each element
+        print(fruit)
+    except StopIteration:
+        break</pre>
+
+        <p>We separate the fruits array into individual memory then select one at a time. It is very similar to <em>forEach</em>. The use case for iterators is to break up some large data into smaller bits of memory. It uses way less memory this way. I hardly find myself using these but I could see them being used a lot when needed.</p>
+
+        <h2>Recursive loops</h2>
+
+        <p>Recursion is a function or method that calls itself. This process repeats until a final case is reached then exits. Take a look</p>
+
+<pre>function printArrayElement(arr, i = 0) {
+    if (i &gt;= arr.length)
+        return;
+    console.log(arr[i]); // this is the action
+    printArrayElement(arr, i + 1);
+}
+const fruits = ["Apple", "Banana", "Cherry"];
+printArrayElement(fruits);</pre>
+
+        <p>We call the function within itself and perform some action. In this case we print the element of the array. We get "Apple Banana Cherry". Once we reach the length of the array we exit the recursion.</p>
+
+        <h2>Nesting loops</h2>
+
+        <p>All of these loops can be nested within each other. Nesting loops is very common. Take a look at this 2D array...</p>
+
+<pre>const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+for (let i = 0; i &lt; matrix.length; i++)
+    for (let j = 0; j &lt; matrix[i].length; j++)
+        console.log(matrix[i][j]); // prints 1 2 3 4 5 6 7 8 9</pre>
+
+        <p>Here we print out the entire matrix by going through each element and printing it out. The entire inner <em>for loop</em> completes before moving to the next element in the outer loop. You can nest any loop within any loop.</p>
+
+        <h2>Learn to choose the right type of loop</h2>
+
+        <p>Each type of loop fits a piece of logic differently. Reading & writing code, language models and trial & error teach us the use cases.</p>
+
+        <p>As an example-for loops are good for finite loops where you need it to end. These are great for when you cannot afford infinite looping. While loops are great for you need an infinite loop with a few exit conditions. Do while is great when you need infinite looping but you need to test the first loop.</p>
+
+        <p>In all my time coding I have only used recursive loops a 1 or 2 times in real coding. Everything possible in recursive loops is also possible in <em>for</em> or <em>while</em> loops.</p>
+
+        <p>However it is still good to know how to use them. For recursive loops LeetCode is good practice. For iterator based, you need to encounter a use case for them as you code.</p>
+
+        <p>I remember Unity and C# mods from video games used iterator looping. Outside that I never had to use them. One day in the future you may need them as part of a framework or SDK. When you do use them you will learn on the spot.</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A How-To Guide for Ignoring Files in a Git Project Using .gitignore</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>A How-To Guide for Ignoring Files in a Git Project Using .gitignore</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>In every project you may see a small file and wonder what it is.</p>
+
+        <p>Most projects that use Git have it.</p>
+
+        <p>Cloning is smooth, excluding and including files for some mysterious reason.</p>
+
+        <p>Ignoring files when uploading and downloading a code source is a very important part of using Git.</p>
+
+        <p>As a contributor to a source you may wonder how ignoring files works and the use cases for each method.</p>
+
+        <p>Let's talk about how this is done.</p>
+
+        <h2>What is .gitignore?</h2>
+
+        <p>When using Git with a code project you have the option to create commits based on file changes.</p>
+
+        <img src="../images/gitignore-guide---img-0.png" alt="Git commits example">
+
+        <p>Often developers create either huge commits or small micro commits each with a varying number of changes.</p>
+
+        <p>Within those changes new files & folders will popup.</p>
+
+        <p>Some will be inappropriate to place to the public.</p>
+
+        <p>Examples of these include credentials, personal notes or executables only you are using.</p>
+
+        <p>In these cases you have the option to ignore the file or folder in Git.</p>
+
+        <p>This way when you upload the project to say GitHub, GitLab or others you do not upload that specific file or folder.</p>
+
+        <p>It remains local to the computer and nowhere else.</p>
+
+        <p>This is done inside a .gitignore file.</p>
+
+        <p>.gitignore is automatically detected within your Git project by Git once you add it to the current commit or create a new commit.</p>
+
+        <p>Like the .git folder, Git considers the contents of .gitignore in all changes to a project.</p>
+
+        <p>Here is what it looks like...</p>
+
+        <img src="../images/gitignore-guide---img-1.png" alt="Project structure with .gitignore file">
+
+        <p>All you have to do is ensure your project is a Git project then create the file in either the root directory or subdirectories.</p>
+
+        <p>It is simply a file which lists the ignored files and folders line by line.</p>
+
+        <p>The patterns within .gitignore reference the current directory it itself is in.</p>
+
+        <p>You cannot use full directory paths as it will be different when someone else downloads your Git project.</p>
+
+        <p>It only operates on relevant paths like this:</p>
+
+        <img src="../images/gitignore-guide---img-2.png" alt="How .gitignore works with directories">
+
+        <p>Notice how it works in the directory the .gitignore file is in.</p>
+
+        <p>Also, although many tutorials and LLMs state you can ignore files in the parent directory of the .gitignore file it doesn't seem to work, at least for me.</p>
+
+        <img src="../images/gitignore-guide---img-3.png" alt="Parent directory example with a.txt">
+
+        <p>In this picture a.txt seems unaffected by .gitignore.</p>
+
+        <p>But if I ignore a file within the current directory or sub directory .gitignore will work.</p>
+
+        <img src="../images/gitignore-guide---img-4.png" alt="Multiple .gitignore files working">
+
+        <p>So this means you can have multiple .gitignore files as long as you include them in your commit.</p>
+
+        <h2>.gitignore syntax</h2>
+
+        <p>Let me give you an example of a .gitignore...</p>
+
+        <img src="../images/gitignore-guide---img-5.png" alt="Example .gitignore syntax">
+
+        <p>This one is in the highest directory of the Git project.</p>
+
+        <p>This means it will work with every directory and subdirectory within that project.</p>
+
+        <p>Here we are ignoring the files noted with pattern from top to bottom, line by line.</p>
+
+        <p>Patterns that are included in .gitignore syntax are the following:</p>
+
+        <ul>
+            <li><strong>*, *.txt, folder/*</strong>: Wild card, all file and folder names within that directory.</li>
+            <li><strong>**, folder/**/file.txt</strong>: Double wildcard means all file and folder names <em>and</em> the subdirectories of the folders.</li>
+            <li><strong>folder/</strong>: denote difference between folder and file by ending with a slash</li>
+            <li><strong>text.txt</strong>: Denote a file by not placing a slash and make sure to include the extension.</li>
+            <li><strong>!folder/, !text.txt</strong>: The <em>not</em> sign means do not ignore.</li>
+            <li><strong>#Comment</strong>: Hash sign means comment</li>
+        </ul>
+
+        <p>Git automatically scans the entire project looking for those patterns and discluding them from the project.</p>
+
+        <h2>How do IDEs work with .gitignore?</h2>
+
+        <p>IDEs typically use a hook into Git to color their files and folders according to the status of that file according to Git.</p>
+
+        <p>There are 8 types of file status in Git.</p>
+
+        <p>Each IDE colors and handles these status differently.</p>
+
+        <p>Here is a list:</p>
+
+        <ul>
+            <li><strong>Ignored</strong>: A file added to .gitignore</li>
+            <li><strong>Unmodified</strong>: Nothing happened to that file but it is still in the commit</li>
+            <li><strong>Modified</strong>: File changed from commit</li>
+            <li><strong>Untracked</strong>: Never added to Git project</li>
+            <li><strong>Staged</strong>: Newly added to Git project</li>
+            <li><strong>Deleted</strong>: Removed from current commit</li>
+            <li><strong>Renamed</strong>: File name changed</li>
+            <li><strong>Copied</strong>: A file copied to another folder</li>
+        </ul>
+
+        <p>I will give you a few examples of an IDE coloring a file according to Git status.</p>
+
+        <p>Here are a few in JetBrains:</p>
+
+        <img src="../images/gitignore-guide---img-6.png" alt="JetBrains: Red means untracked">
+
+        <p>JetBrains: Red means untracked</p>
+
+        <img src="../images/gitignore-guide---img-7.png" alt="JetBrains: White means unmodified">
+
+        <p>JetBrains: White means unmodified</p>
+
+        <img src="../images/gitignore-guide---img-8.png" alt="JetBrains: Blue means modified">
+
+        <p>JetBrains: Blue means modified</p>
+
+        <img src="../images/gitignore-guide---img-9.png" alt="JetBrains: Green means newly staged or renamed">
+
+        <p>JetBrains: Green means newly staged or renamed</p>
+
+        <img src="../images/gitignore-guide---img-10.png" alt="JetBrains: Dark gold means ignored">
+
+        <p>JetBrains: Dark gold means ignored</p>
+
+        <p>In Visual Studio & Visual Studio Code, the colors will be different but the status types will be the same.</p>
+
+        <p>By knowing the color of ignored files you will know if .gitignore is working.</p>
+
+        <h2>Why should you include .gitignore in Git?</h2>
+
+        <p>The whole purpose of .gitignore is to include it in Git.</p>
+
+        <p>Your goal should be to have one code source that works for all developers in the project.</p>
+
+        <p>It should be secure and all credentials should be outside the code source.</p>
+
+        <p>They should be <em>ignored</em>.</p>
+
+        <h2>.gitignore vs git exclude?</h2>
+
+        <p>In the case where you are adding files to the Git project but you do not want other to really know, or is irrelevant to them, we can use Git exclude.</p>
+
+        <p>Git exclude is meant for <em>you</em>, the individual developer.</p>
+
+        <p>Let's say you want to add a text file to the project to take notes but don't want to show it in .gitignore.</p>
+
+        <p>To ignore a file without placing it in .gitignore you <em>exclude</em> it.</p>
+
+        <p>Exclude is different than ignore in that no one but you will know about it when you upload your Git project.</p>
+
+        <p>Take a look...</p>
+
+        <img src="../images/gitignore-guide---img-11.png" alt="Git exclude file example">
+
+        <p>Inside the .git/info/exclude file you can add patterns just like .gitignore.</p>
+
+        <p>The difference is it is not included when you upload the Git project and the patterns work in the <em>root directory</em> of the code source.</p>
+
+        <p>Notice a.txt above is colored dark gold and is ignored.</p>
+
+        <p>The reason it is not visible to others, is .git is considered invisible to the developer by Git.</p>
+
+        <img src="../images/gitignore-guide---img-12.png" alt="GitHub showing .gitignore but not .git folder">
+
+        <p>On GitHub, GitLab and others you will see .gitignore but you will not see .git for the sake of automation.</p>
+
+        <p>In all projects .git is hidden as it is where all actions are saved by Git, including commit history and current changes.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Introduction to Git: <a href="what-is-git-an-insightful-answer-to-how-coders-work-in-teams.html">What Is Git: An Insightful Answer to How Coders Work in Teams</a></p>
+
+        <p>Why use Git: <a href="how-version-control-is-the-best-way-to-save-your-code.html">How Version Control Is the Best Way to Save Your Code</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Time Complexity Is Important and How You Should Use It</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        code {
+            font-family: monospace;
+        }
+        ol, ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Why Time Complexity Is Important and How You Should Use It</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Estimating complexity is an essential part of programming.</p>
+
+        <p>It is how we value our code as we write it.</p>
+
+        <p>It is how we determine if it is good code or bad code.</p>
+
+        <p>The quality of our code can be separated into 4 parts...</p>
+
+        <ol>
+            <li>Code maintainability</li>
+            <li>Code size</li>
+            <li>Space complexity</li>
+            <li>Time complexity</li>
+        </ol>
+
+        <p>Given our solution is the same, these 4 metrics determine our code quality.</p>
+
+        <p>By learning the theory behind each type of complexity we are meant to improve our intuition and write better performant code.</p>
+
+        <p>Besides maintainability and code size, we can focus on how algorithms take time. This is known as time complexity or runtime.</p>
+
+        <p>Time complexity is typically associated with performance more than space.</p>
+
+        <p>We have so much RAM nowadays <strong>its all about the actual seconds a program runs</strong> than how much RAM the program takes.</p>
+
+        <p>The order at which programmers determine if code is "good", typically goes like this, legibility -> time taken -> code size and then memory taken.</p>
+
+        <p>This order is how programmers tend to estimate the quality of code. That is also a great order to "clean up" your code.</p>
+
+        <h2>How to calculate runtime</h2>
+
+        <p>There are two ways to measure time complexity, the theoretical way and the <em>real</em> way.</p>
+
+        <p><strong>Time complexity is to measure the number of seconds it takes.</strong></p>
+
+        <p>Theoretically we measure this by counting <em>memory changes</em>.</p>
+
+        <p>Each memory change takes up time.</p>
+
+        <p>We call this time <em>n</em>.</p>
+
+        <p>To say f(n) is to say our code is a function of n memory changes.</p>
+
+        <p>Lets look at this...</p>
+
+<pre>x = 1
+x = x - 1
+x = 5</pre>
+
+        <p>In the above function there are 3 <em>memory changes</em>.</p>
+
+        <p>This makes our code f(3)</p>
+
+        <p>And, yes in the real world each memory change takes up different times. This is because of the randomness of the world.</p>
+
+        <p>The computer can be doing another task, slowing down the memory change. There could be an electric flux which speeds up the memory change or some other real world event.</p>
+
+        <p>Our computer will never run the code the same every time.</p>
+
+        <p>We can measure <em>real runtime</em> by simply starting a timer at the beginning of the code and ending the timer at the end.</p>
+
+        <p>Like this...</p>
+
+<pre>import time
+def sum_numbers(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    return total
+
+start_time = time.time()
+result = sum_numbers(1000000)
+end_time = time.time()
+
+time_taken = end_time - start_time
+print(f"Time taken to compute: {time_taken} seconds")</pre>
+
+        <p>We start the timer before our code block, end it after, then print the time taken.</p>
+
+        <p>Buuuut, as memory changes increases the <em>real</em> runtime increases proportionally.</p>
+
+        <p>Memory change count and real runtime are so proportionate that even LeetCode can predict both memory change count and runtime.</p>
+
+        <p>LeetCode uses true runtime and true memory taken, measuring them like the above, even telling you your time complexity.</p>
+
+        <p>It is absolutely beautiful how LeetCode will teach you how to estimate time and space.</p>
+
+        <p>Okay, lets talk about the different types of memory changes that determine how long our code will take.</p>
+
+        <p>These functions are examples of how memory changes can happen in different quantities in code.</p>
+
+        <p>Within 3 lines you can have many different quantities.</p>
+
+        <p>For example...</p>
+
+<pre>x = 5 # f(1)
+for i in range(0, x): #f(n)
+    print(str(i))
+x = x+ 1 # f(1)
+x = 0 # f(1)</pre>
+
+        <p>In this statement we have different <em>types</em> of memory changes. We have f(1) changes and we have f(n) memory changes.</p>
+
+        <p>We then <em>add them up</em>.</p>
+
+        <p>f(1) + f(x) + f(1) + f(1).</p>
+
+        <p>Our goal here is to identify how many memory changes happen in each line of code.</p>
+
+        <p>We are going to study the different quantities of memory taken.</p>
+
+        <p>Note that as there is exponential change, it looks like this...</p>
+
+        <img src="../images/time-complexity-img-0.png" alt="Exponential vs Linear Growth">
+
+        <p>Canva</p>
+
+        <p>I recommend reading through these functions quickly, getting the <em>gist</em> of what we are doing with functions.</p>
+
+        <p>The last section of this article is important. If this is all new to you, you should read it.</p>
+
+        <h2>f(m)</h2>
+
+<pre>def fOfM():
+    x = 1
+    x = x + 1
+    x = 5
+fOfM()</pre>
+
+        <p>We simply define f(n) = m, which is 3.</p>
+
+        <p>As long as you realize 1 memory change is 1 unit, then you are good to go.</p>
+
+        <h2>f(n)</h2>
+
+<pre>def f(n):
+    for i in range(n): # n memory changes
+        print(i) #This is the memory change
+f(15)</pre>
+
+        <p>We print i 15 times inside a loop. It happens n times.</p>
+
+        <p>Whenever we have an f(n) = n memory change it is usually a loop.</p>
+
+        <p>We make these calculation of units in our head while we code.</p>
+
+        <h2>f(n*m)</h2>
+
+<pre>def nToTheM(n, m):
+    for _ in range(n):
+        for _ in range(m):
+            print("memory change")
+nToTheM(5, 10)</pre>
+
+        <p>When we are counting higher memory changes, one type is when we loop a loop.</p>
+
+        <p>If we loop n times then m times we get n * m.</p>
+
+        <p>Here we have 50 changes, much higher than any of the above seen before.</p>
+
+        <p>What is wild, LeetCode predicts these theoretical units from its real measurements.</p>
+
+        <p>If your theoretical f(n*m) time taken is too high, it will say "exceeds time limit".</p>
+
+        <h2>f(log(n))</h2>
+
+<pre>def log_n_function(n):
+    count = 0
+    while n > 1:
+        n //= 2 # memory usage
+log_n_function(32)</pre>
+
+        <p>If we divide the runtime by two for every memory change and stop, we get f(log(n))</p>
+
+        <p>Log(32) is 2 ^ n = 32, solving for n in this case. That is the definition of log, 2 ^ what = 32.</p>
+
+        <p>Another example of something like this is binary search</p>
+
+<pre>def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2 # this is log(n)
+        guess = arr[mid]
+        if guess == target:
+            return mid
+        if guess > target:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1
+sorted_list = [1, 3, 5, 7, 9, 11]
+target_value = 7
+result = binary_search(sorted_list, target_value)</pre>
+
+        <p>The actual formula here is something like 5*log(n) because we have like 5 or more extra operations in the functions happening log(n) times.</p>
+
+        <p>But this is an example of when you need to create a log(n) code block.</p>
+
+        <p>There are other functions which are log(n) but we can get a picture from these two.</p>
+
+        <h2>f(n^m)</h2>
+
+<pre>def n_power_m(n, m, depth=0):
+    print("memory change")
+    if depth == m:
+        return
+    for i in range(n): # n ^ m here
+        n_power_m(n, m, depth + 1)
+n = 3
+m = 2
+n_power_m(n, m)</pre>
+
+        <p>The case of n^m is when you loop a recursion or a function calling itself. You will rarely use this in real programming, but you will absolutely use this in LeetCode.</p>
+
+        <p>You may find yourself making a small code block with this complexity.</p>
+
+        <h2>The 3 notations of complexity: Omega, Theta, O</h2>
+
+        <p>There are more functions of complexity out there. I wanted to introduce them to you so you could get the <em>gist</em> of time complexity</p>
+
+        <p>In reality, each block of code has a best case, a middle case and a worst case.</p>
+
+        <p>For example lets look at this...</p>
+
+<pre>def nToTheM(n, m):
+    for _ in range(n):
+        for _ in range(m):
+            print("memory change")
+nToTheM(1, 1)</pre>
+
+        <p>Although our worst case is is f(n*m) our best case is f(1) and our middle case is anything between f(1) and f(n*m).</p>
+
+        <img src="../images/time-complexity-img-1.png" alt="Big O Notation Graph">
+
+        <p>Photo by Algorithm</p>
+
+        <p>All functions between f(1) and f(n*m) are middle cases.</p>
+
+        <p>Meaning f(m), f(n) are all middle cases with the worst cast being f(n*m)</p>
+
+        <p>Of these 3 cases; best, middle, worst we call them Omega (best), Theta (middle) and O (worst).</p>
+
+        <p>The are pronounced big Omega, big Theta and big Oh.</p>
+
+        <p>All three of these are meant to be calculated in our heads all at once. We are supposed to think of every edge case, estimating the best, middle and worst.</p>
+
+        <p>In real programming we calculate complexity in our heads and determine which implementations are best, then we write it.</p>
+
+        <p>In LeetCode it will directly tell you what space and time to use in the problem statement</p>
+
+        <p>LeetCode will say, "Time complexity must be log(n) and space complexity must be n."</p>
+
+        <p>Or whatever the problem requirements are.</p>
+
+        <p>LeetCode can be your best friend in time estimation training. All this becomes super intuitive as you train yourself to think this way.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my <a href="https://a.co/d/b56kpK9">book on learning code</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>First 2 complexities: <a href="how-to-write-good-code.html">How to Write Good Code</a></p>
+
+        <p>Space complexity: <a href="why-space-complexity-is-important-and-how-you-should-use-it.html">What is Space Complexity</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

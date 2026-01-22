@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Create a Multi-User-Dungeon: One of the Best Ways To Learn To Code</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How To Create a Multi-User-Dungeon: One of the Best Ways To Learn To Code</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>If you ever wanted a long-term project that will teach you a language, this would be it.</p>
+
+        <p>MUDs are amazing in their ability to teach programming. It falls under one of the best genres of learning for you, the coder. You can have fun, involve other people and create all kinds of services like a blog for the game, databases, highscores, all kinds of things..</p>
+
+        <p>MUD development will teach you socket programming, the programming fundamentals, server setup and if you are inclined, OOP.</p>
+
+        <p>If you choose a low level language you can learn memory management, how to scale projects, pointers, meta-programming and even making your own framework.</p>
+
+        <p>Yea, MUDs are great long-term projects (article link).</p>
+
+        <p><strong>(You can open my blog articles with CTRL+Click in a separate tab and read them later)</strong></p>
+
+        <p>I have written about project development being the greatest way to learn programming.</p>
+
+        <p>On its own, game development is ultra fun for this.</p>
+
+        <p>But MUDs are the easiest version of multiplayer game development.</p>
+
+        <p>I have worked with a team on Runescape private server development, which is essentially a MUD with a 3D window.</p>
+
+        <p>It was the most beneficial project I ever took for my ability to code.</p>
+
+        <p>I reflect on this and can see how good a text MUD can be for learning to code.</p>
+
+        <p>Let's talk about the details of MUD games...</p>
+
+        <h2>What is a MUD?</h2>
+
+        <p>Multi-User-Dungeons are command line multiplayer games whereby many players share a world fully done by text.</p>
+
+        <p>They typically run by a tick system and connect by telnet.</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-0.png" alt="Dark Castle MUD telnet connection example">
+
+        <p>In the Dark Castle MUD, for example, you can connect with "telnet dcastle.org 6969" from <em>any terminal</em> in <em>any operating system</em>.</p>
+
+        <p>All operating systems can use telnet, it is possible in Bash, Powershell, Windows Terminal and all the rest.</p>
+
+        <p>MUDs were popular in the 1980s-1990s for their ease of connection and multiplayer features.</p>
+
+        <p>Before graphical games were created, this was the MMORPG scene.</p>
+
+        <p>MUDs are not dead and still exist to this day. There are many MUDs out there.</p>
+
+        <p>Check them out:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-1.png" alt="Top MUD Sites website">
+
+        <p><a href="https://topmudsites.com/">https://topmudsites.com/</a></p>
+
+        <h2>How do we start on a MUD?</h2>
+
+        <p>You need 3 things to create a MUD. A frontend, a backend and a database.</p>
+
+        <p>We can pick and choose all three parts of the game. The simplest way to create a frontend is to use telnet.</p>
+
+        <p>Telnet can literally be your entire frontend:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-2.png" alt="Telnet command example">
+
+        <p>One command</p>
+
+        <p>You don't even need to do anything as a game client. Just interact with telnet.</p>
+
+        <h2>Why stick to text</h2>
+
+        <p>Games like Runescape started out as MUDs and over a few years crept to completely rendered games.</p>
+
+        <p>A quick note on that, the Gower brothers who made Runescape were already in the game development industry for years making the graphics of video games.</p>
+
+        <p>They had plenty of experience that most people do not have. And, graphics programming in 1998 was considered much simpler than today. The graphics APIs in 2024 have too many features and take too many lines of code.</p>
+
+        <p>This is why I yearn for the fixed-function era of graphics programming. They were exciting times with simple graphics APIs.</p>
+
+        <p>Yea, the graphics programming frameworks were inefficient but as many graphics programmers who lived in that era say, <em>the graphics APIs of the time were simple</em>.</p>
+
+        <p>It is unfair to compare ourselves to seasoned graphics programmers, unless we are one.</p>
+
+        <p>Anyway, that is why I recommend sticking to just text. Creating 2D/3D graphics for a video game just takes too much upfront time.</p>
+
+        <h2>Backend</h2>
+
+        <p>It is super fast and easy to start on a telnet server.</p>
+
+        <p><strong>You can create a telnet server in any language. It is totally up to you.</strong></p>
+
+        <p>Take a look at this example server in Python:</p>
+
+<pre>import socket
+
+def start_telnet_server(port):
+    # Create a TCP/IP socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    # Bind the socket to the server address and port
+    server_address = ('localhost', port)
+    print(f"Starting up echo server on {server_address[0]} port {server_address[1]}")
+    sock.bind(server_address)
+
+    # Listen for incoming connections
+    sock.listen(1)
+
+    while True:
+        print("Waiting for a connection...")
+        connection, client_address = sock.accept()
+        try:
+            print(f"Connection from {client_address}")
+            while True:
+                data = connection.recv(16)
+                print(f"Received: {data.decode()}")
+                if data:
+                    print("Sending data back to the client")
+                    connection.sendall(data)
+                    break
+        finally:
+            connection.close()
+
+start_telnet_server(9999)</pre>
+
+        <p>You can run this code on your computer and connect with telnet:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-3.png" alt="Simple telnet server connection">
+
+        <p>Simple telnet server</p>
+
+        <p>You will have to design the backend telnet server any way you like.</p>
+
+        <p>This includes an OOP, procedural versus functional, wrapping your sockets in classes or packets. It is a lot of fun and you learn a lot about networking.</p>
+
+        <p>Here is an introduction to sockets (article link).</p>
+
+        <p>Once you get the game where you want, you can run it on a tiny $2 VPN like IONOS.</p>
+
+        <p>Get a domain name and link it, then bam, you got a MUD game.</p>
+
+        <p>Best VPS servers (article link).</p>
+
+        <h2>Ticks</h2>
+
+        <p>The only design tip I want to give for your code is to use ticks.</p>
+
+        <p>The typical way to synchronize every player in the game is to update all of them on a while loop with ticks.</p>
+
+<pre>import time
+
+def updatePlayers():
+    pass
+
+def game_logic():
+    updatePlayers()
+
+def main_loop():
+    last_tick = time.time()
+    while True:
+        game_logic()
+        time.sleep(600)
+
+main_loop()</pre>
+
+        <p>The basic idea is to sleep however long you want your tick to be then update the world.</p>
+
+        <p>All games in game development work this way, but for you specifically a longer tick time like 600ms will allow you to amass a lot of players all at once into one server.</p>
+
+        <h2>A database</h2>
+
+        <p>You can use any database you want. You can go super simple with NoSQL like MongoDB, or you can go with the difficult SQL.</p>
+
+        <p>Me personally, I would use MongoDB. Why make it any harder than it is?</p>
+
+        <p>I recommend saving world data and player data either locally on the VPS file system or in a database.</p>
+
+        <p>For example, our multiplayer game Darkan runs on a multi-world system where every world has a local cache. All the player specific stuff goes into MongoDB.</p>
+
+        <p>You can create a Player class that instances all your player data, save it to a JSON and keep it in your database.</p>
+
+        <p>You create a player login when you start telnet.</p>
+
+        <p>In Mongo it would look like this:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-4.png" alt="Example player save in MongoDB">
+
+        <p>Example player save</p>
+
+        <p>Then you can do some automation with MongoDB.</p>
+
+        <p>If you have never hard of MongoDB, I have an introductory guide to MongoDB (article link).</p>
+
+        <h2>Use example code for your game</h2>
+
+        <p>There are a lot of open-source MUD games out there in various languages.</p>
+
+        <p>A great example is the Dark Castle Mud in C++...</p>
+
+        <p>You connect with telnet and off you go! We connect to the MUD server.</p>
+
+        <p>You can search some MUD examples on GitHub:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-5.png" alt="GitHub MUD server search results">
+
+        <p>Whichever is in your language. Then use that example as inspiration while asking an LLM questions about how to implement the server and about the example code.</p>
+
+        <h2>You can make a highscores</h2>
+
+        <p>Let's say you are making an RPG where you level up stats and get equipment.</p>
+
+        <p>As you program the telnet server, you can also create an API for the database that connects to the website.</p>
+
+        <p>For learning purposes you can make the API in a different language than the telnet server.</p>
+
+        <p>We did this for our multiplayer game, Darkan.org.</p>
+
+        <p>We wrote the website in Javascript, the API in Typescript and the game server in Java.</p>
+
+        <p>As a team we could have stuck with one language for all, but we wanted to learn those languages.</p>
+
+        <p>Here is the highscores for our multiplayer game:</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-6.png" alt="Multiplayer hiscores">
+
+        <p>Multiplayer hiscores</p>
+
+        <p>Thanks to developing this multiplayer video game I have amassed great skill in programming.</p>
+
+        <p>I hope the same for you.</p>
+
+        <h2>FAQ</h2>
+
+        <h2>I have never even heard of this. Do MUDs get 0 player count?</h2>
+
+        <p>I have to agree with this. Most people have been spoiled by fully interactive 3D games. If you make a good enough MUD people will join.</p>
+
+        <p>I would make a MUD for learning and just enjoyment. It is cool, fun and exciting just to program.</p>
+
+        <h2>But I want to add 3D & 2D graphics??</h2>
+
+        <p>The easiest form of graphics development I recommend is by WebGL.</p>
+
+        <p>You will have to make your own art and learn graphics programming for years to be able to do this well.</p>
+
+        <p>This means learning Blender, a sprite maker or other art programs. Art is always the bane of game developers.</p>
+
+        <p>I only recommend creating graphics if you truly love graphics programming and are willing to create a lot of art.</p>
+
+        <p>Though this type of game development is every programmers dream-at this point the MUD would turn to MMORPG.</p>
+
+        <h2>How do I make the MUD game play on a website?</h2>
+
+        <p>For a web UI I recommend a quick echo client. Basically a remake of telnet on your website.</p>
+
+        <p>This way you can telnet on your command line and your website. Ultra cool way to create the game.</p>
+
+        <p>It would look like this...</p>
+
+        <img src="../images/how-to-create-a-multi-user-dungeon-img-7.png" alt="Example frontend - Command Challenge website">
+
+        <p>Example frontend</p>
+
+        <p>If you are planning on using a website I recommend a plain HTML/CSS/JS website on GitHub Pages. It is free hosting.</p>
+
+        <p>Everything will be in client-side Javascript.</p>
+
+        <h2>What programming language should I choose?</h2>
+
+        <p>There are two approaches to picking a programming language. Either, you can pick the one you know best. Or, you can pick one that you want to learn. It more depends if you care more about the product or the journey.</p>
+
+        <p>Do you want to make a fantastic MUD? Or do you want to learn as much as possible about a language? You will have to weigh these two values.</p>
+
+        <h2>How do I setup the server and domain?</h2>
+
+        <p>I recommend the cheapest VPS. Try to aim for $2-$3/month, place your server on there. You can buy a domain on Namecheap, Hostinger or many other domain providers.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>CTA: Check out my <a href="https://a.co/d/b56kpK9">book on learning code</a></p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>Best way to learn programming: <a href="what-is-the-number-1-way-to-improve-skill.html">What Is the #1 Way To Improve Skill?</a></p>
+
+        <p>Introduction to socket programming: <a href="a-quick-guide-on-how-epic-coders-connect-the-world-through-sockets.html">A Quick Guide on How Epic Coders Connect the World Through Sockets</a></p>
+
+        <p>VPS Hosting: <a href="how-do-virtual-private-servers-work-and-why-they-are-awesome.html">How Do Virtual Private Servers Work and Why Are They Awesome?</a></p>
+
+        <p>What is MongoDB: <a href="how-databases-work-and-why-they-are-so-cool.html">How Databases Work and Why They Are So Cool</a></p>
+
+        <p>MUD example: <a href="https://www.dcastle.org/">https://www.dcastle.org/</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

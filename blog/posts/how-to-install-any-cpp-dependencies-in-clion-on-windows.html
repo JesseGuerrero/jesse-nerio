@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install Any C++ Dependencies in CLion on Windows</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Install Any C++ Dependencies in CLion on Windows</h1>
+        <div class="meta">
+            <span>Published: November 21, 2023</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>This is a tutorial which is a bit long.</p>
+
+        <p>It is long, but it is worth it.</p>
+
+        <p>CLion & Vcpkg are amazing tools and you will find your workflow after this setup is flipping awesome.</p>
+
+        <p>In addition because this setup uses CMake, the project can be opened in any Windows IDE that uses CMake, given you know how to use Vcpkg in command line.</p>
+
+        <p>However, the primary reason to use CLion is because it is a JetBrains IDE.</p>
+
+        <p>JetBrains IDEs have the same hot keys, interface layout and services for the developer across all its products.</p>
+
+        <p>You benefit as a developer from using a highly effective editor that is the same across all languages.</p>
+
+        <p>CLion, in my opinion, is the best and ideal IDE for C++ development.</p>
+
+        <p>Without CLion I have found setting up C++ to be a major task within itself. Not even with coding.</p>
+
+        <p>The interface and hotkeys for CLion are hyper intuitive to the point where C++ becomes almost as easy as Java to put together.</p>
+
+        <p>But, there are two problems when using this IDE.</p>
+
+        <p><strong>#1, it is a premium IDE.</strong></p>
+
+        <p>This means you are either paying money for it or you qualify for free usage.</p>
+
+        <p>The only ways to get it for for free are if you are a student or have a decent sized open-source project on GitLab/GitHub.</p>
+
+        <p>You simply apply for either the student edition using your email or the open-source edition using your repository URL.</p>
+
+        <p>Besides these, CLion costs about ~$10/month:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-0.png" alt="CLion pricing showing monthly billing options">
+
+        <p>And there is no difference between the $10/month version and the student/open-source ones.</p>
+
+        <p>#2 The second problem with this IDE is how C++ projects are often made.</p>
+
+        <p><strong>Most C++ projects lock you into Visual Studio.</strong></p>
+
+        <p>Visual Studio is free and frequently used for C++ projects.</p>
+
+        <p>The only way you will be able to use CLion for a Visual Studio project is if the project uses CMake.</p>
+
+        <p>CLion only works with vcpkg and CMake.</p>
+
+        <p>In fact vcpkg automates CMake in CLion.</p>
+
+        <p>The problem with Visual Studio is its usage of solution files.</p>
+
+        <p>When putting together a Visual Studio project most teams create a solution file:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-1.png" alt="Solution File in Visual Studio project">
+
+        <p>Solution files automatically build a project in Visual Studio.</p>
+
+        <p>Due to copy right concerns CLion does not support this functionality.</p>
+
+        <p>For many years CLion developers have been asking for this support.</p>
+
+        <p>Sadly we must rewrite the build process of solution based projects using CMake for CLion.</p>
+
+        <h2>How to install C++ dependencies</h2>
+
+        <p>In the past Vcpkg was not supported by CLion.</p>
+
+        <p>You had to run Vcpkg through a command line and build it outside the IDE.</p>
+
+        <p>It was cumbersome.</p>
+
+        <p>However with more recent CLion builds Vcpkg has become a part of the IDE.</p>
+
+        <p>One way to view this build tool is as if it were NPM in Node or pip in Python.</p>
+
+        <p>Essentially that is Vcpkg.</p>
+
+        <p>You manage dependencies and download them from a server online.</p>
+
+        <p>It is not perfect in CLion yet.</p>
+
+        <p>You still need to fiddle with the CMake file and I will give you some hints on how to do that.</p>
+
+        <p>For this method you need CLion 2023.2.2+.</p>
+
+        <h2>Create a project</h2>
+
+        <p>To start, create a project:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-2.png" alt="CLion Welcome screen with New Project button">
+
+        <p>Next, choose C++ executable, the language version & name the project folder and hit create on the bottom right.:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-3.png" alt="CLion New Project dialog showing C++ Executable option">
+
+        <p>You will see a basic C++ project with CMake as its build tool:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-4.png" alt="Basic C++ project with CMakeLists.txt">
+
+        <p>If you don't know how to use CMake I recommend learning as much as you can about it as any C++ project can be made using CMake.</p>
+
+        <p>After reading this article you can <a href="https://youtu.be/mKZ-i-UfGgQ?si=hUxgKPQTk3ypBk7Z">check out a tutorial on CMake</a>.</p>
+
+        <h2>You must use the Visual Studio tool chain</h2>
+
+        <p>To work with vcpkg you are locked into a Visual Studio tool chain.</p>
+
+        <p>Microsoft made both vcpkg & Visual Studio.</p>
+
+        <p>So, this is mandatory.</p>
+
+        <p>Let us install it...</p>
+
+        <p>Go to File -> Settings</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-5.png" alt="File menu with Settings option">
+
+        <p>Next go into Build, Execution, Deployment...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-6.png" alt="Settings menu showing Build, Execution, Deployment">
+
+        <p>Then click on Toolchains...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-7.png" alt="Toolchains settings page">
+
+        <p>Next tap on the (+) icon:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-8.png" alt="Adding Visual Studio toolchain">
+
+        <p>And, tap Visual Studio.</p>
+
+        <p>Then download...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-9.png" alt="Visual Studio toolchain configuration with Download link">
+
+        <p>It will lead you to <a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a>...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-10.png" alt="Visual Studio Downloads page">
+
+        <p>Tap "free download.</p>
+
+        <p>Run the exe and install the "Visual Studio Installer":</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-11.png" alt="Visual Studio Installer installation progress">
+
+        <p>Next up, exit the installer.</p>
+
+        <p>We are going to install build tools.</p>
+
+        <p>Go back to <a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a> and scroll down.</p>
+
+        <p>Look for a search box and type in "build"...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-12.png" alt="All Downloads search for build tools">
+
+        <p>Download and run that build tool exe. But make sure the installer is not running when you do so.</p>
+
+        <p>After running that download, this will pop up...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-13.png" alt="Visual Studio Build Tools installer workloads">
+
+        <p>Click on Desktop development and tap "install"...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-14.png" alt="Desktop development with C++ selected">
+
+        <p>Install on bottom right</p>
+
+        <p>You will see this...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-15.png" alt="Visual Studio Installer downloading and installing">
+
+        <p>Wait a while until its done.</p>
+
+        <p>You would have to do this anyway with Visual Studio so don't think CLion takes longer.</p>
+
+        <p>We are essentially using Visual Studio C++ build tools and wrapping it in CLion instead of Visual Studio IDE.</p>
+
+        <p>Once it is finished it should look like this:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-16.png" alt="Visual Studio Build Tools 2022 installed">
+
+        <p>Click "modify"</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-17.png" alt="Modify button in Visual Studio Installer">
+
+        <p>In the modify section copy and paste the path to the build tools...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-18.png" alt="Build tools location path">
+
+        <p>Put it into CLion's tool chain path:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-19.png" alt="CLion toolchain settings with Visual Studio path configured">
+
+        <p>Tap apply & "OK".</p>
+
+        <h2>Vcpkg works within CLion</h2>
+
+        <p>With this new version of CLion check out the bottom of the editor:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-20.png" alt="Vcpkg tab at bottom of CLion editor">
+
+        <p>Click on that and take a look...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-21.png" alt="Vcpkg panel showing environments">
+
+        <p>On the left you will see Vcpkg environments.</p>
+
+        <p>It will be empty if this is your first time.</p>
+
+        <p>But, for every project you create a virtual environment that is made in Vcpkg.</p>
+
+        <p>It is just like other languages with Javascript's npm_modules, Python's venv or Java's library path.</p>
+
+        <p>Each environment is independent with its own dependencies.</p>
+
+        <p>So, let's create a C++ environment!</p>
+
+        <p>Tap the (+) sign:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-22.png" alt="Add Vcpkg dialog">
+
+        <p>Name your environment and folder:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-23.png" alt="Naming the Vcpkg environment">
+
+        <p>And hit "okay".</p>
+
+        <p>It will build for a while just like how environments take some time in other languages.</p>
+
+        <h2>Add your dependencies</h2>
+
+        <p>Now lets add some example packages.</p>
+
+        <p>I will use OpenGL, SDL2 & GLEW as examples in this project.</p>
+
+        <p>I recommend following along with the dependencies I place in this article, then after you get it working you can remove them and do your own.</p>
+
+        <p>So, start with OpenGL:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-24.png" alt="Searching for opengl in Vcpkg">
+
+        <p>Type "opengl" in the Vcpkg tab search.</p>
+
+        <p>Click the opengl library and install...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-25.png" alt="OpenGL package install button">
+
+        <p>Then after it is done installing, click the add to vcpkg.json:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-26.png" alt="Add packages to vcpkg.json prompt">
+
+        <p>If you miss that prompt just click add to vcpkg.json in the previous window:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-27.png" alt="Add to vcpkg.json button">
+
+        <p>Now you should see this in you project folder:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-28.png" alt="vcpkg.json file in project explorer">
+
+        <p>That right there is like your package.json in Node or your Gradle build file in Java.</p>
+
+        <p>Basically it lists all the dependencies and includes it in your project:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-29.png" alt="vcpkg.json contents showing dependencies">
+
+        <p>The only problem with CLion right now is the disconnect from vcpkg.json and CMake.</p>
+
+        <p>We will address this soon but for now, add the rest of the packages...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-30.png" alt="Searching for glew">
+
+        <p>Add Glew</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-31.png" alt="Searching for sdl2">
+
+        <p>Add SDL2</p>
+
+        <p>Make sure its inside your vcpkg.json, like this:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-32.png" alt="vcpkg.json with all three dependencies">
+
+        <h2>Run vcpkg install...</h2>
+
+        <p>Now lets run vcpkg install, just like npm install or pip install.</p>
+
+        <p>"vcpkg install" installs these dependencies from your vcpkg.json into your virtual environment.</p>
+
+        <p>So, find where your vcpkg is located.</p>
+
+        <p>We can do this by going to the console inside the Vcpkg console area.</p>
+
+        <p>Look for "console";</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-33.png" alt="Console tab in Vcpkg panel">
+
+        <p>Click on it.</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-34.png" alt="Vcpkg console showing exe path">
+
+        <p>You will see where CLion placed vcpkg exe. To make things simple to where you don't have to do this you can add this file to "PATH" in windows.</p>
+
+        <p>Otherwise just use the full directory path.</p>
+
+        <p>Copy and paste the exe path to the project terminal:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-35.png" alt="Terminal tab at bottom of CLion">
+
+        <p>Paste vcpkg.exe with "install":</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-36.png" alt="Running vcpkg.exe install command">
+
+        <p>It will start building for you...</p>
+
+        <h2>Manually add the dependencies to CMake</h2>
+
+        <p>Now in the output for this vcpkg will give you the CMake code to paste into CMakelists.txt.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-37.png" alt="Terminal output showing vcpkg install progress">
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-38.png" alt="CMake code for OpenGL package">
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-39.png" alt="CMake code for GLEW package">
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-40.png" alt="CMake code for SDL2 package">
+
+        <p>Copy & paste all of it into CMakeLists.txt like so:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-41.png" alt="vcpkg_installed folder in project">
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-42.png" alt="CMakeLists.txt with find_package and target_link_libraries">
+
+        <p>And, everywhere you see "main" replace them with the project name.</p>
+
+        <p>It will look like this...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-43.png" alt="CMakeLists.txt with project name instead of main">
+
+        <p>Now, right click go to the project explorer on the left and reload CMakeLists.txt:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-44.png" alt="Reload CMake Project context menu option">
+
+        <p>You will get an include error...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-45.png" alt="CMake Error showing GLEW not found">
+
+        <p>At this moment CLion is not perfect. It will not give you the include paths to add to CMake.</p>
+
+        <p>These include paths are the actual code for the dependencies inside the virtual environment. Every time you add a dependency you have to go to your specific vcpkg environment and add the actual dependency.</p>
+
+        <p>Kind of redundant, I know. But, I am sure this will be updated in the future.</p>
+
+        <h2>Add the includes...</h2>
+
+        <p>Now lets go back to the path where the vcpkg path was in console...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-46.png" alt="Vcpkg console showing path">
+
+        <p>Go to the actual directory:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-47.png" alt="File explorer showing vcpkg-clion folder">
+
+        <p>And go into packages...</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-48.png" alt="Packages folder showing all dependencies">
+
+        <p>You will see all the includes you potentially need.</p>
+
+        <p>Any time you get include errors just add them as a "HINT".</p>
+
+        <p>CMake will automatically configure the dependency paths based on those folders.</p>
+
+        <p>Here take a look:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-49.png" alt="CMakeLists.txt with HINTS added for find_package">
+
+        <p>And that is it!</p>
+
+        <p>Remember, you have to add hints for every dependency but this is the general workflow for building projects.</p>
+
+        <h2>Delete the build and run</h2>
+
+        <p>Sometimes you may have to delete the build folder then re-build and run when adding dependencies:</p>
+
+        <img src="../images/how-to-install-any-cpp-dependencies-in-clion-on-windows-img-50.png" alt="Context menu showing Delete option for cmake-build-debug folder">
+
+        <p>Delete the build and run.</p>
+
+        <p>Your project will work and you will be able to create OpenGL projects in CLion.</p>
+
+        <h2>Example code</h2>
+
+        <p>You can run this example code in this OpenGL project to verify it worked. It is a Hello Triangle.</p>
+
+        <p><a href="https://gist.github.com/JesseGuerrero/d35c2fce8c0d84fb824a2026ed320d98">https://gist.github.com/JesseGuerrero/d35c2fce8c0d84fb824a2026ed320d98</a></p>
+
+        <h2>A final tip: Use an LLM to help you debug your CMake scripts</h2>
+
+        <p>LLMs are very good at building and debugging CMake scripts.</p>
+
+        <p>CMake is an old and fully documented build tool.</p>
+
+        <p>Often I just need to copy the CMakeLists.txt file content into my LLM and ask it questions.</p>
+
+        <p>It corrects my file most of the time or gives me very valuable information about it.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>CMake tutorial: <a href="https://youtu.be/mKZ-i-UfGgQ?si=hUxgKPQTk3ypBk7Z">https://youtu.be/mKZ-i-UfGgQ?si=hUxgKPQTk3ypBk7Z</a></p>
+
+        <p>Visual Studio downloads: <a href="https://visualstudio.microsoft.com/downloads/">https://visualstudio.microsoft.com/downloads/</a></p>
+
+        <p>Vcpkg website: <a href="https://vcpkg.io/">https://vcpkg.io/</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

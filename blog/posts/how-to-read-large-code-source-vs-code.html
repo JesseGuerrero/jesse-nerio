@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Read Large Code Source: VS Code</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Read Large Code Source: VS Code</h1>
+        <div class="meta">
+            <span>Published: January 22, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>VS Code is a bit different than other IDEs. The goal as a developer in VS Code is to customize your editor with plugins for every project. That is the norm and everyone is expected to add features this way. Because of this, I will be showing you some universal extensions for you to add to the IDE.</p>
+
+        <p>You can read the original <a href="how-to-learn-a-large-code-source-efficiently-and-effectively.html">how to read large code sources</a> to see the best ways to navigate humongous code sources in an IDE agnostic way. As every IDE is different this article specifically is for VS Code.</p>
+
+        <h2>Required extensions</h2>
+        <p>Some features require extensions. I will be trying to keep the plugins I recommend universal to all languages, workflows and frameworks.</p>
+
+        <p>1. Build tool extension: Most build tools like Visual Studio Solutions, Gradle, CMake, NPM, require you to integrate the tool with the IDE. It is impossible to start most projects efficiently without an extension for the build tool. Some build tools are okay without an extension but most require it.</p>
+
+        <p>2. Get a language specific intellisense extension: These are different per language</p>
+
+        <p>3. GitLens: This extension includes additional GUIs for Git which are useful for debugging and managing your commits.</p>
+
+        <p>4. Easy icon theme: The project explorer is easier to read with the right icons. I find easy icon theme great for readability. (Optional)</p>
+
+        <h2>You need a solid build tool</h2>
+        <p>In VS Code this is the hardest part about setting up a workflow with a large code source. Before we even start learning a large code source we need to create build tasks which are compatible with the project and the team.</p>
+
+        <p>In case you are not familiar, build tasks are individual compilations of the code. You can create a debug build task, a release build task and also specify libraries which are only included in release or debug compilation.</p>
+
+        <p>In Javascript for instance you create build tasks in package.json, like this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-0.png" alt="Package.json build tasks">
+
+        <p>Or in Java you have Gradle build tasks like this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-1.png" alt="Gradle build tasks">
+
+        <p>Gradle and NPM are build tools and those pictures show the build tasks the developers use inside the build tool. This is what must first be focused on in any new project or large code source you are trying to work with.</p>
+
+        <h2>VS Code compatibility</h2>
+        <p>You will find certain frameworks are more compatible with VS Code out the box. ElectronJS, for instance, is much more compatible with VS Code than say a Visual Studio C++ solution project.</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-2.png" alt="Terminal commands">
+
+        <p>In fact, Visual Studio C++ solution projects, some JetBrains gradle builds and many obscure languages have no support in VS Code. Even given our free and open-source extension marketplace you will find many projects are locked into the IDE they were created in.</p>
+
+        <p>So, before even considering using VS Code for a large code source take at least a few hours to see if the IDE is compatible with both the source and team.</p>
+
+        <p>This applies to all IDEs. I believe for most developers the inability to use Visual Studio Code for a project is a special type of disappointment. This IDE is super lightweight, hyper customizable and free. For these reasons I can see why people feel this way.</p>
+
+        <p>I have to state this here. Developers have a belief that anything can be coded in Visual Studio Code. And, while this is somewhat true, it is impractical for certain cases.</p>
+
+        <p>Many developers say if you can't get a project working in VS Code then you have a skill issue, not an IDE issue. I am aware we can do everything from command line. Hyper competent developers can run any project in command line, I am sure.</p>
+
+        <p>But, even doing this, if the team you are working with doesn't want the change it may be best to stick to the IDE of the project and away from VS Code. Often it is impractical to recreate build tasks for those two reasons; the team & IDE support.</p>
+
+        <p>But if you get the project builds working and the team is fine with it, then lets get into it.</p>
+
+        <h2>Find a shortcut to navigate the stack</h2>
+        <p>The first thing we should learn to do is go up and down the code stack. The code stack is a series of calls in a code project. The higher up the stack, the more abstract the code. The lower the stack the more specific the code.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-3.png" alt="Lowest stack level">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-4.png" alt="Higher stack level">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-5.png" alt="Highest stack level">
+
+        <p>Typically we get more lines of code and more granular as we go down the stack. It is essential that we know and explore our code sources by going up and down, reading how everything is implemented. This is the primary way you should be learning large code sources.</p>
+
+        <p>With Jetbrains IDEs you have a hotkey which goes down the stack and if there are no lower implementations, you then go up one. However in VS Code you have to manually choose whether or not to go up and down. If there are no lower layers of the stack it just shows up blank.</p>
+
+        <p>So let's see how to do this.</p>
+
+        <h2>Find all references</h2>
+        <p>The easiest way to go up the stack in VS Code is to right-click a variable, function or class and choose "find all references".</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-6.png" alt="Find all references context menu">
+
+        <p>This pulls up a panel which shows you all the usages going up the stack of that function, class or variable. The panel looks like this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-7.png" alt="References panel">
+
+        <h2>Find all implementations</h2>
+        <p>The easiest way to go down the stack is to right-click a variable, function or class and choose "find all implementations".</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-8.png" alt="Find all implementations context menu">
+
+        <p>The panel for going down the stack is the same:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-9.png" alt="Implementations panel">
+
+        <p>Super easy, a little more cumbersome than JetBrains, but the IDE overall uses way less resources and is much faster. It is a trade off.</p>
+
+        <h2>Show call hierarchy</h2>
+        <p>Unlike Visual Studio, going up and down the stack with "find all references" and "find all implementation" is sufficient. In Visual Studio these two are much less intuitive and call hierarchy is the most useful way to go up and down.</p>
+
+        <p>So, I would not bother with call hierarchy at all as it is the same thing as "find all references" here. I believe its only there because Microsoft made both Visual Studio & VS Code and had to be consistent.</p>
+
+        <h2>Find a shortcut to link the file you are in to the project explorer</h2>
+        <p>When going up and down the stack you need a way of seeing where in the folder structure that level of the stack is located. It is much more difficult in other IDEs. Thankfully, this is super easy in Visual Studio Code.</p>
+
+        <p>Just right-click your active folder and select "reveal in explorer view"</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-10.png" alt="Reveal in explorer view">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-11.png" alt="File revealed in explorer">
+
+        <h2>Use a structural view</h2>
+        <p>Wow, I am impressed with VS Code. I might actually start using it more. There is a built-in structural view called "Outline". When you open up a huge file with many functions, class definitions, variables, etc. etc. you can use a structural view to see where everything is in that file.</p>
+
+        <p>This is much faster than scrolling through the file looking for a specific function.</p>
+
+        <p>Check it out:</p>
+
+        <p>Select an active file and open up outline. It will look like this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-12.png" alt="Outline panel location">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-13.png" alt="Outline structural view">
+
+        <p>This outline is a succinct summary of a 200 line file. I can click each function noted by the "building block" icon and it will automatically go to that location in the file. Practice using this as a habit, it speeds up your navigation by quite a bit.</p>
+
+        <h2>Use a find in all files</h2>
+        <p>Another super easy feature of VS Code. When you remember a function or variable but do not know the location, you can look it up here:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-14.png" alt="Search icon in sidebar">
+
+        <p>Just type it in and voila, super easy.</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-15.png" alt="Search results panel">
+
+        <h2>Always make sure you have intellisense</h2>
+        <p>Intellisense is just auto finishing your code with potential functions, classes or variables.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-16.png" alt="Intellisense autocomplete">
+
+        <p>Often this does not come with VS Code. But, in every language there are extensions for intellisense. Also, the building block icon is always a function in most IDEs. That is because functions are the building blocks of code sources.</p>
+
+        <h2>Use a good commit viewer and diff tree</h2>
+        <p>There are many benefits to using GUI for Git. There are purists out there who say command line Git is the best way to manage projects.</p>
+
+        <p>Personally, I have found this methodology lack luster. In some remote sessions with friends I have seen some people opening a Git GUI as though it were a guilty pleasure.</p>
+
+        <p>Just use the GUI. It's really useful for seeing what happened in a commit and team.</p>
+
+        <p>Here are 4 primary tools to use</p>
+
+        <h2>Commit graph</h2>
+        <p>For Visual Studio Code commit graphs require an extension. There are quite a few out there but I would recommend GitLens.</p>
+
+        <p>With this extension you get a graph that looks like this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-17.png" alt="GitLens commit graph">
+
+        <p>Inside the larger red box on the left you see a commit history. This essentially breaks down all the latest updates to your project. Each commit is named, like "Merge codex v.2.0.2". If we select it, like the small box inside the larger one on the left, we see "files changed" on the right. You can see the differences per commit.</p>
+
+        <h2>Commit diff viewer</h2>
+        <p>You can then double click inside files changes and see this:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-18.png" alt="Diff viewer">
+
+        <p>You can then see the difference with the previous commit on the left and the next commit on the right. You can do this for every file changed</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-19.png" alt="Files changed list">
+
+        <p>Just double click one. This way you can see all the code changes your team mates had done.</p>
+
+        <h2>Commit compare</h2>
+        <p>Often, in huge projects many team members are adding to the source. Perhaps one developer makes a mistake that we don't see until months later. But, we don't know how to fix it or where in the source it could be.</p>
+
+        <p>For this very purpose and also just to learn how different updates were added, we can use commit compare. We are essentially comparing the code source between two points in time.</p>
+
+        <p>The way I am going to show how to do this is only available in GitLens, which is why I made it a requirement above.</p>
+
+        <p>So, here it is in steps:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-20.png" alt="Step 1 - Source control panel">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-21.png" alt="Step 2 - Commits section">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-22.png" alt="Step 3 - Select for compare">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-23.png" alt="Step 4 - Compare with selected">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-24.png" alt="Step 5 - GitLens inspect panel">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-25.png" alt="Files changed between commits">
+
+        <p>As you can see, this whole process is not optimized in Git Lens. But it is still highly useful.</p>
+
+        <p>Now we can compare file changes between two points in time in the past of our project. This is great for learning how a source was implemented at different parts of time.</p>
+
+        <p>Also, it is good for debugging. I have used this feature to fix bugs which were active for 6+ months and no developer could figure it out. It took me a few days of going between commits and comparing changes in a project 1000s of files large.</p>
+
+        <p>Between commits I would check the files changed and checkout that commit. I found the exact commit where the developer introduced the bug and did a commit compare with the one before it. A simple 1 line change cleared up the bug after 6 months and we were finally able to release the software.</p>
+
+        <p>Using commit compare is something I use often, just to see what other developers have been up to in my projects. I highly recommend using it to learn and keep up with project updates.</p>
+
+        <h2>Timeline</h2>
+        <p>Another super easy way to look at a commit viewer is to use the timeline feature for that file. You can select a file and click timeline:</p>
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-26.png" alt="Timeline location in explorer">
+
+        <img src="../images/how-to-read-large-code-source-vs-code-img-27.png" alt="Timeline showing file commits">
+
+        <p>And, you are able to see all commits to that file. Very useful, very easy.</p>
+
+        <h2>Conclusion</h2>
+        <p>There is one thing that I left out. That is UML diagrams. It has even less support than JetBrains & Visual Studio, so I decided to leave it out.</p>
+
+        <p>But, if you are writing code in an object oriented project, you should always prioritize learning the class structure. As in, which objects are inherited from what and what functions are added to the children classes. Stuff like that.</p>
+
+        <p>If you can find a way to generate UML diagrams automatically more power to you. But it is different per language and not every language supported in VS Code has UML generation.</p>
+
+        <p>Anywho, I hope you learned something</p>
+
+        <p>CTA: Check out my other articles and follow me on medium.</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+        <p><a href="how-to-learn-a-large-code-source-efficiently-and-effectively.html">How to learn large code sources</a></p>
+        <p><a href="https://marketplace.visualstudio.com/items?itemName=jamesmaj.easy-icons">Easy icons</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>
