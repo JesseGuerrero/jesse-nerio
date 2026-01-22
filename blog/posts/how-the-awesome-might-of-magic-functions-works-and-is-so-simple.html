@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Awesome Might of Magic Functions Works and Is So Simple</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How the Awesome Might of Magic Functions Works and Is So Simple</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Magic functions are a methodology for creating clean code. They exist in most programming languages such as Kotlin, C++, Python & C#. Magic functions do not exist in, for example, Java, Go & Javascript.</p>
+
+        <p>Here are some examples of Magic functions:</p>
+
+<pre><code>class GameTile:
+    def __init__(self, x, y, plane, clip_type):
+        self.X = x
+        self.Y = y
+        self.Plane = plane
+        self.ClipType = clip_type
+
+    # Overload equality operator (==)
+    def __eq__(self, other):
+        return (
+            self.X == other.X
+            and self.Y == other.Y
+            and self.Plane == other.Plane
+            and self.ClipType == other.ClipType
+        )
+
+    # Overload addition operator (+)
+    def __add__(self, other):
+        return GameTile(
+            self.X + other.X, self.Y + other.Y, self.Plane + other.Plane, self.ClipType
+        )
+
+    def __str__(self):
+        return f"X: {self.X}, Y: {self.Y}, Plane: {self.Plane}, ClipType: {self.ClipType}"</code></pre>
+
+        <p>Here we have a generic GameTile class for a video game. This is a typical implementation, often extending from a coordinate class, though we don't show that here.</p>
+
+        <p>See those double underscores? In Python specifically, these are known as dunder(double underline) methods. But, in all programming languages where these are implemented we simply call them magic functions.</p>
+
+        <p>Why? Because they define how our custom objects behave using operators and class conversions.</p>
+
+        <p>Here are two Game Tile magical use cases:</p>
+
+<pre><code>if __name__ == "__main__":
+    tile1 = GameTile(10, 20, 0, "Grass")
+    tile2 = GameTile(5, 10, 1, "Water")
+
+    print(str(tile1 + tile2))</code></pre>
+
+        <p>Here we create two game tiles, add their coordinates together, then turn them into a string. When we add the two tiles we are converting tile 1 and tile 2 into another instance of the tile class.</p>
+
+        <p>As this may illustrate, another name for magic programming is "operator overloading" or also meta-programming.</p>
+
+        <p>This means programming the programming itself.</p>
+
+        <p>Take a look at the exact same example in C++:</p>
+
+<pre><code>class GameTile {
+public:
+    int X;
+    int Y;
+    int Plane;
+    std::string ClipType;
+
+    GameTile(int x, int y, int plane, const std::string& clipType)
+        : X(x), Y(y), Plane(plane), ClipType(clipType) {}
+
+    // Overload equality operator (==)
+    bool operator==(const GameTile& other) const {
+        return (X == other.X) && (Y == other.Y) && (Plane == other.Plane) && (ClipType == other.ClipType);
+    }
+
+    // Overload addition operator (+)
+    GameTile operator+(const GameTile& other) const {
+        return GameTile(X + other.X, Y + other.Y, Plane + other.Plane, ClipType);
+    }
+
+    // Overload stream insertion operator (&lt;&lt;) for string conversion
+    friend std::ostream& operator&lt;&lt;(std::ostream& os, const GameTile& tile) {
+        os &lt;&lt; "X: " &lt;&lt; tile.X &lt;&lt; ", Y: " &lt;&lt; tile.Y &lt;&lt; ", Plane: " &lt;&lt; tile.Plane &lt;&lt; ", ClipType: " &lt;&lt; tile.ClipType;
+        return os;
+    }
+};</code></pre>
+
+        <p>It is the exact same implementation but more verbose as C++ usually becomes.</p>
+
+        <p>Lets take a look at the results of this meta-programming:</p>
+
+<pre><code>int main() {
+    GameTile tile1(10, 20, 0, "Grass");
+    GameTile tile2(5, 10, 1, "Water");
+
+    std::cout &lt;&lt; tile1 + tile2 &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+
+        <p>Pretty interesting right?</p>
+
+        <p>This is hyper important. The majority of frameworks in languages that support magic use these types of implementation.</p>
+
+        <p>PyTorch, Pandas & Flask in Python, for example, use magic programming to simplify the logical part of programming.</p>
+
+        <p>OpenGL extensions, web frameworks, math libraries, etc. in C++ also use these as well.</p>
+
+        <p>When I don't understand something for a framework I peer into its source code to truly understand the logic. Inside I often see these operator/magic implementations.</p>
+
+        <p>8 times out of 10 there are magic functions, especially in larger frameworks.</p>
+
+        <p>These are essential for creating clean code when creating a framework for other people to use.</p>
+
+        <h2>How Would You Learn Magical Programming?</h2>
+
+        <p>Well, you don't. There is no reason to memorize every magic function for every language. Instead I would just make sure to know the keywords or syntax then figure it out as you read or write.</p>
+
+        <img src="../images/how-the-awesome-might-of-magic-functions-works-and-is-so-simple---img-0.jpeg" alt="Thinking emoji on phone">
+
+        <p>Photo by Markus Winkler</p>
+
+        <p>For example, in C++, Kotlin and C# the keyword used is "operator" and in Python the syntax is "dunders" or __str__.</p>
+
+        <p>Magic programming is simple and powerful.</p>
+
+        <p>It is so simple, there was not much more to write about them. If you understand them from this article, that is all about what you need to know to get programming in them.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>An explanation of abstraction: <a href="how-the-greatest-power-of-code-is-abstraction.html">How the Greatest Power of Code Is Abstraction</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

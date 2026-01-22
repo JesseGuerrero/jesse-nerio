@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Are Data Structures & Algorithms?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>What Are Data Structures & Algorithms?</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>I want to give you a detailed overview of data structures and algorithms. They are explained to death. But we need them...</p>
+
+        <h2>What is a data structure?</h2>
+
+        <p>A data structure is a set of 0s and 1s. It is memory. But the difference between any piece of memory and a data structure is the organization. Data structures are memory with organized bits.</p>
+
+        <p>When we store an integer as <em>x</em>:</p>
+
+        <pre><code>int x = 5;</code></pre>
+
+        <p>We are reserving a set of bits. It is memorized with structure. The structure in programming is the class <em>integer</em>.</p>
+
+        <p>Integer comes with abilities which we can use to leverage code. Let's create a structure of bits which are organized to have three functions.</p>
+
+        <p>For example:</p>
+
+        <pre><code>public class MegaInt {
+    private int value;
+
+    public MegaInt(int value) {
+        this.value = value;
+    }
+
+    public void increment() {
+        value++;
+    }
+
+    public void decrement() {
+        value--;
+    }
+
+    public boolean isEven() {
+        return value % 2 == 0;
+    }
+}</code></pre>
+
+        <p>Three functions-increment, decrement and isEven are stored in memory as part of the data structure, MegaInt. We have organized our bits to fit a specific design.</p>
+
+        <p>All data structures follow some design like this. Classes, ints, floats, bytes, strings even arrays are all data structures. They each have their own abilites and structure in memory as data.</p>
+
+        <h2>What is an algorithm?</h2>
+
+        <p>The key feature of an algorithm is its reproducibility. If we have a problem we solve it with a logical set of steps. For example, lets say we want to reproduce a straight line at 45 degrees:</p>
+
+        <img src="../images/what-are-data-structures-and-algorithms---img-0.png" alt="Graph showing f(x) = x line at 45 degrees">
+
+        <p>Our algorithm for reproducing this production is <em>f(x) = x</em>. From here on we can say the algorithm for this line is a formula or equation.</p>
+
+        <p>In the same way we solve for the line-we solve for real technical challenges using code. The code itself is the formula just like <em>f(x) = x</em>. When we code we are to envision the problem then reverse code to solve it <em>in our mind</em>.</p>
+
+        <p>An algorithm is the solution to the problem. Every time you run it-it solves the same problem again and again.</p>
+
+        <p>Sounds hard? Well it is. Coding is hard. It takes years to get decent and much longer to get good. But it is the coolest experience to solve problems from your imagination-to create algorithms.</p>
+
+        <h2>Its all 0s and 1s</h2>
+
+        <p>For higher level languages we use logic. Programming is so abstracted from the hard 0s & 1s it has come to resemble logic. However in the end all of programming is binary numbers. The off and on of circuitry.</p>
+
+        <p>An algorithm takes memory AKA data structures and manipulates them using these numbers. You cannot have an algorithm without memory or memory without an algorithm. They are intertwined as natural law.</p>
+
+        <h2>How do they work together?</h2>
+
+        <p>Electricity flows through your entire computer with a rhythm. It is a cycle of electric current going through the entire computer. Each wave or cycle is called a Hertz (Hz).</p>
+
+        <p>The entire computer has a beating heart not of blood but of electricity. We measure the number of cycles as Gigahertz (GHz), Megahertz (MHz), Kilohertz (kHz), etc.</p>
+
+        <p>When this electricity is beating we can sense a low voltage or a high voltage. This is 0 or 1. High voltage is 1 and low voltage is 0. We can even set the 0s and 1s into the hardware and cause it to <em>memorize</em> data.</p>
+
+        <p>But it is impossible to use that memorized data without turning on the beating electricity. The flow of this electricity is an algorithm. In the end we are looking at a living, breathing physical algorithm. A machine.</p>
+
+        <p>It can't run without its own electricity and because of that algorithms and memory are inseparable. You must use an algorithm to make the computer function. So you will never go without both.</p>
+
+        <h2>Abstract data structures</h2>
+
+        <p>There are too many data structures out there. To memorize them would make you a savant. But it is not necessary.</p>
+
+        <p>Abstract data structures(Abstract Data Types) are the concept behind the implementation. The abstraction of MegaInt before would be the Abstract Data Type "wrapper".</p>
+
+        <p>Wrappers add functionalities to primitives as a new class. There are others out there like:</p>
+
+        <ul>
+            <li>List</li>
+            <li>Map</li>
+            <li>Set</li>
+            <li>Tensor</li>
+            <li>Graph</li>
+            <li>Etc.</li>
+        </ul>
+
+        <p>Every programming language has several implementations of every Abstract Data Type out there.</p>
+
+        <h2>Common algorithms</h2>
+
+        <p>If you go to college you will be taught common algorithms. It will be a difficult semester as you write pseudo code and memorize solutions.</p>
+
+        <p>However, the best way to learn algorithms is by self-discovery and reading code. We discover the solution while writing. We learn others by reading.</p>
+
+        <p>Most advanced developers do not memorize the pseudo code of algorithms. They find it themselves and memorize it out of pride of discovery. Here are some common algorithms:</p>
+
+        <ul>
+            <li>Binary Search</li>
+            <li>Merge Sort</li>
+            <li>Depth First Search</li>
+            <li>Dynamic Programming</li>
+            <li>Many more...</li>
+        </ul>
+
+        <p>These are the typical algorithms we use in competitive programming and algorithms class. But for me I noticed I used none of those. Always I find a simpler solution to be the best, even performing better than runtime.</p>
+
+        <p>Once a few years ago I implemented binary search for a backend. The array was always above size 50. I thought it was the bomb at 12 lines of code. My code reviewer looked at it and said I could write it brute force with 2 lines.</p>
+
+        <p>After reducing the function to two lines the brute force was 1/4 faster in all cases. Wow, binary search didn't even matter. So far in real world programming I used none of these algorithms.</p>
+
+        <h2>How do you learn data structures and algorithms?</h2>
+
+        <p>Instead of learning algorithms what I like to learn is techniques. Techniques are what make you a better problem solver. As an example some techniques-like in graphics programming are these:</p>
+
+        <ul>
+            <li>Rasterization</li>
+            <li>Shading</li>
+            <li>Texture mapping</li>
+            <li>Level of Detail Rendering</li>
+            <li>Etc.</li>
+        </ul>
+
+        <p>All niches have techniques. These are the true algorithms which we use day to day. Lets take two more for web development and machine learning. Here is web development:</p>
+
+        <ul>
+            <li>Routing</li>
+            <li>JWT authorization</li>
+            <li>Responsive web design</li>
+            <li>DOM manipulation</li>
+        </ul>
+
+        <p>And machine learning:</p>
+
+        <ul>
+            <li>Supervised learning</li>
+            <li>Unsupervised learning</li>
+            <li>Regression</li>
+            <li>Transfer Learning</li>
+            <li>Etc.</li>
+        </ul>
+
+        <p>We focus on these and get better results than learning general algorithms ever could. Techniques are what is used in the real world.</p>
+
+        <h2>How to learn data structures</h2>
+
+        <p>There are infinitely less Abstract Data Types than there are implementations. As programmers it is our job to memorize the ADT(Abstract Data Type).</p>
+
+        <p>When we associate the class to an ADT in our head we readily understand it without looking at the code. We can learn all implementations based on the ADT concept itself.</p>
+
+        <p>Lets say you have this code:</p>
+
+        <pre><code>public class MyList&lt;T&gt; {
+    private Object[] elements;
+    private int size;
+    private static final int DEFAULT_CAPACITY = 10;
+
+    public MyList() {
+        elements = new Object[DEFAULT_CAPACITY];
+        size = 0;
+    }
+
+    public void add(T element) {
+        if (size == elements.length) {
+            ensureCapacity();
+        }
+        elements[size++] = element;
+    }
+
+    public T get(int index) {
+        if (index &lt; 0 || index &gt;= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds: " + index);
+        }
+        return (T) elements[index];
+    }
+
+    public int size() {
+        return size;
+    }
+
+    private void ensureCapacity() {
+        int newCapacity = elements.length * 2;
+        elements = Arrays.copyOf(elements, newCapacity);
+    }
+}</code></pre>
+
+        <p>This is the "<em>List</em>" Abstract Data type in Java. It wraps around an array and makes it able to change size.</p>
+
+        <p>There are two ways to tackle learning something like this. Either we read the code and learn what each function does. Or we refer to the functions of the List ADT.</p>
+
+        <p>The List class has been written hundreds of times in all languages. Should we memorize 100 instances of List or 1 abstraction of List? No we learn the abstraction.</p>
+
+        <p>That is how we learn data structures. The abstractions are what is taught in the Data Structures & Algorithms college courses.</p>
+
+        <h2>Resources to learn data structures and algorithms</h2>
+
+        <p>There are several types of material for learning data structures & algorithms. Books, online courses, college, language models, frameworks and LeetCode are the main ones.</p>
+
+        <h3>Language models</h3>
+
+        <p>For learning DSA (Data Structures & Algorithms) we should always use a language model. No matter which way we are learning DSA we use language models.</p>
+
+        <h3>Other resources</h3>
+
+        <p>I tried learning DSA from Udemy. It was a failure. I kept zoning out and not knowing what to code after watching the lecture. It seems writing code is the best way to learn these things.</p>
+
+        <p>I am not a fan of learning DSA from books or online courses. Instead what I am a fan of is using frameworks, coding and LeetCode. The majority of my DSA learning came from writing code and LeetCode solving. I used resources like NeetCode, the Grind129 and just plain using Java to learn everything.</p>
+
+        <p>College was helpful but more to keep myself passionate. In the end, like most things programming-implementation is king.</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

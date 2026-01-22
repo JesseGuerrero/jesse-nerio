@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Databases Work and Why They Are So Cool</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How Databases Work and Why They Are So Cool</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>At first glance databases seem like a pain to learn.</p>
+
+        <p>It doesn't seem that important or "cool" to learn as you would a programming language.</p>
+
+        <p>But, you will find there are some important use cases for databases. After implementing these use cases you likely would wonder, "How in the world did I program without databases?"</p>
+
+        <p>Databases are not just for large applications. They are for anyone who wants to save data.</p>
+
+        <p>Right now, without saving on disk, when you restart an app all the data/variables saved within the app disappear.</p>
+
+        <p>As a remedy, without database programming, you are likely saving your application data to a local file.</p>
+
+        <p>Local file storage is the only way to easily save data between app restarts.</p>
+
+        <p>This is the primary use case of a database; to save information between app restarts.</p>
+
+        <p>What is crazy, databases can be saved on a computer that is not local to you.</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-0.jpeg" alt="World map">
+
+        <p>Photo by Andrew Stutesman</p>
+
+        <p>It can be saved in Germany, for example, if you are renting a remote computer in that country.</p>
+
+        <p>All the way from home your application can ask for data from Germany while it is running.</p>
+
+        <p>What is really awesome, even in Germany the response time or time to get the data is in milliseconds.</p>
+
+        <p>Getting data from across the internet is extremely fast.</p>
+
+        <p>When we have a database, multiple applications can read/write to the database, still across the internet.</p>
+
+        <p>You are able to have consistent data between multiple applications and still run the app at nearly identical speed.</p>
+
+        <p>If you have multiple pieces of software and you need to have them sync data, databases are the solution.</p>
+
+        <p>Of course, a local database or a nearby database will be faster.</p>
+
+        <p>Every database call has a differing response time. If you make lots of database calls for small amounts of data from across the globe on lets say a website, there will be inconsistencies.</p>
+
+        <p>If, for example, you ask for pictures from a database and call every picture one a time, you will see the website calls for the pictures one at a time, in order of the calls, sporadically.</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-1.jpeg" alt="Stopwatch">
+
+        <p>Photo by Veri Ivanova</p>
+
+        <p>100ms for one, 300ms for another, 120ms for the next image. This is essentially how it works.</p>
+
+        <p>From a local database you will see 30ms, 50ms, 80ms, 35ms response times, as an example.</p>
+
+        <p>But, this is the best thing about databases. Any data can be saved.</p>
+
+        <p>Data can be; player files in an MMORPG, healthcare records for a hospital, blog posts on let's say WordPress or pretty much anything else.</p>
+
+        <p>Btw, that is how this blog post is saved.</p>
+
+        <h2>Database vs file structure</h2>
+
+        <p>A database is a file structure. Just like a folder on your local PC, it stores data in some structured way.</p>
+
+        <p>The difference between a database and a computer directory is just; it is remotely accessible (which you can do with a file structure), it has a built-in software with its structure, and it has a language for calling to the database.</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-2.jpeg" alt="Notebook and pens">
+
+        <p>Photo by Fation Hyso</p>
+
+        <p>The built-in software of the database is the main difference between a file structure and a database.</p>
+
+        <p>The software allows you to ask for data by some pattern, set filters and change the data inside.</p>
+
+        <p>The software of a database is stuff like, MySQL, MongoDB, Amazon S3, PostgreSQL, etc.</p>
+
+        <p>Here is an example of a filter and search:</p>
+
+<pre><code>SELECT * FROM hospitals WHERE hospital_name = 'St. Peters Hospital';</code></pre>
+
+        <p>Let us say you have data on a list of hospitals and you want to ask for information about a hospital 'St. Peters hospital'.</p>
+
+        <p>This is an example statement where we are asking for that information from the built-in software of the database.</p>
+
+        <p>You can't do this with a file structure. Folders and files cannot be filtered no where near as precisely as a database.</p>
+
+        <h2>Databases have a URL/URI</h2>
+
+        <p>In reality, every device connected to the internet is connected together.</p>
+
+        <p>This means, if it can access the internet, you can access the database. With the right credentials of course.</p>
+
+        <p>If you knew the password and username for any database directly connected to the internet, you could access it.</p>
+
+        <p>How would you do this?</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-3.jpeg" alt="Safari browser icon">
+
+        <p>Photo by Brett Jordan</p>
+
+        <p>Well we use a URL, just like a website. Okay, okay, if you are a developer you would get upset at that simplification. Let me explain.</p>
+
+        <p>A URL is a child type of a URI. A URI is an internet address and a URL is just a type of internet address.</p>
+
+        <p>So, if we look at a "URL" aka "URI" of a database address on the internet, it would be something like this:</p>
+
+<pre><code>postgresql://username:password@localhost:5432/database_name</code></pre>
+
+        <p>If we were to fill in that template with credentials, it would look like this...</p>
+
+<pre><code>mongodb://Jesse:lovetocode@72.158.123.1:27017/mydatabase</code></pre>
+
+        <p>With "Jesse" as the username and "lovetocode" as the password we are accessing a remote database on IP address 72.158.123.1 on port 27017 with the database name "mydatabase".</p>
+
+        <p>With these credentials <em>anyone</em> can access your database.</p>
+
+        <p>Often, companies hide the database behind a local network for this reason.</p>
+
+        <h2>Query languages</h2>
+
+        <p>When you access data from a database, you use a query language. Query, meaning an ask for data from the database.</p>
+
+        <p>It may seem complicated and not worth learning. However, once you have gotten to a point where you can use it easily, it is super freakin cool!</p>
+
+        <p>You can organize your data in some way that your application accesses it in ridiculously organized ways.</p>
+
+        <p>Take a look at a query statement like this one:</p>
+
+<pre><code>SELECT * FROM patients
+WHERE doctor = 'Dr Andry'
+ORDER BY 'diagnosisID' DESC
+OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY;</code></pre>
+
+        <p>Look, I know this looks complicated but hear me out. You can't do this with a file structure.</p>
+
+        <p>Here we are filtering patients by doctor, ordering by their diagnosis in a descending manner and only asking for every other patient.</p>
+
+        <p>I mean, BOOM man. This cannot be done any other way but through a database or some long winded script through a file structure.</p>
+
+        <p>This is a query language, a language for asking for data.</p>
+
+        <h2>What is a database client?</h2>
+
+        <p>A client, or a DBMS is a software which allows you to see and ask for data directly on screen.</p>
+
+        <p>Take a look at this example of a database client:</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-4.png" alt="MongoDB Compass client showing grandexchange data">
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-5.png" alt="MongoDB query result">
+
+        <p>This is an auction house for an MMORPG. We are essentially saving every item in the auction house by itemID and Owner of the item.</p>
+
+        <p>We can use the database query language to get this data and view/manipulate the data live from the client.</p>
+
+        <p>And, as we change the data in-game I can see it changing in the client.</p>
+
+        <p>Freakin cool right?</p>
+
+        <p>Here is an example query:</p>
+
+<pre><code>darkan-server.grandexchange.find({
+  "selling": true,
+  "price": { $gte: 50000 }
+})</code></pre>
+
+        <p>Here we are asking for selling items with a price "greater than or equal" to 50,000 gold.</p>
+
+        <p>And we can change the price of these items to 50,000 gold using the query language:</p>
+
+<pre><code>darkan-server.grandexchange.updateMany(
+  {
+    "selling": true,
+    "price": { $gt: 72000 }
+  },
+  {
+    $set: { "price": 50000 }
+  }
+)</code></pre>
+
+        <p>And we would see this reflected in the Mongo Client.</p>
+
+        <h2>No-SQL vs SQL</h2>
+
+        <p>The two main differences between No-SQL & SQL are the structure of the database and the query language.</p>
+
+        <p>The structure of SQL databases are pretty similar across database software.</p>
+
+        <p>There are differences between say MySQL and PostgreSQL but the foundational ideas between them is the same.</p>
+
+        <img src="../images/how-databases-work-and-why-they-are-so-cool---img-6.jpeg" alt="Excel spreadsheet showing database structure">
+
+        <p>Photo by duimdog</p>
+
+        <p>You use tables within databases to access data in a structured way.</p>
+
+        <p>Tables are related to other tables.</p>
+
+        <p>We can get into SQL or you can look it up online. The main thing I want to tell you, is that between SQL softwares most of the essentials are the same.</p>
+
+        <p>No-SQL, on the other hand, can be completely different across database software.</p>
+
+        <p>MongoDB is nothing like Amazon S3 or Redis, or the many others out there.</p>
+
+        <p>For No-SQL the query language is different, the data structure is different and there are all kinds of ways and reasons to set them up.</p>
+
+        <p>So, basically SQL is a more standardized way to setup a database and No-SQL is a mess of choosing what software and client to use.</p>
+
+        <h2>Should I learn No-SQL or SQL first?</h2>
+
+        <p>Loads of companies use SQL and once you learn one SQL software you learn mostly all of them.</p>
+
+        <p>For this reason, I would always say learn SQL first. It doesn't matter which SQL software you choose, just use the one in the tutorial, course or class you are taking.</p>
+
+        <p>What is cool, query languages are the same across all programming languages.</p>
+
+        <p>Take a look at this example of SQL in Python & C++:</p>
+
+<pre><code>import mysql.connector
+db_connection = {
+    "host": "72.158.123.1",
+    "user": "Jesse",
+    "password": "lovetocode",
+    "database": "United Healthcare",
+}
+conn = mysql.connector.connect(**db_connection)
+cursor = conn.cursor()
+query = "SELECT * FROM docters WHERE hospital_name = 'St. Peters Hospital'"
+cursor.execute(query)
+results = cursor.fetchall()
+for result in results:
+    print(result)</code></pre>
+
+        <p>Here we are asking for a query of which doctors exist at St. Peters hospital. Once we get this data we convert into data inside the programming application.</p>
+
+        <p>We then print the resulting doctors files.</p>
+
+        <p>Now take a look at the same thing in C++:</p>
+
+<pre><code>#include &lt;mysql_driver.h&gt;
+#include &lt;mysql_connection.h&gt;
+#include &lt;cppconn/driver.h&gt;
+#include &lt;cppconn/resultset.h&gt;
+#include &lt;cppconn/statement.h&gt;
+
+int main() {
+    const std::string host = "72.158.123.1";
+    const std::string user = "Jesse";
+    const std::string password = "lovetocode";
+    const std::string database = "United Healthcare";
+    sql::mysql::MySQL_Driver* driver;
+    sql::Connection* con;
+    driver = sql::mysql::get_mysql_driver_instance();
+    con = driver-&gt;connect(host, user, password);
+    con-&gt;setSchema(database);
+    sql::Statement* stmt;
+    stmt = con-&gt;createStatement();
+    const std::string query = "SELECT * FROM doctors WHERE hospital_name = 'St. Peter''s Hospital'";
+    sql::ResultSet* res = stmt-&gt;executeQuery(query);
+    while (res-&gt;next()) {
+        std::string name = res-&gt;getString("name");
+        std::cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; std::endl;
+    }
+}</code></pre>
+
+        <p>Now, yes, I agree its longer and seems more complicated in C++. But, that is because of the C++ language and not SQL.</p>
+
+        <p>It is essentially the same thing and if you learn C++ just as well as you know Python, you won't see the difference between the two.</p>
+
+        <p>What is super cool, you can convert these code statements into functions and do all kinds of neat things automations with a database, <em>in any programming language</em>.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>SQL Tutorial: <a href="https://www.youtube.com/watch?v=5OdVJbNCSso&ab_channel=BroCode">https://www.youtube.com/watch?v=5OdVJbNCSso</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

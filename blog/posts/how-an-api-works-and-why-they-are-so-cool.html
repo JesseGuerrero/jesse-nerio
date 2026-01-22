@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How an API Works and Why They Are So Cool</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How an API Works and Why They Are So Cool</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>APIs (Application Programming Interfaces) are often thought only to be web-based. The typical association is with Rest APIs, which essentially use web protocols or TCP/UDP custom protocols.</p>
+
+        <p>However, APIs are better thought of as an interface between two applications or code sources which are executing at the same time. A fantastic example of this is graphics APIs.</p>
+
+        <p>How can I, the developer, interact with the GPU and make it show 3D models, animations and process a game frame? This interaction is the very definition of an interface.</p>
+
+        <p>Through an interface we have an intermediary layer between the graphics card and the developer. Popular interfaces between the developer and graphics card are OpenGL, WebGL, Vulkan, DirectX, SDL and many more.</p>
+
+        <p>Of course, there is a driver and firmware associated with the graphics card. It is those two we manipulate with the graphics interface or graphics API. Further, many libraries in Python and well, every language library, can be thought of as an interface.</p>
+
+        <p>In reality, interfaces are used constantly to manipulate foreign forces using code. Whether or not we expressly call it an interface is a whole other thing.</p>
+
+        <p>You could say web scrappers, like beautiful soup(Python), are an interface between Python and the networking layer of your computer. Though we don't call them interfaces but just a library. However, it is the same function as an API.</p>
+
+        <p>The fact that we use different terminology for different types of interfaces can be very confusing. But, once you understand most libraries are in-fact interfaces between two software, it should be easier to digest the idea of an API.</p>
+
+        <h2>Examples of APIs</h2>
+
+        <p>Every major app has an API. Some are plugin APIs, some are hardware APIs, some are web APIs and there are many other types of interfaces. I can give you a few examples of these, just to solidify the thought.</p>
+
+        <p>Firstly, Unity. This game engine has a scripting interface which allows you to interact with the engine using C#. It is a set of classes, functions, objects etc. This interface is called the Unity API and every script uses it.</p>
+
+        <p>Second, Minecraft's plugin API. Developers created Bukkit, Spigot, Paper, Forge and Fabric which are all scripting interfaces, allowing you to manipulate Minecraft either server-side or client-side.</p>
+
+        <p>Third, Google Maps API. Google created a way to get Maps using their live data programmatically. You would be interfacing your applications with Google Maps, usually with a web request.</p>
+
+        <h2>What Is the Difference Between a REST API and Regular API?</h2>
+
+        <p>A Rest API is an API with a specific type of construction, used across the internet. That really is all there is to it. Rest APIs hold no information and hold no configuration while its running. Configuration is done before and after running the API.</p>
+
+        <p>The "rest" part of Rest API means there is no saved data in the API. It does not "hold the state of the application" and therefore merely passes information from one application to another.</p>
+
+        <p>This is unlike other APIs, like graphics programming or Unity scripting, whereby data is actually held by the interface itself. By contrast, both graphics and Unity APIs are what is known as a state machine. Essentially, they hold the state of the program for the developer to use later.</p>
+
+        <p>Rest APIs, instead of interfacing with hardware or a game engine is an interface for two applications across the internet...</p>
+
+        <img src="../images/how-an-api-works-and-why-they-are-so-cool---img-0.png" alt="Diagram showing You, Rest API, and Software connection">
+
+        <p>Computer, Cloud, Software icons by Icons8</p>
+
+        <p>Think of it like this picture. You, a client, access an internet-based API to manipulate another software, the one on the right. All the configuration and information is managed in the software the Rest API is connecting to.</p>
+
+        <p>Imagine this, you are holding a remote control for a TV. You are the client, the remote control is the Rest API and the server is the TV. Does the remote control hold the data for your TV? No, the TV has that data. But, the Rest API or the remote controller manipulates it...</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>OpenGL: <a href="https://www.opengl.org/">https://www.opengl.org/</a></p>
+
+        <p>Web scrapper example: <a href="https://pypi.org/project/beautifulsoup4/">https://pypi.org/project/beautifulsoup4/</a></p>
+
+        <p>Unity game engine: <a href="https://unity.com/">https://unity.com/</a></p>
+
+        <p>Minecraft API: <a href="https://www.spigotmc.org/wiki/spigot-installation/">https://www.spigotmc.org/wiki/spigot-installation/</a></p>
+
+        <p>Google Maps API: <a href="https://developers.google.com/maps">https://developers.google.com/maps</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Version Control Is the Best Way to Save Your Code</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How Version Control Is the Best Way to Save Your Code</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Let us say you want to save your work in Microsoft Word. But, instead of saving just one version of Word, you, in fact, want to save a history of changes so that you can always see your previous text.</p>
+
+        <p>If you didn't know, Word has this feature. Take a look:</p>
+
+        <img src="../images/how-version-control-is-the-best-way-to-save-your-code---img-0.png" alt="Screenshot of Microsoft Word">
+
+        <p>These previous saves are known as "versions". It is a version of the Word document which was saved in the past.</p>
+
+        <p>Now, imagine there are multiple people writing in this Word document, but you still want to save versions for each person. How can we merge their work, show their history, and pick which parts of the document we want?</p>
+
+        <p>This is version control. Git is a version control software for code. It controls the versions of the code or the history for multiple users.</p>
+
+        <p>Git, is independent of programming. Just like Word, where the text itself is simply saved but not manipulated, version control can be used for any application.</p>
+
+        <p>In addition, there are many different software for version control with code. There is Git, subversion, vesta and many more. Companies often use their own proprietary version control as well.</p>
+
+        <p>Not only this, there is a local client-side version of version control and a server-side version control. Imagine this. You want to save all the versions of your code to your local computer. You love it and you save multiple versions.</p>
+
+        <p>However, you lose your data due to some unforeseen event. What happens to the files? Well, you lose the files and all the version history, just like with Word documents.</p>
+
+        <p>This is where server-side Git comes in. Two popular examples you might recognize are GitHub & GitLab. Think of it like Google Drive or OneDrive, where you save on a cloud all your versions and all your work.</p>
+
+        <p>If you upload your version history to a server-sided Git service then losing data is now longer accounted by you, but GitHub & GitLab.</p>
+
+        <p>But, what is different between the server-side and client-side Git? Well, nothing really. Git is a small program which works the same on all devices. All GitHub (well use this as an example) did was automate Git with code on their server, then display that information on a webpage.</p>
+
+        <p>Essentially, you are using Git on these servers. It is just there is an additional layer to the software which provides a web based GUI along with features GitHub wanted to implement.</p>
+
+        <h2>How to Learn Version Control?</h2>
+
+        <p>To truly learn version control, you must learn client-side first. Recognize it is the exact same software on the GitHub side, with just a layer of automation. You are saving the local files in the same way on the server.</p>
+
+        <p>Start with learning the terminology and practicing the commands. Personally, me myself, I love JetBrains Git GUI for my local Git. It looks like this:</p>
+
+        <img src="../images/how-version-control-is-the-best-way-to-save-your-code---img-1.png" alt="Screenshot of IntelliJ">
+
+        <p>This is how I learned Git. But, many people learn from straight command line. My only issue is, you can't visualize the changes made to the version history as easily.</p>
+
+        <p>Things I recommend avoiding are pretty much every other GUI interface. JetBrains is the best in this department. Now, if you have a computer that is ultra low resource and you want to use a GUI, then I recommend Git Lens for Visual Studio Code. It is much faster and has most of the same features, though not all.</p>
+
+        <p>After choosing either a GUI or command line, there are really only a few things you have to learn to start. They are, committing, pulling, pushing & merging. All 4 of these are essential to use Git, so learn them well. There are a bunch of other commands, but these will get you started.</p>
+
+        <p>To do this, I recommend studying with a full Git course and keeping notes, like this one:</p>
+
+        <p><a href="https://www.youtube.com/watch?v=RGOj5yH7evk">Git & GitHub Crash Course 2023</a></p>
+
+        <p>Afterward, focus on practicing Git with your personal projects. Google things, ask a Large Language Model questions and make a reference manual.</p>
+
+        <p>Save often. I love posting all my coding projects on Git, so I don't lose my work.</p>
+
+        <h2>How Does Version Control Work in Teams?</h2>
+
+        <p>Version control is an amazing software for working in a team. You can use it for anything from websites to Unity & Unreal game versions. In a team, you might have 10 people working and assigned different features to implement.</p>
+
+        <p>With version control they can do all these things independently. Permissions for different Git commands can be given or taken away. There can be one person handling all the merges of user code, or each can do them independently and save them in individual merge requests. The history of code can be 10s of thousands of saved versions/commits.</p>
+
+        <p>In addition, there is a code review feature on most server-side Git web applications like GitHub where you can look at other people's code changes and recommend edits.</p>
+
+        <p>It is common for code merges to go under several code reviews before it is accepted into the original code...</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <img src="../images/how-version-control-is-the-best-way-to-save-your-code---img-2.png" alt="What Is Version Control?">
+
+        <img src="../images/how-version-control-is-the-best-way-to-save-your-code---img-3.png" alt="jessenerio.com">
+
+        <h2>Resources</h2>
+
+        <p>Git official website: <a href="https://git-scm.com/">https://git-scm.com/</a></p>
+
+        <p>Subversion official website: <a href="https://subversion.apache.org/">https://subversion.apache.org/</a></p>
+
+        <p>JetBrain official website: <a href="https://www.jetbrains.com/">https://www.jetbrains.com/</a></p>
+
+        <p>Alternative Git GUI: <a href="https://www.gitkraken.com/gitlens">https://www.gitkraken.com/gitlens</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Do Virtual Private Servers Work and Why Are They Awesome?</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How Do Virtual Private Servers Work and Why Are They Awesome?</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>In essence, a virtual private server(VPS) is a computer which you control from far away. It is a remote computer, also known as a remote host. The "virtual" part of the phrase exists because typically the computer you are controlling is inside a huge computer as a virtual machine.</p>
+
+        <p>In our featured image here, you see a hardware section on the left. Usually, this hardware is very expensive with a CPU of 300+ cores, 1TB+ RAM & 100TB+ hard drive, with even some series of awesome GPUs.</p>
+
+        <img src="../images/how-do-virtual-private-servers-work-and-why-they-are-awesome---img-0.png" alt="What Is A Virtual Private Server">
+
+        <h2>What Is the "Virtual" in Virtual Private Server</h2>
+
+        <p>The computer you have control of, the remote computer, is allocated a portion of this hardware. This is known as virtualization. Typically we do this with VirtualBox or VMware in our personal computers.</p>
+
+        <p>Each virtualized computer or virtual machine(VM), then has its own operating system which can be chosen by the owner of the machine. What is interesting is, these operating systems have an operating system which manages it.</p>
+
+        <p>Just like when you run Virtual Box or VMware on your operating system(Windows, Mac or Linux). A hypervisor runs these virtual machines inside it. It is an operating system for managing a bunch of operating systems. Your Windows(or Mac/Linux) machine would be the hypervisor, AKA the manager.</p>
+
+        <p>Think about it, you can host any operating system on Windows, and spread out your resources however you want with Virtual Box. It is the exact same thing with a Virtual Private Server.</p>
+
+        <p>You are allocated a portion of a computer in the form of a virtual machine.</p>
+
+        <h2>What Is the "Private" Part in Virtual Private Server</h2>
+
+        <p>The private part exists because the person selling you a remote computer only gives you access. You are the only one who is given the credentials for the machine.</p>
+
+        <p>Typically there is a privacy agreement that is the same per each company you are buying from. Almost always you have executive control of your private server (VPS) as long as you do not try to hack the other virtual machines inside the hardware y'all are sharing.</p>
+
+        <p>You can think of this like an apartment you are buying. You can do anything in there as long as you don't disturb your neighbors or break the law.</p>
+
+        <p>You can give your credentials, duplicate them, create new ones and apply rules to all users you want to give access to your VPS.</p>
+
+        <h2>What Is the "Server" Part in Virtual Private Server</h2>
+
+        <p>A server is essentially a computer which has a public connection to the internet. That is all the definition means, but in the context of a VPS it means a computer that doesn't stop running.</p>
+
+        <p>The difference between a VPS and your personal computer is that you shut yours down and can physically touch it. If your PC's hardware were to break, you are in charge. If your VPS hardware breaks, it is the company you bought it from who is in charge of backing up your data and fixing your hardware.</p>
+
+        <p>That is the agreement usually accepted between customer and vendor when buying a server...</p>
+
+        <h2>Buying a VPS Is Super Cheap</h2>
+
+        <p>There are two other options I can think of for hosting websites, game servers, applications and any other service. They are specialized hosting and a Cloud system.</p>
+
+        <p>Specialized hosting would be a vendor who has committed themselves to hosting a niche. For example, there are companies who only host Minecraft servers. There are others who specialize in WordPress, other games, machine learning processes, etc. This would be a specialized host.</p>
+
+        <p>A cloud system is a vendor which sells an automated orchestra of servers. Essentially it is a very long list of virtual private servers which are serving an enterprise or person with automation to the extreme.</p>
+
+        <p>A cloud system would be needed for huge services, such as an MMORPG, online banking, video service like YouTube, or any other enterprise which serves at a large scale.</p>
+
+        <p>New World, for example, is a <em>massive</em> multiplayer game with over 100k players on at once and it is hosted with a cloud system, Amazon Web Services.</p>
+
+        <p>You can think of a cloud system like buying an office building. It would be overkill for an individual but just right for a person trying to build something with a lot of customers.</p>
+
+        <p>Both, cloud systems and specialized vendors are typically more expensive than a VPS...</p>
+
+        <h2>What Can You Do With a VPS?</h2>
+
+        <p>Typically, you are given terminal access to a VPS. There is, in the cheaper options, no GUI. It is better this way, trust me. You do not want a GUI. I guess, if you just want to get a server up in running quickly you can pay the extra $3 per month for a GUI though.</p>
+
+        <p>But, going pure command line is a great way to improve your skills as a software developer. At that point, anything that can be done with a terminal can be done in a VPS. If you go this route, I recommend any Linux distribution...</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <img src="../images/how-do-virtual-private-servers-work-and-why-they-are-awesome---img-1.png" alt="jessenerio.com">
+
+        <h2>Resources</h2>
+
+        <p>VPS service example: <a href="https://contabo.com/en/">https://contabo.com/en/</a></p>
+
+        <p>Cloud Service example: <a href="https://aws.amazon.com/">https://aws.amazon.com/</a></p>
+
+        <p>Specialized service example: <a href="https://www.hostinger.com/">https://www.hostinger.com/</a></p>
+
+        <p>Hypervisor wiki: <a href="https://en.wikipedia.org/wiki/Hypervisor">https://en.wikipedia.org/wiki/Hypervisor</a></p>
+
+        <p>Free Virtual Box: <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+
+        <p>Premium VMware: <a href="https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html">https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

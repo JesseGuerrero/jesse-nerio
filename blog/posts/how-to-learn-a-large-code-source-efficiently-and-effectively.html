@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Learn a Large Code Source Efficiently and Effectively</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        h3 {
+            margin-top: 25px;
+            color: #333;
+        }
+        ol, ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How to Learn a Large Code Source Efficiently and Effectively</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>There are 4 fundamental steps that are essential to learning a code source. Here they are in order of importance:</p>
+
+        <ol>
+            <li>Learn the fundamentals</li>
+            <li>Learn the language/build tools</li>
+            <li>Learn the framework</li>
+            <li>Learn the source</li>
+        </ol>
+
+        <p>When it comes to 2 through 4 you can kind of do them at the same time. A large code source <em>will</em> speed these up quite a bit.</p>
+
+        <p>For the sake of coders who just want to learn the source I decided to put step 4 at the top of the article. You can see steps 1-3 after "learn the source"...</p>
+
+        <h2>Learn the Source</h2>
+
+        <p>There are a lot of small actionable tips that make learning a code source much much easier, quicker and efficient.</p>
+
+        <p>I <em>highly recommend</em> all of them. Try to do these one at a time in all your IDEs where you will be learning a large code source.</p>
+
+        <p>Mostly, these are tools for navigating and reading code in a hyper efficient way.</p>
+
+        <p>Without these it may seem somewhat impossible to learn humongous code sources.</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-0.jpeg" alt="Person navigating on boat">
+
+        <p>Photo by Garrett Parker</p>
+
+        <p>It is kind of like travelling by boat in a huge ocean. You absolutely need all the navigation tools you can get to learn the seas.</p>
+
+        <p>That is what these are. Ways to learn the sea...</p>
+
+        <p>All JetBrains IDEs have this stuff setup already, so I will be using IntelliJ to illustrate these features.</p>
+
+        <p>Let me give you a list of things to do...</p>
+
+        <h3>Find a shortcut to navigate the stack</h3>
+
+        <p>This is an amazing tidbit that will absolutely make navigating and reading source code much simpler.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-1.png" alt="IntelliJ stack navigation screenshot">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>You should always navigate the stack and be able to easily see the usages of a function or class.</p>
+
+        <p>In IntelliJ, the shortcut is the middle mouse button.</p>
+
+        <p>In VSCode, Visual Studio and non-Jetbrains IDEs I believe you have to set it up yourself.</p>
+
+        <p>These usages and reading the actual code within the function will tell you all you need to know on how to use that function.</p>
+
+        <p>This is my <em>most used</em> feature when using an IDE.</p>
+
+        <h3>Find a shortcut to link the file you are in to the project explorer</h3>
+
+        <p>Another super actionable and simplification tool is the "find file in project view".</p>
+
+        <p>As you navigate the stack and usages of a function, you can easily visualize where the file/code is at in the project explorer.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-2.png" alt="IntelliJ project explorer screenshot">
+
+        <p>Screenshot of IntelliJ</p>
+
+        <p>In IntelliJ this can be done with "ALT+F1" but instead I recommend making an easy shortcut you can remember without effort.</p>
+
+        <p>As you read a source code with 1000s of files out there or more, you should be navigating the stack and constantly going in and out of files to really see where everything is.</p>
+
+        <p>You can thoroughly learn the file structure this way.</p>
+
+        <p>In VSCode, Visual Studio and non-Jetbrains IDEs you have to set it up yourself.</p>
+
+        <p>This is my <em>second most used feature</em>.</p>
+
+        <h3>Use a structural view</h3>
+
+        <p>A structure view is a visualization of the class in a quick table.</p>
+
+        <p>It has both properties and methods listed out.</p>
+
+        <p>This highly simplifies navigating a large file.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-3.png" alt="IntelliJ structure view screenshot">
+
+        <p>Screenshot of IntelliJ</p>
+
+        <p>You can click each method on the left and go to it. Then, use your usages hotkey and find in project view (the two above) and navigate the source code extremely quick.</p>
+
+        <p>This code source I use has 1000s of Java files for an MMORPG and I quickly navigate through the whole thing using these hotkeys.</p>
+
+        <p>Your goal should be to make navigation and reading as easy as possible.</p>
+
+        <p>I honestly don't know if this feature is available in other IDEs. Just know this is called a "structure view".</p>
+
+        <p><em>This is my third most used feature.</em></p>
+
+        <h3>Use a find in all files</h3>
+
+        <p>This is another highly actionable tidbit that simplifies learning a code source.</p>
+
+        <p>You should be able to right click a folder or the whole project and easily search for a text.</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-4.png" alt="IntelliJ find in files context menu">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-5.png" alt="IntelliJ find in files results">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>This way if you don't know where a function is in the project you can easily find it.</p>
+
+        <p>I often use this because the file structure is so deep with so many files it is impossible to know where everything is exactly.</p>
+
+        <p>But for some reason I remember the class names and function names.</p>
+
+        <p>After going to that file I can search the project view and go up and down the stack (using previous tools).</p>
+
+        <p>For sure every IDE has this, but usually you have to set it up.</p>
+
+        <p><em>This is my 4th most used feature.</em></p>
+
+        <h3>Always make sure you have intellisense</h3>
+
+        <p>Absolutely essential, intellisense is a life saver.</p>
+
+        <p>I never use a code source without this feature.</p>
+
+        <p>I have raised some eyebrows with how I talk about intellisense.</p>
+
+        <p>But basically, this means your IDE suggests which properties or methods you are trying to use.</p>
+
+        <p>It even (should) filters out private variables/methods.</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-6.png" alt="IntelliJ intellisense screenshot">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>By typing out the first few letters "get" you can see all the methods and variables/fields that start with those characters.</p>
+
+        <p>Now I can go to those functions and apply all the hotkeys from above.</p>
+
+        <p>Every IDE has this, but it looks different for each.</p>
+
+        <p>This is an <em>essential feature</em>.</p>
+
+        <p>There is something similar but uses Machine Learning called co-pilot. I have found co-pilot to be not that great for large code sources. At least, not as great as ye old faithful intellisense.</p>
+
+        <p>Personally, I disable co-pilot on all IDEs. But a lot of people swear by it.</p>
+
+        <h3>Use a good commit viewer and diff tree</h3>
+
+        <p>You will be amazed at how visualizing changes within a Git commit can help you understand the latest changes in a large code source.</p>
+
+        <p>Lines are color coded and the original is usually on the left with the new version on the right.</p>
+
+        <p>If I am trying to debug other peoples logical errors and commits, commit viewer and diff tree is what I use.</p>
+
+        <p>I have used this GUI to solve problems that the rest of the developers couldn't solve for 6 months!</p>
+
+        <p>It took me about 3 days once I tried to fix it...</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-7.png" alt="IntelliJ commit viewer screenshot">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>Here we can see this developer added getPouchCoins() and getPouchCoinsAsInt().</p>
+
+        <p>This is much easier than just viewing the file and trying to find the newest editions yourself.</p>
+
+        <p>This is available on GitHub & VSCode as a plugin, but I find JetBrains Commit Viewer to be most intuitive to me.</p>
+
+        <p>Also when there are multiple branches or commits I want to sift through, each with a bunch of features, I often use diff trees.</p>
+
+        <p>Basically, it shows you all the differences between two code sources or through a series of commits.</p>
+
+        <p>Every IDE has this but it looks quite different in each.</p>
+
+        <p>In JetBrains you can right-click and compare, take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-8.png" alt="IntelliJ compare commits screenshot">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-9.png" alt="IntelliJ diff tree screenshot">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>I am comparing the code source from November 1st to the code source on November 3rd.</p>
+
+        <p>If you have a large team and you need to read up on the latest updates, this is the way.</p>
+
+        <p>The setup and look is entirely different per IDE.</p>
+
+        <p>I use this to <em>debug commits</em>.</p>
+
+        <h3>Ask a LLM about certain parts</h3>
+
+        <p>This is fun, though employers don't seem to like it. I have brought up this tip in interviews and was thoroughly rebuked with a story about proprietary software being inserted to Chat-GPT.</p>
+
+        <p>So, here is the thing. Any code you put into an LLM, that LLM will learn. So if you put very sensitive code into the machine learning model, if someone else asks for it, it might actually show up!</p>
+
+        <p>But, asking an LLM to explain code is extremely useful nonetheless.</p>
+
+        <p>Most advanced software engineers do this without telling their employer. Obviously they don't put sensitive code in there. But they ask for general tips on learning the source and it is very helpful.</p>
+
+        <h3>Use a UML generator</h3>
+
+        <p>I didn't know about this feature of IDEs until later on in my programming journey.</p>
+
+        <p>But if you are using a highly object-oriented code source, a UML version of the inheritance structure will be highly useful to you.</p>
+
+        <p>Though I often find I only need to see the UML chart once and to get the inheritance structure memorized...</p>
+
+        <p>Take a look:</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-10.png" alt="IntelliJ show diagram menu">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-11.png" alt="IntelliJ UML diagram">
+
+        <p>Screenshot from IntelliJ</p>
+
+        <p>For me personally I absolutely need this UML chart but only a few times at the beginning just to see the structure of the classes.</p>
+
+        <p>I only use this feature <em>a few times at the beginning</em>.</p>
+
+        <h2>Learn the Fundamentals</h2>
+
+        <p>Now, if you are trying to learn a code source without knowing the fundamentals, such as basic programming syntax, compiler/interpreter theory, loops, classes & math, you will struggle.</p>
+
+        <p>It will seem impossible to understand a large code source at say work or an open source project.</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-12.jpeg" alt="Start here sign">
+
+        <p>Photo by Gia Oris</p>
+
+        <p>By understanding the fundamentals of Computer Science and programming you will have transferrable skills to all languages and frameworks.</p>
+
+        <p>This is why the fundamentals are, well, the fundamentals. They will help you read any and all code sources.</p>
+
+        <p>See my fundamentals guide which I wrote about in more depth.</p>
+
+        <h2>Learn the Language/Build Tools</h2>
+
+        <p>The current meta or standard way self-taught developers nowadays are learning languages is through Udemy. Preferably you know the language/build tools before taking on the code source.</p>
+
+        <p>These two things, language and build tools, besides the fundamentals are perhaps the best thing you can do to learn a code source, especially at the beginning.</p>
+
+        <p>The language can more easily be learned through a full course like Zero to Hero courses on Udemy, hopefully implementing small projects in the course at the same time.</p>
+
+        <p>It is interesting how build tools are highly linked to the language. It is why I put them together.</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-13.jpeg" alt="Stacked stones">
+
+        <p>Photo by Mathieu Turle</p>
+
+        <p>These build tools are often stacked on top of another.</p>
+
+        <p>For example, Gradle is built on a layer above Maven in Java. If your code source uses Gradle, it is a good idea to learn Maven first.</p>
+
+        <p>Another example of this is CMakelists in C++.</p>
+
+        <p>It automates Make. You should learn the basics of Make before CMakelists. Additionally, VSPackage is written to automate CMakelists, so there you have your order of learning build tools.</p>
+
+        <p>Examples of build tools ordering:</p>
+
+        <ul>
+            <li>Make -> CMakelists -> VSPackage</li>
+            <li>Maven -> Gradle</li>
+        </ul>
+
+        <p>If you are working on a large Java Spring app or a C# ASP.NET app, the build tool scripts are usually quite complex.</p>
+
+        <p>Separating your learning by understanding every layer sets you up for mastery of a code source.</p>
+
+        <p>Fundamentals will be supported by learning these as well.</p>
+
+        <h2>Learn the Framework</h2>
+
+        <p>Let's assume you know the language and build tools well. If you don't, you have your work cut out for you.</p>
+
+        <p>You will have to learn the language, build tools and framework at the same time. Not the easiest task.</p>
+
+        <p>Now, how would you do this?</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-14.jpeg" alt="Person lifting weights">
+
+        <p>Photo by Victor Freitas</p>
+
+        <p>Well don't be overwhelmed, as you learn both the framework and language, the code source will get easier and easier, to a point where everything can be understood. It is mostly a matter of effort over time.</p>
+
+        <h3>Watch a Udemy/YouTube course</h3>
+
+        <p>Same as the language, Udemy is the meta. The courses there are so good, developers are flocking in the thousands and learning from them.</p>
+
+        <p>If you need to learn something like ReactJS, Spring, or Django these things can be taken care of by learning from these videos and creating small projects.</p>
+
+        <p>It really is that simple.</p>
+
+        <h3>Create your own project in the same framework</h3>
+
+        <p>While you are watching these courses, you will need to create your own project or write code in the code source at the same time.</p>
+
+        <p>Actually using the framework is where the understanding you need is at.</p>
+
+        <p>I have been a part of a medium sized Next.js project before, in an open-source MeetUp group.</p>
+
+        <img src="../images/how-to-learn-a-large-code-source-efficiently-and-effectively---img-15.jpeg" alt="Code on screen">
+
+        <p>Photo by Ferenc Almasi</p>
+
+        <p>By creating my own NextJS project and watching Udemy, within two weeks I was contributing to the code source with ease.</p>
+
+        <p>Well, I had the advantage of knowing Javascript and NPM (build tool) really well. More than everyone else in the group, so, it was just a matter of learning the framework.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+
+        <h2>Resources</h2>
+
+        <p>A guide on learning the fundamentals: <a href="why-the-fundamentals-of-coding-are-the-key-to-success.html">Why the Fundamentals of Coding Are the Key to Success</a></p>
+
+        <p>Pros & cons of Jetbrains IDE: <a href="pros-cons-of-jetbrains-ides.html">Pros & Cons of JetBrains IDEs</a></p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

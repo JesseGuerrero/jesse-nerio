@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Greatest Power of Code Is Abstraction</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background: #f8f8f8;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #222;
+        }
+        h3 {
+            margin-top: 25px;
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        code {
+            font-family: "Consolas", "Monaco", monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="https://jessenerio.com">Home</a></li>
+            <li><a href="https://jessenerio.com/publications">Publications</a></li>
+            <li><a href="../../portfolio/">Portfolio</a></li>
+            <li><a href="../index.html">Blog Posts</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>How the Greatest Power of Code Is Abstraction</h1>
+        <div class="meta">
+            <span>Published: January 7, 2026</span>
+            <span> | Author: Jesus Guerrero</span>
+        </div>
+    </header>
+
+    <article class="content">
+        <p>Abstraction is to take a longform version of a code implementation and condense it to a lesser representation.</p>
+
+        <p>It does not matter which language we are writing in, from assembler to Python, there is abstraction.</p>
+
+        <p>When we write code and abstract it, we typically create layers.</p>
+
+        <p>All power in programming derives from this concept. Take this code, for example:</p>
+
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        try {
+            // This code will throw an exception.
+            int[] numbers = new int[5];
+            numbers[5] = 10;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+
+        <p>Here we create a numbers array with indices 0-4. We then call the 5th index, which is out of bounds.</p>
+
+        <p>When we look into the stack we get this:</p>
+
+<pre><code>java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+at com.example.Main.main(Main.java:12)
+at java.lang.reflect.Method.invoke(Native Method)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at java.lang.ClassLoader.invokeMethod(ClassLoader.java:961)
+at java.lang.ClassLoader.invokeMethod(ClassLoader.java:888)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Native Method)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at com.sun.jndi.toolkit.dir.DirContextAdapter.invoke(DirContextAdapter.java:439)
+at com.sun.jndi.toolkit.dir.BasicDirContext.lookup(BasicDirContext.java:107)
+at com.sun.jndi.ldap.LdapCtx.lookup(LdapCtx.java:205)
+at javax.naming.InitialContext.lookup(InitialContext.java:412)</code></pre>
+
+        <p>This representation above is known as a <em>stack</em>. A stack shows the <em>layers</em> of abstraction in our given code.</p>
+
+        <p>Main is our highest level of abstraction at the top of the stack. Then as we go down the layers we get more and more into the details as to how our code is implemented.</p>
+
+        <p>And, this stack goes much deeper than this. Here we only show from the entry point of java to the bottom of the Java compilation. But, there are further layers in Assembly then machine code.</p>
+
+        <p>In programming we use this stack to debug the code at different levels of abstraction, which allow us to control our code.</p>
+
+        <p>We can create layers of abstraction very easily with functions and classes.</p>
+
+        <p>Here is a simple example:</p>
+
+<pre><code>import traceback
+def a():
+    def b():
+        def c():
+            raise Exception("Exception")
+        c()
+    b()
+
+# Calling the outermost function
+try:
+    a()
+except Exception as e:
+    traceback.print_exc()</code></pre>
+
+        <p>Here we are calling c() within b() within a() and then throwing an error in c(). We are literally creating layers of abstraction, abstracting c within b within a.</p>
+
+        <p>Of course, we would be making the code simpler, not more complex. In this example every layer is more complex. But, in practice its easier after every layer.</p>
+
+        <p>Here is the stack:</p>
+
+<pre><code>Traceback (most recent call last):
+  File "scratch.py", line 11, in &lt;module&gt;
+    a()
+  File "scratch.py", line 7, in a
+    b()
+  File "scratch.py", line 6, in b
+    c()
+  File "scratch.py", line 5, in c
+    raise Exception("Exception")</code></pre>
+
+        <h2>Language Itself Is Abstraction</h2>
+
+        <p>All languages, frameworks and libraries are an abstraction.</p>
+
+        <p>The abstraction runs so deep, even to the hardware of your device.</p>
+
+        <p>Each device in your computer has an attached firmware, or software which is programmed in a very hard, static and solid way within that device.</p>
+
+        <p>This includes your CPU, motherboard, GPU, network card, harddrive & RAM.</p>
+
+        <p>The CPU itself, like all the other hardware, has mathematical functions which deal with direct 0s & 1s. These functions are called in a very low language called Assembly.</p>
+
+        <p>Due to this even Assembler is an abstract language because it is using pre-built functions from the hardware in the CPU.</p>
+
+        <p>If we were to view this as a stack we would see CPU Functions -> Assembler -> C++ -> Python, like this:</p>
+
+        <img src="../images/how-the-greatest-power-of-code-is-abstraction---img-0.png" alt="Abstraction stack diagram">
+
+        <p>Made in Canva</p>
+
+        <p>Though this is quite a massive simplification, it explains how abstraction is created in programming.</p>
+
+        <p>By the way, that Java stack I showed you would have been at the very bottom under "Your Script".</p>
+
+        <h2>Abstraction Comes With a Cost</h2>
+
+        <p>There are drawbacks to abstraction. Yes, it is really cool and makes the world a simpler place. But universal to all abstraction are some key issues. Here are the two main ones:</p>
+
+        <h3>Abstraction always creates more computation</h3>
+
+        <p>Every layer you go up in abstraction, you always take a performance hit.</p>
+
+        <p>Think about it. If I want to abstract something, how does this affect its performance?</p>
+
+        <p>Lets say I want to make this code more simple. Take a look at this code:</p>
+
+<pre><code>result = 5 + 7
+print(f"The sum of {5} and {7} is {result}")
+result = 7 + 9
+print(f"The sum of {7} and {9} is {result}")</code></pre>
+
+        <p>Looks a little messy right? Now lets add this:</p>
+
+<pre><code>def add_and_print(x, y):
+    result = x + y
+    print(f"The sum of {x} and {y} is {result}")</code></pre>
+
+        <p>And rewrite it with a layer of abstraction:</p>
+
+<pre><code># Call the function with two numbers
+add_and_print(5, 7)
+add_and_print(7, 9)
+add_and_print(1, 2)</code></pre>
+
+        <p>We made the function much easier to understand, more powerful and shorter.</p>
+
+        <p>But, do you think the code is any more performant than the first? No, it is actually slower than if we did it all the long way.</p>
+
+        <p>All the way down, look at this again:</p>
+
+        <img src="../images/how-the-greatest-power-of-code-is-abstraction---img-1.png" alt="Abstraction stack diagram">
+
+        <p>Made in Canva</p>
+
+        <p>All the way down from Binary code to your script you are either getting slower or staying the same.</p>
+
+        <h3>You cannot debug everything</h3>
+
+        <p>The concept of abstraction leads to the idea of high level and low level programming. High level means it is high in the stack, it is very abstract. Low level means it is more like the binary code.</p>
+
+        <p>In this layers of abstraction, there are points where you can no longer debug the code.</p>
+
+        <p>You simply have to give control to that specific layer where you are at.</p>
+
+        <p>Take Python for example. Let's say there is an error with print.</p>
+
+<pre><code>print("I am just printing")</code></pre>
+
+        <p>Some poor developer messed up the print function in the latest update to Python.</p>
+
+        <p>But, there are many other features added to the language so you wish you can use it.</p>
+
+        <p>If you wanted to debug print, it would be impossible at the abstraction layer of Python.</p>
+
+        <p>You would have to access the C implementation of Python and debug it from there.</p>
+
+        <p>This is highly inconvenient in many situation in programming. Often your implementation is dependent on an abstract library or *.dll and you cannot access it without creating a whole new workspace.</p>
+
+        <p>This issue exists with all abstraction.</p>
+
+        <p>You have to give up a lot of control the higher and more abstract you go.</p>
+
+        <h2>Conclusion</h2>
+
+        <p>This is why lower level programming is so cool.</p>
+
+        <p>You have more control and more performance over absolutely everything about your program.</p>
+
+        <p>The problem is, you will take much longer to create the project and the code will appear very complex, though it is probably much less than the higher level code.</p>
+
+        <p>Anywho, I hope you learned something...</p>
+
+        <p>Happy coding!</p>
+    </article>
+
+    <footer>
+        <a href="../index.html" class="back-link">&larr; Back to Blog</a>
+    </footer>
+</body>
+</html>

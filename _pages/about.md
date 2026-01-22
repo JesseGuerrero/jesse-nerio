@@ -36,10 +36,6 @@ Community volunteer supporting Christian education programs at OCA parish under 
 
 News
 ------
-- [08/2025] We submitted our first paper to AAAI titled "AI-Powered Service for Land Surface Temperature Forecasting Across the USA"
-
-- [02/2025] Joined an OCA parish. Christ is risen! 
-
 - [08/2024] Enrolled in a PhD program under Dr. Najafirad's advisement.
 
 - [05/2024] I joined Dr. Najafirad's SAAL group! Excited to explore geospatial programming and ML.
