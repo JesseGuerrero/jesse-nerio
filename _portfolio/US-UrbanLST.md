@@ -149,5 +149,3 @@ US-UrbanLST is the first open-source, large-scale, granular LST dataset for the 
 - **Infrastructure**: UTSA HPC Slurm Platform, GPU servers
 - **Dataset Hosting**: HuggingFace
 - **Application**: LLM-driven chatbot (UrbanCast)
-
----
