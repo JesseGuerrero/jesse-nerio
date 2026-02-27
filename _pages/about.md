@@ -29,7 +29,7 @@ Research Assistant contributing to NLP publications. Led by [Dr. Izzat Alsmadi](
 Core developer for an open-source RuneScape remake. Founded by [Trenton Kress](https://trentonkress.com/).
 
 **Student Advocate** | *Students With Psychosis* | *2020 - Present*  
-Volunteer member supporting psychosis student advocacy initiatives and mental health awareness. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
+Volunteer member supporting psychosis student advocacy initiatives. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
 
 News
 ------

@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Jesse Guerrero"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Computer Science at University of Texas - San Antonio"
+  bio              : # "PhD Student in Computer Science at University of Texas - San Antonio"
   location         : "San Antonio TX, United States"
   employer         : "SAAL Laboratory - UTSA"
   uri              : # URL
