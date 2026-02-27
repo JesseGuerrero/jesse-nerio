@@ -23,10 +23,10 @@ Projects
 Lab assistant in twin cities and geospatial applications. Supervised by [Dr. Peyman Najafirad](https://scholar.google.com/citations?user=uoCn8c8AAAAJ&hl=en).
 
 **Natural Language Processing Research** | *TAMUSA* | *Fall 2022 - Spring 2023*  
-Research Assistant contributing to NLP research publications and advancing computational linguistics methodologies. Led by [Dr. Izzat Alsmadi](https://scholar.google.com/citations?user=VuFUT2IAAAAJ&hl=en).
+Research Assistant contributing to NLP publications. Led by [Dr. Izzat Alsmadi](https://scholar.google.com/citations?user=VuFUT2IAAAAJ&hl=en).
 
 **Game Developer** | *Darkan Project* | *2017 - Present*  
-Core developer for an open-source RuneScape remake, contributing to game engine architecture and gameplay systems. Founded by [Trenton Kress](https://trentonkress.com/).
+Core developer for an open-source RuneScape remake. Founded by [Trenton Kress](https://trentonkress.com/).
 
 **Student Advocate** | *Students With Psychosis* | *2020 - Present*  
 Volunteer member supporting psychosis student advocacy initiatives and mental health awareness. Led by [Cecilia McGough](https://www.linkedin.com/in/cecilia-mcgough/).
