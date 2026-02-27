@@ -5,7 +5,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi there! My name is Jesse (resume [here](https://jessenerio.com/files/Jesse_Resume.pdf)). I am a PhD student in Computer Science at University of Texas - San Antonio. I joined the [Secure AI Autonomy Lab (SAAL)](https://secureaiautonomylab.github.io/) in 2024, Where I have been advised by Dr Peyman Najafirad.
+Hi there! My name is Jesse. I am a PhD student in Computer Science at University of Texas - San Antonio. I joined the [Secure AI Autonomy Lab (SAAL)](https://secureaiautonomylab.github.io/) in 2024, Where I have been advised by Dr Peyman Najafirad.
 
 My research interests lie in the intersection of neural networks and user interfacing. Specifically, I am exploring the applications of neural models and human interactions to address challenges in agentic automation, remote sensing with neural models, user experience, vision and language models.
 
